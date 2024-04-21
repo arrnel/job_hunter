@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(schema = "currencies", name = "currency")
@@ -21,14 +22,13 @@ public class CurrencyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name = "currencies_id_seq", sequenceName = "currencies_id_seq", allocationSize = 1)
     private Integer id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "name", nullable = false, unique = true)
     @Enumerated(EnumType.STRING)
     private Currency currency;
 
-    @Column(name = "currency_rate", nullable = false)
+    @Column(name = "rate", nullable = false)
     private BigDecimal rate;
 
     @Column(name = "is_default", nullable = false)

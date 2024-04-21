@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import java.util.UUID;
+
 @Getter
 @Builder
 public class RegionResponse {

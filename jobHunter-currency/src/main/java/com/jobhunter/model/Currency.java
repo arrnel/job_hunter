@@ -1,5 +1,9 @@
 package com.jobhunter.model;
 
+import com.jobhunter.config.Config;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.stream.Stream;
 
 public enum Currency {
@@ -174,8 +178,12 @@ public enum Currency {
     ZMW,
     ZWL;
 
-    public static final Currency defaultCurrency = Currency.valueOf(Config.Currency.defaultCurrency());
     public static final Currency[] activeCurrencies = activeCurrencies();
+
+    public static Currency getDefaultCurrency() {
+        Currency currency = getCurrencyByName(Config.Currency.defaultCurrency());
+        return currency != null ? currency : Currency.USD;
+    }
 
     public static boolean isCurrencyActive(Currency currency) {
         for (Currency activeCurrency : activeCurrencies)
@@ -184,7 +192,7 @@ public enum Currency {
         return false;
     }
 
-    private static Currency[] activeCurrencies() {
+    public static Currency[] activeCurrencies() {
         return Stream.of(Config.Currency.activeCurrencies()).map(Currency::getCurrencyByName).toArray(Currency[]::new);
     }
 

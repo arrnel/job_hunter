@@ -1,11 +1,11 @@
 package com.jobhunter.dataParser.downloader.impl;
 
+import com.jobhunter.config.Config;
 import com.jobhunter.dataParser.downloader.FileDownloader;
+import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.InvalidDownloadLink;
-import com.jobHunter.enums.ECode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StreamUtils;
@@ -17,16 +17,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Objects;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class SimpleMapsFileDownloader implements FileDownloader {
-
-    @Value("${location.file.version:basicv1.77}")
-    private String version;
 
     private final RestTemplate restTemplate;
 
@@ -34,8 +29,8 @@ public class SimpleMapsFileDownloader implements FileDownloader {
     public File download() {
 
         String currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmmss"));
-        String url = "https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_" + version + ".zip";
-        File file = restTemplate.execute(url, HttpMethod.GET, null, clientHttpResponse -> {
+        String url = "https://simplemaps.com/static/data/world-cities/basic/simplemaps_worldcities_basicv" + Config.Geo.simpleMapsFileVersion() + ".zip";
+        return restTemplate.execute(url, HttpMethod.GET, null, clientHttpResponse -> {
 
             if (!clientHttpResponse.getStatusCode().is2xxSuccessful())
                 throw new InvalidDownloadLink(ECode.INVALID_DOWNLOAD_LINK, "Wrong link: [" + url + "]");
@@ -47,8 +42,6 @@ public class SimpleMapsFileDownloader implements FileDownloader {
 
         });
 
-        log.info("Successfully downloaded file: " + Objects.requireNonNull(file).getAbsolutePath());
-        return file;
     }
 
 }

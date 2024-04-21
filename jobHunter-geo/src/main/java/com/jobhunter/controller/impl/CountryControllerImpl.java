@@ -4,6 +4,7 @@ import com.jobhunter.controller.CountryController;
 import com.jobhunter.dto.CountryResponse;
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.dto.queryParamsDTO.CountrySearchRequestParams;
+import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.CountryToCountryResponseMapper;
 import com.jobhunter.mapper.PageCountryToPageResponseMapper;
@@ -13,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import static com.jobHunter.enums.ECode.CITY_NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 
 @Slf4j
@@ -33,7 +33,7 @@ public class CountryControllerImpl implements CountryController {
     public CountryResponse getCountryById(@PathVariable Integer id) {
         return countryToResponseMapper
                 .map(countryService.getCountryById(id)
-                        .orElseThrow(() -> new LocationNotFoundException(CITY_NOT_FOUND, "Country with id = [" + id + "] not found")));
+                        .orElseThrow(() -> new LocationNotFoundException(ECode.COUNTRY_NOT_FOUND, "Country with id = [" + id + "] not found")));
     }
 
     @Override

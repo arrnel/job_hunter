@@ -2,13 +2,14 @@ package com.jobhunter.exception;
 
 import com.jobhunter.enums.ECode;
 
-public class CurrencyNotFoundException extends GlobalException{
+public class CurrencyUpdaterException extends GlobalException{
 
-    public CurrencyNotFoundException(ECode code, String message) {
+    public CurrencyUpdaterException(ECode code, String message) {
         super(code, message);
     }
 
-    public CurrencyNotFoundException(ECode code) {
+    public CurrencyUpdaterException(ECode code) {
         super(code);
     }
+
 }

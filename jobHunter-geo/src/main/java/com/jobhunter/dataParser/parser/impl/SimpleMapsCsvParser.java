@@ -30,6 +30,7 @@ public class SimpleMapsCsvParser implements FileParser {
 
     @Override
     public void parse(File file) {
+
         try (CSVParser parser = CSVParser.parse(file, StandardCharsets.UTF_8, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
 
             for (CSVRecord record : parser) {

@@ -8,9 +8,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.util.UUID;
+
 
 @Entity
-@Table(schema = "location", name = "city")
+@Table(schema = "geo", name = "city")
 @Data
 @Builder
 @NoArgsConstructor

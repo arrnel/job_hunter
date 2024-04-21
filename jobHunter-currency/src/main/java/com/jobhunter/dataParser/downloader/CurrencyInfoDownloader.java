@@ -1,6 +1,6 @@
 package com.jobhunter.dataParser.downloader;
 
-public interface CurrencyInfoParser {
+public interface CurrencyInfoDownloader {
 
     String getCurrenciesText();
 

@@ -1,12 +1,12 @@
-package com.jobhunter.dataParser.extractor;
+package com.jobhunter.dataParser.parser;
 
 import com.jobhunter.model.Currency;
 
 import java.math.BigDecimal;
 import java.util.Map;
 
-public interface CurrencyInfoExtractor {
+public interface CurrencyRateMapParser {
 
-    Map<Currency, BigDecimal> convert(String source);
+    Map<Currency, BigDecimal> parse(String source);
 
 }

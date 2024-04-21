@@ -11,7 +11,7 @@ java {
 
 subprojects {
 
-    group = 'com.arrnel.jobHunter'
+    group = 'com.jobHunter'
     version = '0.0.1'
 
     java {
@@ -38,4 +38,3 @@ subprojects {
 tasks.named('test') {
     useJUnitPlatform()
 }
-

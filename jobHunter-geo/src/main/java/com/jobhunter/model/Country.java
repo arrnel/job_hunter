@@ -7,8 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.util.UUID;
+
 @Entity
-@Table(schema = "location", name = "country")
+@Table(schema = "geo", name = "country")
 @Data
 @Builder
 @NoArgsConstructor

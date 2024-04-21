@@ -1,7 +1,6 @@
 package com.jobhunter.exception;
 
-import com.jobHunter.enums.ECode;
-import com.jobHunter.exception.GlobalException;
+import com.jobhunter.enums.ECode;
 
 public class IllegalRequestParamValueException extends GlobalException {
 

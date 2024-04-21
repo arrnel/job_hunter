@@ -4,6 +4,7 @@ import com.jobhunter.controller.CityController;
 import com.jobhunter.dto.CityResponse;
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.dto.queryParamsDTO.CitySearchRequestParams;
+import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.CityToCityResponseMapper;
 import com.jobhunter.mapper.PageCityToPageResponseMapper;
@@ -13,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import static com.jobHunter.enums.ECode.CITY_NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 
 @Slf4j
@@ -33,7 +33,7 @@ public class CityControllerImpl implements CityController {
         log.info("Get city with id = [{}]", id);
         return cityToResponseMapper
                 .map(cityService.getCityById(id)
-                        .orElseThrow(() -> new LocationNotFoundException(CITY_NOT_FOUND, "City with id = [" + id + "] not found")));
+                        .orElseThrow(() -> new LocationNotFoundException(ECode.CITY_NOT_FOUND, "City with id = [" + id + "] not found")));
     }
 
     @Override

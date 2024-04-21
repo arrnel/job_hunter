@@ -4,6 +4,7 @@ import com.jobhunter.controller.RegionController;
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.dto.RegionResponse;
 import com.jobhunter.dto.queryParamsDTO.RegionSearchRequestParams;
+import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.PageRegionToPageResponseMapper;
 import com.jobhunter.mapper.RegionToRegionResponseMapper;
@@ -13,7 +14,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import static com.jobHunter.enums.ECode.CITY_NOT_FOUND;
 import static org.springframework.http.HttpStatus.OK;
 
 @Slf4j
@@ -32,7 +32,7 @@ public class RegionControllerImpl implements RegionController {
     public RegionResponse getRegionById(@PathVariable Integer id) {
         log.info("Get region with id = [{}]", id);
         return regionToResponseMapper.map(regionService.getRegionById(id)
-                .orElseThrow(() -> new LocationNotFoundException(CITY_NOT_FOUND, "Region with id = [" + id + "] not found")));
+                .orElseThrow(() -> new LocationNotFoundException(ECode.REGION_NOT_FOUND, "Region with id = [" + id + "] not found")));
     }
 
     @Override

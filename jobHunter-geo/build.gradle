@@ -7,12 +7,6 @@ plugins {
 springBootVersion = project.ext.springBootVersion
 dependencyManagementVersion = project.ext.dependencyManagementVersion
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
-
 dependencies {
     implementation(
             project(":common")
@@ -26,15 +20,13 @@ dependencies {
             , 'org.testcontainers:junit-jupiter'
             , 'org.testcontainers:postgresql'
     )
-    compileOnly 'org.projectlombok:lombok'
+    compileOnly (
+            'org.projectlombok:lombok'
+            , "org.apache.commons:commons-csv:${project.ext.apacheCommonCsvVersion}"
+    )
     runtimeOnly 'org.postgresql:postgresql'
-    annotationProcessor 'org.projectlombok:lombok'
-}
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${project.ext.springCloudVersion}"
-    }
+    annotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.register('printVersion') {

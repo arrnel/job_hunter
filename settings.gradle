@@ -1,4 +1,5 @@
 rootProject.name = 'job_hunter'
+include 'common'
 include 'jobHunter-auth'
 include 'jobHunter-comments'
 include 'jobHunter-company'
@@ -10,5 +11,4 @@ include 'jobHunter-geo'
 include 'jobHunter-notification'
 include 'jobHunter-user'
 include 'jobHunter-vacancy'
-include 'common'
 

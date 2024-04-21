@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.jobhunter.enums.ECode.INVALID_SEARCH_BY_NAME_AND_PARTIAL_NAME;
 import static com.jobhunter.helper.StringHelper.isStringNullOrEmpty;
-import static com.jobHunter.enums.ECode.INVALID_SEARCH_BY_NAME_AND_PARTIAL_NAME;
 
 @Component
 public class NameParamSpecificationImpl implements NameParamSpecification {

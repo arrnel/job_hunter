@@ -3,9 +3,9 @@ server:
 
 spring:
   application:
-    name: job_hunter_comment
+    name: job_hunter_company
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:job_hunter_comment}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:job_hunter_company}
     username: ${POSTGRES_USER:job_hunter_admin}
     password: ${POSTGRES_PASSWORD:12345}
     driverClassName: org.postgresql.Driver
@@ -16,4 +16,10 @@ spring:
     baseline-on-migrate: true
     baseline-version: 0
     schemas: flyway
-    locations: classpath:db/migration/currency
+    locations: classpath:db/migration/script
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug

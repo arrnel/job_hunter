@@ -1,2 +1,5 @@
-package com.jobhunter.parser;public interface CurrencyParser {
+package com.jobhunter.dataParser;
+
+public interface CurrencyUpdater {
+    void update();
 }

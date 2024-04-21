@@ -1,5 +1,3 @@
-create extension if not exists "uuid-ossp";
-
 create schema if not exists geo;
 
 create table if not exists geo.country
@@ -11,7 +9,7 @@ create table if not exists geo.country
 
 create table if not exists geo.region
 (
-    id         serial unique not null default uuid_generate_v1(),
+    id         serial unique not null,
     country_id serial        not null,
     name       varchar(255)  not null,
     primary key (id, name)
@@ -19,7 +17,7 @@ create table if not exists geo.region
 
 create table if not exists geo.city
 (
-    id         serial unique not null default uuid_generate_v1(),
+    id         serial unique not null,
     country_id serial        not null,
     region_id  serial,
     name       varchar(255)  not null,

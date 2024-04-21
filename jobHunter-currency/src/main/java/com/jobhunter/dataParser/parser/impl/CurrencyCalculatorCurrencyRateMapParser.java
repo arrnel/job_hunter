@@ -1,19 +1,21 @@
-package com.jobhunter.dataParser.extractor.impl;
+package com.jobhunter.dataParser.parser.impl;
 
-import com.jobhunter.dataParser.extractor.CurrencyInfoExtractor;
+import com.jobhunter.dataParser.parser.CurrencyRateMapParser;
 import com.jobhunter.model.Currency;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CurrencyCalculatorCurrencyInfoExtractor implements CurrencyInfoExtractor {
+@Service
+public class CurrencyCalculatorCurrencyRateMapParser implements CurrencyRateMapParser {
 
     @Override
-    public Map<Currency, BigDecimal> convert(String text) {
+    public Map<Currency, BigDecimal> parse(String text) {
 
-        Map<Currency, BigDecimal> map = new HashMap<>();
+        Map<Currency, BigDecimal> map = new TreeMap<>();
         List<Currency> currenciesList = new LinkedList<>(Arrays.asList(Currency.values()));
 
         Pattern pattern = Pattern.compile("\\[\"(\\w{3})\",(\\d+\\.?\\d*)]");
