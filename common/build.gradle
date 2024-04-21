@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version '8.6'
+}
+
+group = 'org.jobhunter'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(
+            "org.aeonbits.owner:owner-java8:${project.ext.ownerVersion}"
+    )
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.jobHunter'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+subprojects {
+
+    group = 'com.arrnel.jobHunter'
+    version = '0.0.1'
+
+    java {
+        sourceCompatibility = '17'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springBootVersion = '3.2.4'
+        dependencyManagementVersion = '1.1.4'
+        oauth2AuthorizationServerVersion = '1.2.2'
+        oauth2ResourceServerVersion = '3.2.3'
+        ownerVersion = '1.0.12'
+        junitVersion = '5.9.1'
+        apacheCommonCsvVersion = '1.10.0'
+        springCloudVersion = '2023.0.1'
+    }
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+

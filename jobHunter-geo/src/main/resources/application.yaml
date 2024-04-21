@@ -1,0 +1,28 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: jobHunter-geo
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:job_hunter}
+    username: ${POSTGRES_USER:job_hunter_admin}
+    password: ${POSTGRES_PASSWORD:12345}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        order_updates
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    schemas: flyway
+    locations: classpath:db.migration/location-service
+
+logging:
+  level:
+    org:
+      springframework:
+        security: debug

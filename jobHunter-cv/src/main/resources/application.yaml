@@ -1,0 +1,19 @@
+server:
+  port: 9004
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:job_hunter}
+    username: ${POSTGRES_USER:job_hunter_admin}
+    password: ${POSTGRES_PASSWORD:12345}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 0
+    schemas: flyway_currency
+    locations: classpath:db/migration/currency
