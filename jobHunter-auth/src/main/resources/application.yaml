@@ -66,9 +66,9 @@ spring:
     username: ${POSTGRES_USER:job_hunter_admin}
     password: ${POSTGRES_PASSWORD:12345}
 job_hunter_front:
-  base_uri: 'http://127.0.0.1:3000'
+  base_url: 'http://127.0.0.1:3000'
 job_hunter_auth:
-  base_uri: 'http://127.0.0.1:9000'
+  base_url: 'http://127.0.0.1:9000'
 oauth2:
   client-id: 'client'
   client-secret: '{noop}secret'
@@ -90,9 +90,9 @@ spring:
     username: ${POSTGRES_USER:job_hunter_admin}
     password: ${POSTGRES_PASSWORD:12345}
 job_hunter_front:
-  base_uri: 'http://frontend.jobhunter.dc'
+  base_url: 'http://frontend.jobhunter.dc'
 job_hunter_auth:
-  base_uri: 'http://auth.jobhunter.dc:9000'
+  base_url: 'http://auth.jobhunter.dc:9000'
 oauth2:
   client-id: 'client'
   client-secret: '{noop}secret'
@@ -118,9 +118,9 @@ spring:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
 job_hunter_front:
-  base_uri: 'https://jobhunter.qa.guru'
+  base_url: 'https://jobhunter.qa.guru'
 job_hunter_auth:
-  base_uri: 'https://auth.jobhunter.qa.guru'
+  base_url: 'https://auth.jobhunter.qa.guru'
 oauth2:
   client-id: ${OAUTH2_CLIENT_ID}
   client-secret: ${OAUTH2_CLIENT_SECRET}
@@ -147,10 +147,10 @@ spring:
     password: ${POSTGRES_PASSWORD}
 
 job_hunter_front:
-  base_uri: 'https://jobhunter_stage.qa.guru'
+  base_url: 'https://jobhunter_stage.qa.guru'
 
 job_hunter_auth:
-  base_uri: 'https://auth.jobhunter_stage.qa.guru'
+  base_url: 'https://auth.jobhunter_stage.qa.guru'
 
 oauth2:
   client-id: ${OAUTH2_CLIENT_ID}

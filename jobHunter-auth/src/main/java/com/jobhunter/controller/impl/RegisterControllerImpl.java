@@ -34,7 +34,7 @@ public class RegisterControllerImpl implements RegisterController {
 
     @Autowired
     public RegisterControllerImpl(UserService userService,
-                              @Value("${job_hunter_front.base_uri}") String jobHunterFrontUri) {
+                              @Value("${job_hunter_front.base_url}") String jobHunterFrontUri) {
         this.userService = userService;
         this.jobHunterFrontUri = jobHunterFrontUri;
     }

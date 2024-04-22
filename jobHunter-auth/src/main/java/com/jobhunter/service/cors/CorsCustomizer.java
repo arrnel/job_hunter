@@ -15,14 +15,14 @@ import java.util.List;
 @Component
 public class CorsCustomizer {
 
-    private final String nifflerFrontUri;
-    private final String nifflerAuthUri;
+    private final String jobHunterFrontUri;
+    private final String jobHunterAuthUri;
 
     @Autowired
-    public CorsCustomizer(@Value("${job_hunter_front.base_uri}") String jobHunterFrontUri,
-                          @Value("${job_hunter_auth.base_uri}") String jobHunterAuthUri) {
-        this.nifflerFrontUri = jobHunterFrontUri;
-        this.nifflerAuthUri = jobHunterAuthUri;
+    public CorsCustomizer(@Value("${job_hunter_front.base_url}") String jobHunterFrontUri,
+                          @Value("${job_hunter_auth.base_url}") String jobHunterAuthUri) {
+        this.jobHunterFrontUri = jobHunterFrontUri;
+        this.jobHunterAuthUri = jobHunterAuthUri;
     }
 
     public void corsCustomizer(@Nonnull HttpSecurity http) throws Exception {
@@ -37,7 +37,7 @@ public class CorsCustomizer {
         return request -> {
             CorsConfiguration cc = new CorsConfiguration();
             cc.setAllowCredentials(true);
-            cc.setAllowedOrigins(List.of(nifflerFrontUri, nifflerAuthUri));
+            cc.setAllowedOrigins(List.of(jobHunterFrontUri, jobHunterAuthUri));
             cc.setAllowedHeaders(List.of("*"));
             cc.setAllowedMethods(List.of("*"));
             return cc;
