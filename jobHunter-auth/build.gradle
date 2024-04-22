@@ -10,12 +10,19 @@ dependencyManagementVersion = project.ext.dependencyManagementVersion
 dependencies {
     implementation(
             project(":common")
-            ,'org.springframework.boot:spring-boot-starter-data-jpa'
-            ,'org.springframework.boot:spring-boot-starter-web'
-            ,'org.flywaydb:flyway-core'
+            , "org.springframework.boot:spring-boot-starter-security"
+            , 'org.springframework.boot:spring-boot-starter-web'
+            , 'org.springframework.boot:spring-boot-starter-data-jpa'
+            , 'org.springframework.boot:spring-boot-starter-thymeleaf'
+            , "org.springframework.boot:spring-boot-starter-validation"
+            , "org.springframework.security:spring-security-oauth2-authorization-server:${project.ext.oauth2AuthorizationServerVersion}"
+            , "org.springframework.cloud:spring-cloud-starter-vault-config:${project.ext.springVaultVersion}"
+            , "org.springframework.kafka:spring-kafka:${project.ext.springKafkaVersion}"
+            , 'org.flywaydb:flyway-core'
     )
     testImplementation(
             'org.springframework.boot:spring-boot-starter-test'
+            , "org.springframework.security:spring-security-test"
             , 'org.springframework.boot:spring-boot-testcontainers'
             , 'org.testcontainers:junit-jupiter'
             , 'org.testcontainers:postgresql'

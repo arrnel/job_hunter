@@ -23,14 +23,16 @@ subprojects {
     }
 
     ext {
-        springBootVersion = '3.2.4'
+        apacheCommonCsvVersion = '1.10.0'
         dependencyManagementVersion = '1.1.4'
         oauth2AuthorizationServerVersion = '1.2.2'
         oauth2ResourceServerVersion = '3.2.3'
         ownerVersion = '1.0.12'
         junitVersion = '5.9.1'
-        apacheCommonCsvVersion = '1.10.0'
+        springBootVersion = '3.2.4'
         springCloudVersion = '2023.0.1'
+        springKafkaVersion = '3.1.2'
+        springVaultVersion = '4.1.0'
     }
 
 }
