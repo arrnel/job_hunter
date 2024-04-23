@@ -47,6 +47,7 @@ public class UserEntity {
     @Column(name = "credentials_non_expired", nullable = false)
     private Boolean credentialsNonExpired;
 
+    @Builder.Default
     @OneToMany(fetch = EAGER, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     private List<AuthorityEntity> authorities = new ArrayList<>();
 
