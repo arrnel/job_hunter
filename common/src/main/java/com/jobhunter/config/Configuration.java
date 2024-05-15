@@ -4,6 +4,56 @@ import org.aeonbits.owner.Config;
 
 public interface Configuration extends Config {
 
+    // INFO: common
+    @Key("common.port.jobhunter_auth")
+    @DefaultValue("9000")
+    Integer jobHunterAuthPort();
+
+    @Key("common.port.jobhunter_comments")
+    @DefaultValue("9002")
+    Integer jobHunterCommentsPort();
+
+    @Key("common.port.jobhunter_company")
+    @DefaultValue("9003")
+    Integer jobHunterCompanyPort();
+
+    @Key("common.port.jobhunter_currency")
+    @DefaultValue("9004")
+    Integer jobHunterCurrencyPort();
+
+    @Key("common.port.jobhunter_cv")
+    @DefaultValue("9005")
+    Integer jobHunterCvPort();
+
+    @Key("common.port.jobhunter_files")
+    @DefaultValue("9006")
+    Integer jobHunterFilesPort();
+
+    @Key("common.port.jobhunter_front")
+    @DefaultValue("8080")
+    Integer jobHunterFrontPort();
+
+    @Key("common.port.jobhunter_gateway")
+    @DefaultValue("9007")
+    Integer jobHunterGatewayPort();
+
+    @Key("common.port.jobhunter_geo")
+    @DefaultValue("9008")
+    Integer jobHunterGeoPort();
+
+    @Key("common.port.jobhunter_job")
+    @DefaultValue("9009")
+    Integer jobHunterJobPort();
+
+    @Key("common.port.jobhunter_notification")
+    @DefaultValue("9010")
+    Integer jobHunterNotificationPort();
+
+    @Key("common.port.jobhunter_user")
+    @DefaultValue("9011")
+    Integer jobHunterUserPort();
+
+    // _________________________________________________________________________________________________________________
     // INFO: jobHunter-auth
     // _________________________________________________________________________________________________________________
     // INFO: jobHunter-comments
@@ -94,6 +144,8 @@ public interface Configuration extends Config {
     int ageMax();
     // _________________________________________________________________________________________________________________
 
-    // INFO: jobHunter-vacancy
-
+    // INFO: jobHunter-job
+    @Key("job.file.categories")
+    @DefaultValue("files/categories.json")
+    String pathToCategoriesFile();
 }

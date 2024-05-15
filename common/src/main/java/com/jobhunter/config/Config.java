@@ -12,6 +12,58 @@ public class Config {
         config = ConfigFactory.create(Configuration.class, System.getProperties());
     }
 
+    public static class Port {
+
+        public static Integer auth() {
+            return config.jobHunterAuthPort();
+        }
+
+        public static Integer comments() {
+            return config.jobHunterCommentsPort();
+        }
+
+        public static Integer company() {
+            return config.jobHunterCompanyPort();
+        }
+
+        public static Integer currency() {
+            return config.jobHunterCurrencyPort();
+        }
+
+        public static Integer cv() {
+            return config.jobHunterCvPort();
+        }
+
+        public static Integer files() {
+            return config.jobHunterFilesPort();
+        }
+
+        public static Integer frontend() {
+            return config.jobHunterFrontPort();
+        }
+
+        public static Integer gateway() {
+            return config.jobHunterGatewayPort();
+        }
+
+        public static Integer geo() {
+            return config.jobHunterGeoPort();
+        }
+
+        public static Integer job() {
+            return config.jobHunterJobPort();
+        }
+
+        public static Integer notification() {
+            return config.jobHunterNotificationPort();
+        }
+
+        public static Integer user() {
+            return config.jobHunterUserPort();
+        }
+
+    }
+
     public static class Auth {
 
     }
@@ -55,6 +107,13 @@ public class Config {
         }
     }
 
+    public static class Job {
+
+        public static String pathToCategoriesFile() {
+            return config.pathToCategoriesFile();
+        }
+
+    }
 
     public static class Notification {
 
@@ -112,10 +171,6 @@ public class Config {
         public static int ageMax() {
             return config.ageMax();
         }
-    }
-
-    public static class Vacancy {
-
     }
 
 }

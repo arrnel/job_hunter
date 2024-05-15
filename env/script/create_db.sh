@@ -10,10 +10,10 @@ DATABASES=(
 "job_hunter_currency" 
 "job_hunter_cv" 
 "job_hunter_file" 
-"job_hunter_geo" 
+"job_hunter_geo"
+"job_hunter_job"
 "job_hunter_notification"
-"job_hunter_user" 
-"job_hunter_vacancy"
+"job_hunter_user"
 )
 
 for DATABASE in ${DATABASES[@]}
