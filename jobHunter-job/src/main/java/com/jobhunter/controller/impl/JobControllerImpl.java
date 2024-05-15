@@ -118,6 +118,7 @@ public class JobControllerImpl implements JobController {
                 jobService.updateJob(
                         jobId,
                         mapJobRequestToJob.map(requestBody)
+                                .setDateUpdated(LocalDateTime.now())
                 ));
     }
 

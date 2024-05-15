@@ -80,9 +80,9 @@ public class JobServiceImpl implements JobService {
     @Override
     public Job updateJob(Long jobId, Job newJob) {
 
+        String newJobTitle = newJob.getTitle();
         Job oldJob = jobRepository.findById(jobId)
                 .orElseThrow(() -> new JobNotFoundException(JOB_NOT_FOUND, "Job with id = [" + jobId + "] not found"));
-        String newJobTitle = newJob.getTitle();
         boolean isJobExistInCompanyWithTitle =
                 newJobTitle != null
                         && !oldJob.getTitle().equals(newJobTitle)

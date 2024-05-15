@@ -2,7 +2,10 @@ package com.jobhunter.mapper.impl;
 
 import com.jobhunter.dto.JobResponse;
 import com.jobhunter.mapper.JobToJobResponseMapper;
-import com.jobhunter.model.*;
+import com.jobhunter.model.IndustrySubCategoryModel;
+import com.jobhunter.model.Job;
+import com.jobhunter.model.JobTypeEntity;
+import com.jobhunter.model.SpecializationSubCategoryModel;
 import org.springframework.stereotype.Component;
 
 import java.util.stream.Collectors;
