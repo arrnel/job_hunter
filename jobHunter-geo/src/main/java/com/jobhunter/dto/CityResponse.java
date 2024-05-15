@@ -1,11 +1,9 @@
 package com.jobhunter.dto;
 
-import com.jobhunter.enums.CityType;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jobhunter.enums.CityType;
 import lombok.Builder;
 import lombok.Getter;
-
-import java.util.UUID;
 
 @Getter
 @Builder

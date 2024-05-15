@@ -106,8 +106,8 @@ spring:
   cloud:
     vault:
       authentication: TOKEN
-      host: vault.qa.guru
-      uri: https://vault.qa.guru
+      host: vault.jobhunter.com
+      uri: https://vault.jobhunter.com
       token: ${VAULT_TOKEN}
       kv:
         enabled: true
@@ -118,9 +118,9 @@ spring:
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
 job_hunter_front:
-  base_url: 'https://jobhunter.qa.guru'
+  base_url: 'https://jobhunter.jobhunter.com'
 job_hunter_auth:
-  base_url: 'https://auth.jobhunter.qa.guru'
+  base_url: 'https://auth.jobhunter.jobhunter.com'
 oauth2:
   client-id: ${OAUTH2_CLIENT_ID}
   client-secret: ${OAUTH2_CLIENT_SECRET}
@@ -134,8 +134,8 @@ spring:
   cloud:
     vault:
       authentication: TOKEN
-      host: vault.qa.guru
-      uri: https://vault.qa.guru
+      host: vault.jobhunter.com
+      uri: https://vault.jobhunter.com
       token: ${VAULT_TOKEN}
       kv:
         enabled: true
@@ -147,10 +147,10 @@ spring:
     password: ${POSTGRES_PASSWORD}
 
 job_hunter_front:
-  base_url: 'https://jobhunter_stage.qa.guru'
+  base_url: 'https://jobhunter_stage.jobhunter.com'
 
 job_hunter_auth:
-  base_url: 'https://auth.jobhunter_stage.qa.guru'
+  base_url: 'https://auth.jobhunter_stage.jobhunter.com'
 
 oauth2:
   client-id: ${OAUTH2_CLIENT_ID}

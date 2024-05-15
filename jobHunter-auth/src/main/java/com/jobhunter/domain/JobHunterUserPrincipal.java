@@ -2,7 +2,6 @@ package com.jobhunter.domain;
 
 import com.jobhunter.model.UserEntity;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

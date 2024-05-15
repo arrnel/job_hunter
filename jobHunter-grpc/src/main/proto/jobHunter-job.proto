@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.jobhunter.grpc.job";
+option java_outer_classname = "JobProto";
+
+message CreateJobRequest {
+  int64 companyId = 1;
+  JobRequest jobRequest = 2;
+}
+
+message GetJobRequest {
+  int64 jobId = 1;
+}
+
+message SearchJobsRequest {
+  int64 companyId = 1;
+  string partialTitle = 2;
+  string partialDescription = 3;
+  string partialContent = 4;
+  double minPrice = 5;
+  double maxPrice = 6;
+  string currency = 7;
+  int32 cityId = 8;
+  int32 regionId = 9;
+  int32 countryId = 10;
+  string afterDate = 11;
+  string beforeDate = 12;
+  int32 pageNo = 13;
+  int32 pageSize = 14;
+}
+
+message UpdateJobRequest {
+  int64 jobId = 1;
+  JobRequest jobRequest = 2;
+}
+
+message DeleteJobRequest {
+  int64 jobId = 1;
+}
+
+message StatusDTO {
+  bool status = 1;
+}
+
+message JobRequest {
+  string title = 1;
+  string description = 2;
+  double minPrice = 3;
+  double maxPrice = 4;
+  string currency = 5;
+  string priceType = 6;
+  repeated string jobTypes = 7;
+  repeated int32 specializationId = 8;
+  repeated int32 industries = 9;
+  int32 cityId = 10;
+}
+
+message JobResponse {
+  int64 id = 1;
+  string title = 2;
+  string description = 3;
+  double minPrice = 4;
+  double maxPrice = 5;
+  string currency = 6;
+  JobPriceType priceType = 7;
+  repeated string jobTypes = 8;
+  repeated int32 specializationId = 9;
+  repeated int32 industryId = 10;
+  int32 cityId = 11;
+  string dateCreated = 12;
+  string dateUpdated = 13;
+}
+
+message PageResponse {
+  int32 currentPage = 1;
+  int32 totalPages = 2;
+  int32 itemsPerPage = 3;
+  int64 totalItems = 4;
+  repeated JobResponse data = 5;
+}
+
+enum JobPriceType {
+  HOURLY = 0;
+  FIXED_PRICE = 1;
+}
+
+service JobController {
+  rpc CreateNewJob (CreateJobRequest) returns (JobResponse) {}
+  rpc GetJob (GetJobRequest) returns (JobResponse) {}
+  rpc GetJobs (SearchJobsRequest) returns (PageResponse) {}
+  rpc UpdateJob (UpdateJobRequest) returns (JobResponse) {}
+  rpc DeleteJob (DeleteJobRequest) returns (StatusDTO) {} // Вам потребуется определить сообщение DeleteJobRequest и тип StatusDTO, на основании предоставленных вами данных, я не могу детально определить эти сообщения.
+}

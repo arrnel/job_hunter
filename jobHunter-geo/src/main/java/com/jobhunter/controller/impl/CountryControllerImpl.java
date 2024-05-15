@@ -3,7 +3,7 @@ package com.jobhunter.controller.impl;
 import com.jobhunter.controller.CountryController;
 import com.jobhunter.dto.CountryResponse;
 import com.jobhunter.dto.PageResponse;
-import com.jobhunter.dto.queryParamsDTO.CountrySearchRequestParams;
+import com.jobhunter.dto.requestParams.CountriesFilter;
 import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.CountryToCountryResponseMapper;
@@ -55,7 +55,7 @@ public class CountryControllerImpl implements CountryController {
                 , name, partialName, pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort()));
         return pageCountryToPageResponseMapper.map(
                 countryService.getCountries(
-                    CountrySearchRequestParams.builder()
+                    CountriesFilter.builder()
                             .name(name)
                             .partialName(partialName)
                             .build()

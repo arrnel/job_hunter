@@ -1,7 +1,6 @@
 package com.jobhunter.controller.impl;
 
 import com.jobhunter.controller.CurrencyController;
-import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.CurrencyNotFoundException;
 import com.jobhunter.model.Currency;
@@ -24,9 +23,13 @@ public class CurrencyControllerImpl implements CurrencyController {
 
     private final CurrencyService currencyService;
 
+    @Override
     @GetMapping
     @ResponseStatus(OK)
-    public CurrencyRateDTO getRate(@RequestParam String fromValue, @RequestParam String toValue) {
+    public CurrencyRateDTO getRate(
+            @RequestParam("from") String fromValue
+            , @RequestParam("to") String toValue
+    ) {
 
         Currency from = Currency.getCurrencyByName(fromValue),
                 to = Currency.getCurrencyByName(toValue);
@@ -56,8 +59,8 @@ public class CurrencyControllerImpl implements CurrencyController {
     }
 
     @GetMapping("/update")
-    public StatusDTO update() {
-        return currencyService.update();
+    public void update() {
+        currencyService.update();
     }
 
     @Scheduled(fixedDelay = 60 * 60 * 1000) // INFO: updating every hour

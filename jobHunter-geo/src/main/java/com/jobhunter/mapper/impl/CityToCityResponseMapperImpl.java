@@ -1,8 +1,6 @@
 package com.jobhunter.mapper.impl;
 
 import com.jobhunter.dto.CityResponse;
-import com.jobhunter.dto.CountryResponse;
-import com.jobhunter.dto.RegionResponseShort;
 import com.jobhunter.mapper.CityToCityResponseMapper;
 import com.jobhunter.mapper.CountryToCountryResponseMapper;
 import com.jobhunter.mapper.RegionToRegionResponseShortMapper;

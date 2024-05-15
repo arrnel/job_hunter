@@ -1,7 +1,7 @@
 package com.jobhunter.validation.validator;
 
-import com.jobhunter.validation.EqualPasswords;
 import com.jobhunter.dto.RegistrationRequestDTO;
+import com.jobhunter.validation.EqualPasswords;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

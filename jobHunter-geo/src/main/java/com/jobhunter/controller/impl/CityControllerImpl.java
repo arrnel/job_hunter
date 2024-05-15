@@ -3,7 +3,7 @@ package com.jobhunter.controller.impl;
 import com.jobhunter.controller.CityController;
 import com.jobhunter.dto.CityResponse;
 import com.jobhunter.dto.PageResponse;
-import com.jobhunter.dto.queryParamsDTO.CitySearchRequestParams;
+import com.jobhunter.dto.requestParams.CitiesFilter;
 import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.CityToCityResponseMapper;
@@ -52,7 +52,7 @@ public class CityControllerImpl implements CityController {
 
         return pageCityToPageResponseMapper.map(
                 cityService.getCities(
-                        CitySearchRequestParams.builder()
+                        CitiesFilter.builder()
                                 .name(name)
                                 .partialName(partialName)
                                 .regionId(regionId)

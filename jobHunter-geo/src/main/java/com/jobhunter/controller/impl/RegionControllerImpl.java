@@ -3,7 +3,7 @@ package com.jobhunter.controller.impl;
 import com.jobhunter.controller.RegionController;
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.dto.RegionResponse;
-import com.jobhunter.dto.queryParamsDTO.RegionSearchRequestParams;
+import com.jobhunter.dto.requestParams.RegionsFilter;
 import com.jobhunter.enums.ECode;
 import com.jobhunter.exception.LocationNotFoundException;
 import com.jobhunter.mapper.PageRegionToPageResponseMapper;
@@ -50,7 +50,7 @@ public class RegionControllerImpl implements RegionController {
 
         return pageRegionToPageResponseMapper.map(
                 regionService.getRegions(
-                        RegionSearchRequestParams.builder()
+                        RegionsFilter.builder()
                                 .name(name)
                                 .partialName(partialName)
                                 .countryId(countryId)

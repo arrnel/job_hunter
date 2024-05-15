@@ -4,6 +4,7 @@ import com.jobhunter.dataParser.CurrencyUpdater;
 import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.exception.CurrencyNotFoundException;
 import com.jobhunter.model.Currency;
+import com.jobhunter.model.CurrencyEntity;
 import com.jobhunter.model.CurrencyRateDTO;
 import com.jobhunter.repository.CurrencyRepository;
 import com.jobhunter.service.CurrencyService;
@@ -14,11 +15,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static com.jobhunter.enums.ECode.CURRENCY_NOT_FOUND;
+import static java.math.RoundingMode.CEILING;
 
 @Slf4j
 @Service
@@ -49,30 +50,24 @@ public class CurrencyServiceImpl implements CurrencyService {
 
         log.info("Get exchange rate from = [{}], to = [{}]", from, to);
 
-
+        CurrencyEntity fromEntity = currencyRepository.findByCurrency(from).orElseThrow(() -> new CurrencyNotFoundException(
+                CURRENCY_NOT_FOUND
+                , "Currency \"from\" = [" + from + "] not found"));
+        CurrencyEntity toEntity = currencyRepository.findByCurrency(to).orElseThrow(() -> new CurrencyNotFoundException(
+                CURRENCY_NOT_FOUND
+                , "Currency \"to\" = [" + to + "] not found"));
 
         return CurrencyRateDTO.builder()
                 .from(from)
                 .to(to)
-                .dateUpdated(dateUpdated)
-                .rate(
-                        calculateRate(
-                                currencyRepository.findByCurrency(from).orElseThrow(() -> new CurrencyNotFoundException(
-                                                CURRENCY_NOT_FOUND
-                                                , "Currency \"from\" = [" + from + "] not found"))
-                                        .getRate()
-                                , currencyRepository.findByCurrency(to).orElseThrow(() -> new CurrencyNotFoundException(
-                                                CURRENCY_NOT_FOUND
-                                                , "Currency \"to\" = [" + to + "] not found"))
-                                        .getRate()
-                        )
-                )
+                .rate(calculateRate(fromEntity.getRate(), toEntity.getRate()))
+                .dateUpdated(fromEntity.getDateUpdated())
                 .build();
 
     }
 
     private static BigDecimal calculateRate(BigDecimal from, BigDecimal to) {
-        return from.multiply(BigDecimal.valueOf(1).divide(to, 6, RoundingMode.CEILING));
+        return BigDecimal.ONE.divide(from, 6, CEILING).multiply(to).setScale(6, CEILING);
     }
 
     @Override
@@ -96,7 +91,7 @@ public class CurrencyServiceImpl implements CurrencyService {
                                 .from(Currency.getDefaultCurrency())
                                 .to(value.getCurrency())
                                 .rate(value.getRate())
-                                .dateUpdated(dateUpdated)
+                                .dateUpdated(value.getDateUpdated())
                                 .build()
                 ).toList();
 

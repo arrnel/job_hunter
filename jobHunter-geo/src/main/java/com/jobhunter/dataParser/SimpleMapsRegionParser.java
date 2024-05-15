@@ -3,7 +3,6 @@ package com.jobhunter.dataParser;
 import com.jobhunter.dataParser.downloader.FileDownloader;
 import com.jobhunter.dataParser.extractor.FileExtractor;
 import com.jobhunter.dataParser.parser.FileParser;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,13 +1,10 @@
 package com.jobhunter.specification.modelSpecification.impl;
 
-import com.jobhunter.dto.queryParamsDTO.CountrySearchRequestParams;
+import com.jobhunter.dto.requestParams.CountriesFilter;
 import com.jobhunter.model.Country;
 import com.jobhunter.specification.fieldSpecification.impl.NameParamSpecificationImpl;
 import com.jobhunter.specification.modelSpecification.CountrySpecification;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
@@ -22,7 +19,7 @@ public class CountrySpecificationImpl implements CountrySpecification {
     private final NameParamSpecificationImpl nameSpecification;
 
     @Override
-    public Specification<Country> findByCriteria(CountrySearchRequestParams requestParams) {
+    public Specification<Country> findByCriteria(CountriesFilter requestParams) {
 
         return (root, query, criteriaBuilder) -> {
 

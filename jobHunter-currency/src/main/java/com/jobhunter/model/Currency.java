@@ -1,8 +1,6 @@
 package com.jobhunter.model;
 
 import com.jobhunter.config.Config;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.stream.Stream;
 
