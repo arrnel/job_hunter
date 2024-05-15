@@ -2,8 +2,8 @@ package com.jobhunter.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jobhunter.enums.Currency;
-import com.jobhunter.enums.PriceType;
 import com.jobhunter.enums.JobType;
+import com.jobhunter.enums.PriceType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

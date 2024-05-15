@@ -13,12 +13,9 @@ create table if not exists jobs.job
     max_price_in_default_currency decimal(19, 2) not null,
     currency                      varchar(3)     not null,
     price_type                    int            not null,
---     job_type                      int[]          not null,
     city                          int            not null,
     region                        int,
     country                       int            not null,
---     industries                    int[]          not null,
---     specializations               int[]          not null,
     date_created                  timestamp(3)   not null,
     date_updated                  timestamp(3),
     primary key (id)
@@ -127,14 +124,6 @@ alter table jobs.job_specialization_subcategory
 alter table jobs.job_specialization_subcategory
     add constraint job_specialization_subcategory__specialization_subcategory_fk
         foreign key (subcategory_id) references categories.specialization_subcategory (id);
-
--- alter table jobs.job
---     add constraint job__industry_subcategory__fk
---         foreign key (industries) references categories.industry_subcategory (id);
---
--- alter table jobs.job
---     add constraint job__specialization_subcategory__fk
---         foreign key (specializations) references categories.specialization_subcategory (id);
 
 delete
 from jobs.job_type;

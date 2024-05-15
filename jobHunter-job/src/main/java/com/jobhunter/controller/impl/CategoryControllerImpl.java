@@ -32,7 +32,7 @@ public class CategoryControllerImpl implements CategoryController {
     private final SpecializationCategoryToSpecializationCategoryResponseMapper specializationCategoryResponseMapper;
     private final SpecializationSubCategoryToSpecializationSubCategoryResponseMapper specializationSubCategoryResponseMapper;
 
-    // Info: Список всех отраслей Set<Category>
+    // Info: Set of all industry names with ids
     @Override
     @GetMapping("/industry")
     @ResponseStatus(OK)
@@ -41,20 +41,19 @@ public class CategoryControllerImpl implements CategoryController {
         return categoryService.getAllIndustries().stream().map(industryCategoryResponseMapper::map).collect(Collectors.toSet());
     }
 
-    // Info: Список всех подкатегорий с заданными id Set<SubCategory>
+    // Info: Set of industry subcategories with expected ids
     @Override
     @PostMapping("/industry/sub")
     @ResponseStatus(OK)
     public Set<IndustrySubCategoryResponse> getIndustrySubCategoriesWithIds(@RequestParam("id") Set<Integer> ids) {
         log.info("Get industries subcategories with ids = [{}]", ids.toString());
-
         return categoryService
                 .getIndustriesSubCategoriesWithIds(ids)
                 .stream().map(industrySubCategoryResponseMapper::map)
                 .collect(Collectors.toSet());
     }
 
-    // Info: Список всех категорий отраслей c подкатегориями
+    // Info: Set of all industries with subcategories
     @Override
     @GetMapping("/industry/tree")
     @ResponseStatus(OK)
@@ -73,7 +72,7 @@ public class CategoryControllerImpl implements CategoryController {
 
     }
 
-    // Info: Список всех специализаций Set<Category>
+    // Info: Set of all specialization names with ids
     @Override
     @GetMapping("/specialization")
     @ResponseStatus(OK)
@@ -82,7 +81,7 @@ public class CategoryControllerImpl implements CategoryController {
         return categoryService.getAllSpecializations().stream().map(specializationCategoryResponseMapper::map).collect(Collectors.toSet());
     }
 
-    // Info: Список всех подкатегорий с заданными id Set<SubCategory>
+    // Info: Set of specialization subcategories with expected ids
     @Override
     @PostMapping("/specialization/sub")
     @ResponseStatus(OK)
@@ -94,7 +93,7 @@ public class CategoryControllerImpl implements CategoryController {
                 .collect(Collectors.toSet());
     }
 
-    // Info: Список всех категорий специализаций c подкатегориями
+    // Info: Set of all specializations with subcategories
     @Override
     @GetMapping("/specialization/tree")
     @ResponseStatus(OK)

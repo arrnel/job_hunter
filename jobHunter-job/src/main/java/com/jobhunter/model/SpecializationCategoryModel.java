@@ -12,14 +12,6 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @Accessors(chain = true)
 @ToString
-//@Data
-//@SuperBuilder(toBuilder = true)
-//@NoArgsConstructor
-//@Accessors(chain = true)
-//@ToString(callSuper = true)
-//@EqualsAndHashCode(callSuper = true)
-//public class SpecializationCategoryModel extends CategoryModel {
-
 public class SpecializationCategoryModel {
 
     @Id
