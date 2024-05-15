@@ -1,0 +1,74 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres:16.2-alpine3.19
+    container_name: postgres
+    restart: unless-stopped
+    networks:
+      - job_hunter
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-job_hunter_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-12345}
+      POSTGRES_DB: ${POSTGRES_DB:-job_hunter}
+    volumes:
+      - job_hunter_db_data:/var/lib/postgresql/data
+      - .env/script/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4:8.3
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-my.mail@gmail.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-12345}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    depends_on:
+      - postgres
+    ports:
+      - "${PGADMIN_PORT:-5433}:80"
+    networks:
+      - job_hunter
+    volumes:
+      - job_hunter_pgadmin_data:/var/lib/pgadmin
+    restart: unless-stopped
+
+  zookeeper:
+    container_name: zookeeper
+    image: confluentinc/cp-zookeeper:7.3.2
+    ports:
+      - "2181:2181"
+    environment:
+      - ZOOKEEPER_CLIENT_PORT=2181
+    networks:
+    - job_hunter
+    restart: unless-stopped
+
+  kafka:
+    container_name: kafka
+    image: confluentinc/cp-kafka:7.3.2
+    ports:
+      - "9092:9092"
+    depends_on:
+      zookeeper:
+        condition: service_started
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+    networks:
+      - job_hunter
+    restart: unless-stopped
+
+networks:
+  job_hunter:
+    driver: bridge
+
+volumes:
+  job_hunter_db_data:
+  job_hunter_pgadmin_data:

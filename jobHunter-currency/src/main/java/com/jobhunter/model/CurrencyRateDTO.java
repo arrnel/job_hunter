@@ -27,5 +27,4 @@ public class CurrencyRateDTO {
     @JsonProperty("date_updated")
     private LocalDateTime dateUpdated;
 
-
 }

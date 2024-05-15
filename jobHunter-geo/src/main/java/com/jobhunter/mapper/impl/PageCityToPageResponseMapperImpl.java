@@ -2,8 +2,6 @@ package com.jobhunter.mapper.impl;
 
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.mapper.CityToCityResponseMapper;
-import com.jobhunter.mapper.CountryToCountryResponseMapper;
-import com.jobhunter.mapper.Mapper;
 import com.jobhunter.mapper.PageCityToPageResponseMapper;
 import com.jobhunter.model.City;
 import lombok.RequiredArgsConstructor;

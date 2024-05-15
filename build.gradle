@@ -23,14 +23,31 @@ subprojects {
     }
 
     ext {
-        springBootVersion = '3.2.4'
+        apacheCommonCsvVersion = '1.10.0'
         dependencyManagementVersion = '1.1.4'
+        grpcVersion = '1.58.0'
+        jibVersion = '3.4.1'
+        junitVersion = '5.9.1'
         oauth2AuthorizationServerVersion = '1.2.2'
         oauth2ResourceServerVersion = '3.2.3'
         ownerVersion = '1.0.12'
-        junitVersion = '5.9.1'
-        apacheCommonCsvVersion = '1.10.0'
+        protobufPluginVersion = '0.9.4'
+        protobufVersion = '3.24.3'
+        springBootVersion = '3.2.4'
+        springGraphqlDateTimeVersion = '6.0.0'
+        springGrpcVersion = '3.0.0.RELEASE'
         springCloudVersion = '2023.0.1'
+        springKafkaVersion = '3.1.2'
+        springVaultVersion = '4.1.1'
+
+        dockerHubName = 'arrnel'
+        dockerImage = System.getProperty("os.arch") == "aarch64" || System.getProperty("os.arch") == "arm64"
+                ? "arm64v8/eclipse-temurin:21-jre"
+                : "eclipse-temurin:21-jre"
+        dockerArch = System.getProperty("os.arch") == "aarch64" || System.getProperty("os.arch") == "arm64"
+                ? "arm64"
+                : "amd64"
+
     }
 
 }

@@ -1,0 +1,16 @@
+package com.jobhunter.dto.requestParams;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Builder;
+import lombok.Data;
+
+@Data
+@Builder
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class RegionsFilter {
+
+    private String name;
+    private String partialName;
+    private Integer countryId;
+
+}

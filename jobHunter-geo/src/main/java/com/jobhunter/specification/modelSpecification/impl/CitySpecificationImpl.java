@@ -1,6 +1,6 @@
 package com.jobhunter.specification.modelSpecification.impl;
 
-import com.jobhunter.dto.queryParamsDTO.CitySearchRequestParams;
+import com.jobhunter.dto.requestParams.CitiesFilter;
 import com.jobhunter.model.City;
 import com.jobhunter.specification.fieldSpecification.RegionParamSpecification;
 import com.jobhunter.specification.fieldSpecification.impl.CountryParamSpecificationImpl;
@@ -23,7 +23,7 @@ public class CitySpecificationImpl implements CitySpecification {
     private final CountryParamSpecificationImpl countrySpecification;
 
     @Override
-    public Specification<City> findByCriteria(CitySearchRequestParams requestParams) {
+    public Specification<City> findByCriteria(CitiesFilter requestParams) {
 
         return (root, query, criteriaBuilder) -> {
 

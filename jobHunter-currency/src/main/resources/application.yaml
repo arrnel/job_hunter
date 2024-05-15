@@ -5,7 +5,7 @@ spring:
   application:
     name: job_hunter_currency
   datasource:
-    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:job_hunter_currency}
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/job_hunter_currency
     username: ${POSTGRES_USER:job_hunter_admin}
     password: ${POSTGRES_PASSWORD:12345}
     driverClassName: org.postgresql.Driver

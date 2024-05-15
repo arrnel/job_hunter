@@ -1,10 +1,8 @@
 package com.jobhunter.mapper.impl;
 
-import com.jobhunter.dto.CountryResponse;
 import com.jobhunter.dto.RegionResponse;
 import com.jobhunter.mapper.CountryToCountryResponseMapper;
 import com.jobhunter.mapper.RegionToRegionResponseMapper;
-import com.jobhunter.model.Country;
 import com.jobhunter.model.Region;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

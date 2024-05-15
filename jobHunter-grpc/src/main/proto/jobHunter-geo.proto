@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.jobhunter.grpc.geo";
+option java_outer_classname = "LocationProto";
+
+service CityService {
+  rpc GetCityById (IdRequest) returns (CityResponse) {}
+  rpc GetCities (PagedRequest) returns (PageResponse) {}
+}
+
+service CountryService {
+  rpc GetCountryById (IdRequest) returns (CountryResponse) {}
+  rpc GetCountries (PagedRequest) returns (PageResponse) {}
+  rpc GetAllCountries (PageInfo) returns (PageResponse) {}
+}
+
+service RegionService {
+  rpc GetRegionById (IdRequest) returns (RegionResponse) {}
+  rpc GetRegions (PagedRequest) returns (PageResponse) {}
+}
+
+message IdRequest {
+  int32 id = 1;
+}
+
+message PagedRequest {
+  string name = 1;
+  string partialName = 2;
+  int32 regionId = 3;
+  int32 countryId = 4;
+  PageInfo pageInfo = 5;
+}
+
+message PageInfo {
+  int32 page = 1;
+  int32 size = 2;
+  string sort = 3;
+}
+
+message PageResponse {
+  int32 currentPage = 1;
+  int32 perPage = 2;
+  int32 total = 3;
+  int32 totalPages = 4;
+}
+
+message CountryResponse {
+  int32 id = 1;
+  string name = 2;
+}
+
+message RegionResponse {
+  int32 id = 1;
+  string name = 2;
+  CountryResponse country = 3;
+}
+
+message RegionResponseShort {
+  int32 id = 1;
+  string name = 2;
+}
+
+message CityResponse {
+  int32 id = 1;
+  string name = 2;
+  RegionResponseShort region = 3;
+  CountryResponse country = 4;
+  int64 population = 5;
+  CityType cityType = 6;
+}
+
+enum CityType {
+  UNDEFINED = 0;
+  PRIMARY = 1;
+  ADMIN = 2;
+  MINOR = 3;
+}

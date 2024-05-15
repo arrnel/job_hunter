@@ -1,0 +1,202 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.jobhunter.grpc.currency";
+option java_outer_classname = "CurrencyRateProto";
+
+service CurrencyService {
+  rpc GetRate (CurrencyRateRequest) returns (CurrencyRate) {}
+  rpc GetAllCurrencies (google.protobuf.Empty)  returns (AllCurrenciesResponse) {}
+}
+
+message CurrencyRateRequest {
+  string from = 1;
+  string to = 2;
+}
+
+message CurrencyRate {
+  string from = 1;
+  string to = 2;
+  double rate = 3;
+  string dateUpdated = 4;
+}
+
+message AllCurrenciesResponse {
+  repeated CurrencyRate currencyRate = 1;
+}
+
+enum Currency {
+  UNDEFINED = 0;
+  AED = 1;
+  AFN = 2;
+  ALL = 3;
+  AMD = 4;
+  ANG = 5;
+  AOA = 6;
+  ARS = 7;
+  AUD = 8;
+  AWG = 9;
+  AZN = 10;
+  BAM = 11;
+  BBD = 12;
+  BDT = 13;
+  BGN = 14;
+  BHD = 15;
+  BIF = 16;
+  BMD = 17;
+  BND = 18;
+  BOB = 19;
+  BRL = 20;
+  BSD = 21;
+  BTC = 22;
+  BTN = 23;
+  BWP = 24;
+  BYN = 25;
+  BZD = 26;
+  CAD = 27;
+  CDF = 28;
+  CHF = 29;
+  CLF = 30;
+  CLP = 31;
+  CNH = 32;
+  CNY = 33;
+  COP = 34;
+  CRC = 35;
+  CUC = 36;
+  CUP = 37;
+  CVE = 38;
+  CZK = 39;
+  DJF = 40;
+  DKK = 41;
+  DOP = 42;
+  DZD = 43;
+  EGP = 44;
+  ERN = 45;
+  ETB = 46;
+  EUR = 47;
+  FJD = 48;
+  FKP = 49;
+  GBP = 50;
+  GEL = 51;
+  GGP = 52;
+  GHS = 53;
+  GIP = 54;
+  GMD = 55;
+  GNF = 56;
+  GTQ = 57;
+  GYD = 58;
+  HKD = 59;
+  HNL = 60;
+  HRK = 61;
+  HTG = 62;
+  HUF = 63;
+  IDR = 64;
+  ILS = 65;
+  IMP = 66;
+  INR = 67;
+  IQD = 68;
+  IRR = 69;
+  ISK = 70;
+  JEP = 71;
+  JMD = 72;
+  JOD = 73;
+  JPY = 74;
+  KES = 75;
+  KGS = 76;
+  KHR = 77;
+  KMF = 78;
+  KPW = 79;
+  KRW = 80;
+  KWD = 81;
+  KYD = 82;
+  KZT = 83;
+  LAK = 84;
+  LBP = 85;
+  LKR = 86;
+  LRD = 87;
+  LSL = 88;
+  LYD = 89;
+  MAD = 90;
+  MDL = 91;
+  MGA = 92;
+  MKD = 93;
+  MMK = 94;
+  MNT = 95;
+  MOP = 96;
+  MRU = 97;
+  MUR = 98;
+  MVR = 99;
+  MWK = 100;
+  MXN = 101;
+  MYR = 102;
+  MZN = 103;
+  NAD = 104;
+  NGN = 105;
+  NIO = 106;
+  NOK = 107;
+  NPR = 108;
+  NZD = 109;
+  OMR = 110;
+  PAB = 111;
+  PEN = 112;
+  PGK = 113;
+  PHP = 114;
+  PKR = 115;
+  PLN = 116;
+  PYG = 117;
+  QAR = 118;
+  RON = 119;
+  RSD = 120;
+  RUB = 121;
+  RWF = 122;
+  SAR = 123;
+  SBD = 124;
+  SCR = 125;
+  SDG = 126;
+  SEK = 127;
+  SGD = 128;
+  SHP = 129;
+  SLL = 130;
+  SOS = 131;
+  SRD = 132;
+  SSP = 133;
+  STD = 134;
+  STN = 135;
+  SVC = 136;
+  SYP = 137;
+  SZL = 138;
+  THB = 139;
+  TJS = 140;
+  TMT = 141;
+  TND = 142;
+  TOP = 143;
+  TRY = 144;
+  TTD = 145;
+  TWD = 146;
+  TZS = 147;
+  UAH = 148;
+  UGX = 149;
+  USD = 150;
+  UYU = 151;
+  UZS = 152;
+  VES = 153;
+  VND = 154;
+  VUV = 155;
+  WST = 156;
+  XAF = 157;
+  XAG = 158;
+  XAU = 159;
+  XCD = 160;
+  XDR = 161;
+  XOF = 162;
+  XPD = 163;
+  XPF = 164;
+  XPT = 165;
+  YER = 166;
+  ZAR = 167;
+  ZMW = 168;
+  ZWL = 169;
+
+}

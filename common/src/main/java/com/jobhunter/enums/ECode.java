@@ -8,12 +8,20 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum ECode {
 
+    // @formatter:off
+    // INFO: COMMON
+    INVALID_REQUEST_PARAM                               ("Request param is invalid"),
+    INVALID_EXTERNAL_LINK                               ("Invalid external link in system parsing method"),
+    REQUEST_PARAMS_COMBINATION_INVALID                  ("Request params invalid combination"),
+    //__________________________________________________________________________________________________
+
     // INFO: AUTH SECTION
     USER_TOKEN_NOT_FOUND                                ("User token not found"),
     USER_TOKEN_IS_INVALID                               ("Invalid token"),
     ACCESS_DENIED                                       ("Access denied"),
     UNAUTHORIZED_USER                                   ("User not authorized. Exception from user and user_profiles API"),
 
+    //__________________________________________________________________________________________________
     // INFO: USER-SERVICE
     USER_NOT_FOUND                                      ("User not found"),
     USER_ALREADY_EXIST                                  ("User already exists"),
@@ -76,15 +84,16 @@ public enum ECode {
 
     USER_ROLE_NOT_FOUND                                 ("User role not found"),
 
+    //__________________________________________________________________________________________________
     // INFO: LOCATION-SERVICE
     INVALID_DOWNLOAD_LINK                               ("Invalid download link"),
     FAILED_EXTRACT_FILE                                 ("Failed to extract file"),
-    INVALID_SEARCH_BY_NAME_AND_PARTIAL_NAME             ("Search location by name or partial name"),
-
+    //__________________________________________________________________________________________________
 
     // INFO: JOB-SERVICE
-    JOB_001("Job not found"),
+    JOB_NOT_FOUND                                       ("Job not found"),
     //__________________________________________________________________________________________________
+    JOB_NAME_IS_ALREADY_EXISTS                          ("Job name is already exists"),
     JOB_NAME_REQUIRED                                   ("Job name is required"),
     JOB_NAME_SHORT                                      ("Job name is short"),
     JOB_NAME_LONG                                       ("Job name is long"),
@@ -108,13 +117,23 @@ public enum ECode {
     JOB_CURRENCY_IS_REQUIRED                            ("Job currency is required"),
     JOB_CURRENCY_IS_INVALID                             ("Job currency is invalid"),
     //__________________________________________________________________________________________________
-    JOB_FORMAT_IS_REQUIRED                              ("Job format is required"),
-    JOB_FORMAT_IS_INVALID                               ("Job format is invalid"),
+    JOB_TYPE_IS_REQUIRED                                ("Job type is required"),
+    JOB_TYPE_NOT_FOUND                                  ("Job type not found"),
+    JOB_TYPE_IS_INVALID                                 ("Job format is invalid"),
+    //__________________________________________________________________________________________________
+    PRICE_TYPE_IS_REQUIRED                              ("Price type is required"),
+    PRICE_TYPE_NOT_FOUND                                ("Price type not found"),
+    PRICE_TYPE_IS_INVALID                               ("Price format is invalid"),
+    //__________________________________________________________________________________________________
+    JOB_CATEGORY_IS_REQUIRED                            ("Job category is required"),
+    JOB_CATEGORY_NOT_FOUND                              ("Job category not found"),
+    JOB_CATEGORY_IS_INVALID                             ("Job category is invalid"),
     //__________________________________________________________________________________________________
     JOB_LOCATION_IS_REQUIRED                            ("Job location is required"),
     JOB_LOCATION_IS_SHORT                               ("Job location is short"),
     JOB_LOCATION_IS_LONG                                ("Job location is long"),
     JOB_LOCATION_IS_INVALID                             ("Job location is invalid"),
+    //__________________________________________________________________________________________________
 
     // INFO: COMPANY-SERVICE
     COMPANY_NOT_FOUND                                   ("Company not found"),
@@ -141,6 +160,8 @@ public enum ECode {
     CURRENCY_INFO_PARSER_FAIL                           ("Failed to parse currency rate map"),
     CURRENCY_INFO_SAVER_FAILED                          ("Failed to save currencies in DB");
     //__________________________________________________________________________________________________
+    // @formatter:on
+
     private final String message;
 
 }

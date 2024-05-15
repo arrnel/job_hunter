@@ -2,20 +2,29 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version "${springBootVersion}"
     id 'io.spring.dependency-management' version "${dependencyManagementVersion}"
+    id 'com.google.cloud.tools.jib' version "${jibVersion}"
 }
 
 springBootVersion = project.ext.springBootVersion
 dependencyManagementVersion = project.ext.dependencyManagementVersion
+jibVersion = project.ext.jibVersion
 
 dependencies {
     implementation(
             project(":common")
-            ,'org.springframework.boot:spring-boot-starter-data-jpa'
-            ,'org.springframework.boot:spring-boot-starter-web'
-            ,'org.flywaydb:flyway-core'
+            , "org.springframework.boot:spring-boot-starter-security"
+            , 'org.springframework.boot:spring-boot-starter-web'
+            , 'org.springframework.boot:spring-boot-starter-data-jpa'
+            , 'org.springframework.boot:spring-boot-starter-thymeleaf'
+            , "org.springframework.boot:spring-boot-starter-validation"
+            , "org.springframework.security:spring-security-oauth2-authorization-server:${project.ext.oauth2AuthorizationServerVersion}"
+            , "org.springframework.cloud:spring-cloud-starter-vault-config:${project.ext.springVaultVersion}"
+            , "org.springframework.kafka:spring-kafka:${project.ext.springKafkaVersion}"
+            , 'org.flywaydb:flyway-core'
     )
     testImplementation(
             'org.springframework.boot:spring-boot-starter-test'
+            , "org.springframework.security:spring-security-test"
             , 'org.springframework.boot:spring-boot-testcontainers'
             , 'org.testcontainers:junit-jupiter'
             , 'org.testcontainers:postgresql'
@@ -24,6 +33,28 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
 
+}
+
+jib {
+    container {
+        ports = ['9000']
+        jvmFlags = ["-Dspring.profiles.active=${System.env.PROFILE}"]
+        environment = ['VAULT_TOKEN': "${System.env.VAULT_TOKEN}".toString()]
+        creationTime = 'USE_CURRENT_TIMESTAMP'
+    }
+    from {
+        image = "${project.ext.dockerImage}"
+        platforms {
+            platform {
+                architecture = "${project.ext.dockerArch}"
+                os = 'linux'
+            }
+        }
+    }
+    to {
+        image = "${project.ext.dockerHubName}/${project.name}-${System.env.PROFILE}"
+        tags = ['latest', "${project.version}"]
+    }
 }
 
 tasks.register('printVersion') {

@@ -1,6 +1,6 @@
 package com.jobhunter.service.impl;
 
-import com.jobhunter.dto.queryParamsDTO.CitySearchRequestParams;
+import com.jobhunter.dto.requestParams.CitiesFilter;
 import com.jobhunter.model.City;
 import com.jobhunter.repository.CityRepository;
 import com.jobhunter.service.CityService;
@@ -25,7 +25,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public Page<City> getCities(CitySearchRequestParams requestParams, final Pageable pageable) {
+    public Page<City> getCities(CitiesFilter requestParams, final Pageable pageable) {
         return cityRepository.findAll(citySpecification.findByCriteria(requestParams), pageable);
     }
 
