@@ -1,9 +1,10 @@
 package com.jobhunter.mapper;
 
 import com.jobhunter.dto.CompanyRequest;
+import com.jobhunter.dto.CompanyResponse;
 import com.jobhunter.model.Company;
 
-public interface CompanyRequestToCompanyMapper extends Mapper<Company, CompanyRequest> {
+public interface CompanyToCompanyResponseMapper extends Mapper<CompanyResponse, Company> {
     @Override
-    Company map(CompanyRequest source);
+    CompanyResponse map(Company source);
 }

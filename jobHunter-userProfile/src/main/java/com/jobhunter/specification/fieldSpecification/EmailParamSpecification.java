@@ -6,10 +6,10 @@ import jakarta.persistence.criteria.Root;
 
 import java.util.List;
 
-public interface UserParamSpecification {
+public interface EmailParamSpecification {
 
     List<Predicate> specify(
-            Long userId
+            String email
             , Root<?> root
             , CriteriaBuilder criteriaBuilder
             , List<Predicate> predicates

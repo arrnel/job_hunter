@@ -6,7 +6,7 @@ import jakarta.persistence.criteria.Root;
 
 import java.util.List;
 
-public interface UserIdParamSpecification {
+public interface UserParamSpecification {
 
     List<Predicate> specify(
             Long userId

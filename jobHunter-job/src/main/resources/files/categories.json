@@ -1,686 +1,2026 @@
 {
-  "specializations": {
-    "Automotive Business": [
-      "Car Cleaner",
-      "Auto Mechanic",
-      "Service Advisor",
-      "Sales Manager, Customer Service Manager"
-    ],
-    "Sales, Customer Service": [
-      "Real Estate Agent",
-      "Analyst",
-      "Broker",
-      "Cashier Operator",
-      "Commercial Director (CCO)",
-      "Sales Department Coordinator",
-      "Loan Officer",
-      "Sales Manager, Customer Service Manager",
-      "Partner Relations Manager",
-      "Call Center Operator, Contact Center Specialist",
-      "Sales Assistant, Cashier",
-      "Customer Service Manager",
-      "Sales Manager",
-      "Branch Manager",
-      "Certification Specialist",
-      "Technical Support Specialist",
-      "Insurance Agent",
-      "Sales Representative"
-    ],
-    "Agriculture": [
-      "Agronomist",
-      "Veterinarian",
-      "Animal Technician",
-      "Machine Operator",
-      "Service Engineer, Mechanic Engineer",
-      "Technologist"
-    ],
-    "Marketing, Advertising, PR": [
-      "Event Manager",
-      "PR Manager",
-      "SMM Manager, Content Manager",
-      "Analyst",
-      "Art Director, Creative Director",
-      "Designer, Artist",
-      "Marketing and PR Director (CMO)",
-      "Copywriter, Editor, Proofreader",
-      "Marketing Analyst",
-      "Marketing Manager, Internet Marketer",
-      "Sales Manager, Customer Service Manager",
-      "Partner Relations Manager",
-      "Promoter",
-      "Marketing and Advertising Manager"
-    ],
-    "Transport, Logistics, Transportations": [
-      "Flight Attendant",
-      "Driver",
-      "Loader",
-      "Dispatcher",
-      "Storekeeper",
-      "Courier",
-      "Machine Operator",
-      "Logistics Manager, Foreign Trade Manager",
-      "Warehouse Manager",
-      "Logistics Manager",
-      "Packer, Assembler"
-    ],
-    "Information Technology": [
-      "BI Analyst, Data Analyst",
-      "DevOps Engineer",
-      "Analyst",
-      "Art Director, Creative Director",
-      "Business Analyst",
-      "Game Designer",
-      "Data Scientist",
-      "Designer, Artist",
-      "Information Technology Director (CIO)",
-      "Product Manager",
-      "Methodologist",
-      "Programmer, Developer",
-      "Product Analyst",
-      "Development Group Leader",
-      "Analytics Manager",
-      "Project Manager",
-      "Network Engineer",
-      "System Administrator",
-      "System Analyst",
-      "System Engineer",
-      "Information Security Specialist",
-      "Technical Support Specialist",
-      "Tester",
-      "Technical Director (CTO)",
-      "Technical Writer"
-    ],
-    "Purchases": [
-      "Purchasing Manager",
-      "Tender Specialist"
-    ],
-    "Construction, Real Estate": [
-      "Real Estate Agent",
-      "Architect",
-      "Broker",
-      "Surveyor",
-      "Project Chief Engineer",
-      "Designer, Artist",
-      "Quality control engineer, Cost estimator engineer",
-      "Safety and health engineer, Environmental engineer",
-      "Maintenance engineer",
-      "Design engineer, Project engineer",
-      "Painter, Plasterer",
-      "Machinist",
-      "Installer",
-      "Supervisor, construction and installation master",
-      "Laborer",
-      "Project Manager",
-      "Construction Project Manager",
-      "Welder",
-      "Fitter, Plumber",
-      "Electrician"
-    ],
-    "Sport Clubs, Fitness, Beauty Salons": [
-      "Administrator",
-      "Cosmetologist",
-      "Massage Therapist",
-      "Nail Service Specialist",
-      "Sales Manager, Customer Relations Manager",
-      "Hairdresser",
-      "Fitness Trainer, Gym Instructor"
-    ],
-    "Senior and Middle Management": [
-      "CEO",
-      "CIO",
-      "CMO",
-      "HRD",
-      "CLO",
-      "CCO",
-      "Head of production",
-      "COO",
-      "Head of Analytics Department",
-      "Head of Logistics Department",
-      "Head of Marketing and Advertising Department",
-      "HR Department Head",
-      "Branch Manager",
-      "CTO",
-      "CFO"
-    ],
-    "Insurance": [
-      "Underwriter",
-      "Appraiser",
-      "Insurance Agent"
-    ],
-    "Science, Education": [
-      "Business Trainer",
-      "Kindergartener, Nanny",
-      "Laboratory Worker",
-      "Methodist",
-      "Scientific Specialist, Researcher",
-      "Psychologist",
-      "Teacher, Lecturer, Educator"
-    ],
-    "Other": [
-      "Other"
-    ],
-    "Manufacturing, Maintenance Service": [
-      "PHE Engineer",
-      "Quality Engineer",
-      "Safety and Environment Engineer",
-      "Maintenance Engineer",
-      "Design Engineer, Project Engineer",
-      "Electronics Engineer",
-      "Electrical Engineer, Engineer Electrician",
-      "Quality Control Inspector",
-      "Laboratory Worker",
-      "Equipment Repairman",
-      "Machinist",
-      "Measurer",
-      "Mechanic",
-      "Scientific Specialist, Researcher",
-      "Head of Production",
-      "Shift Supervisor, Workshop Supervisor",
-      "Production Line Operator",
-      "CNC Machine Operator",
-      "Welder",
-      "Service Engineer, Mechanical Engineer",
-      "Fitter, Plumber",
-      "Certification Specialist",
-      "Technologist",
-      "Turner, Miller, Grinder",
-      "Seamstress, Tailor, Cutter",
-      "Electrician"
-    ],
-    "Human Resource Management, Training": [
-      "Business Trainer",
-      "HRD",
-      "Compensation and Benefits Manager",
-      "HR Manager",
-      "HR Department Head",
-      "HR Specialist",
-      "Recruiting Specialist"
-    ]
-  },
-  "industries": {
-    "Automotive Business": [
-      "Auto parts, tires (retail trade)",
-      "Auto components, parts (manufacturing)",
-      "Auto components, parts, tires (promotion, wholesale trade)",
-      "Passenger, commercial vehicles, motorcycles, buses, trolleybuses (promotion, wholesale trade)",
-      "Passenger, commercial vehicles, motorcycles, buses, trolleybuses (manufacturing)",
-      "Retail trade of cars (dealer center)",
-      "Maintenance, repair of cars",
-      "Financial services (captive banks and leasing companies)"
-    ],
-    "Oil and Gas": [
-      "Gasoline, fuel (promotion, wholesale trade)",
-      "Gasoline, fuel (retail trade)",
-      "Gas extraction",
-      "Oil extraction",
-      "Oil refining, petrochemistry (production)",
-      "Petrochemistry (promotion, wholesale trade)",
-      "Gas processing",
-      "Gas transportation, storage",
-      "Oil transportation, storage"
-    ],
-    "Agriculture": [
-      "Farming, plant growing, animal husbandry",
-      "Fishing, fish farming",
-      "Agricultural products (promotion, wholesale trade)"
-    ],
-    "Educational Institutions": [
-      "Driving School",
-      "Business education",
-      "University, secondary special, technical colleges",
-      "Boarding school, orphanage",
-      "Research, scientific, academic activity",
-      "Foreign languages training",
-      "Arts training (drawing, singing, dancing, photo)",
-      "Advanced training, retraining",
-      "Sports training",
-      "Training companies",
-      "School, kindergarten"
-    ],
-    "Consumer goods (non-food)": [
-      "Household chemicals, perfumery, cosmetics (promotion, wholesale trade)",
-      "Household chemicals, perfumery, cosmetics (production)",
-      "Stationery, consumables (promotion, wholesale trade)",
-      "Stationery, consumables (production)",
-      "Furniture (promotion, wholesale trade)",
-      "Furniture (production)",
-      "Clothing, shoes, accessories, textiles (promotion, wholesale trade)",
-      "Clothing, shoes, accessories, textiles (production)",
-      "Dishes, light, home goods (promotion, wholesale trade)",
-      "Dishes, light, home goods (production)",
-      "Plumbing (promotion, wholesale trade)",
-      "Plumbing (production)",
-      "Sports goods and equipment (promotion, wholesale trade)",
-      "Sports goods and equipment (production)",
-      "Construction materials, assembled structures for repair and construction (promotion, wholesale trade)",
-      "Construction materials, assembled structures for repair and construction (production, installation, service, repair)",
-      "Tobacco (promotion, wholesale trade)",
-      "Tobacco (production)",
-      "Children's goods (promotion, wholesale trade)",
-      "Children's goods (production)",
-      "Jewelry, costume jewelry (promotion, wholesale trade)",
-      "Jewelry, costume jewelry (production)"
-    ],
-    "Electronics, Instrumentation, Household Appliances, Computers and Office Equipment": [
-      "Household appliances, electronics, climate equipment (installation, service, repair)",
-      "Household appliances, electronics, climate equipment (promotion, wholesale trade)",
-      "Household appliances, electronics, climate equipment (production)",
-      "Industrial, household electrical equipment and electrical engineering (installation, service, repair)",
-      "Industrial, household electrical equipment and electrical engineering (promotion, wholesale trade)",
-      "Industrial, household electrical equipment and electrical engineering (production)",
-      "Electronic computing, optical, control-measuring equipment, radio electronics, automation (installation, service, repair)",
-      "Electronic computing, optical, control-measuring equipment, radio electronics, automation (promotion, wholesale trade)",
-      "Electronic computing, optical, control-measuring equipment, radio electronics, automation (production)"
-    ],
-    "Hotels, restaurants, catering, food services": [
-      "Hotel",
-      "Catering (Mobile catering centers)",
-      "Restaurant, public dining, fast food"
-    ],
-    "Media, marketing, advertising, BTL, PR, design, producing": [
-      "Publishing activity",
-      "Film studios and sound recording studios",
-      "Marketing, Advertising, BTL, Event, PR agencies, exhibits organization",
-      "Production Center",
-      "Production and sale of souvenirs and advertising products",
-      "Multimedia Production, Content Creation, Editorial Activity",
-      "Printing and Publishing",
-      "Distribution of multimedia and printed products",
-      "TV program distribution, cinema (cable television)",
-      "Television and Radio broadcasting"
-    ],
-    "Construction, real estate, operation, design": [
-      "Real Estate agency services",
-      "Architecture, Design",
-      "Property Development",
-      "Consulting, appraisal in real estate",
-      "Road and infrastructure construction",
-      "Residential construction",
-      "Commercial construction (trade areas, office buildings)",
-      "Construction of metallurgical industry facilities",
-      "Construction of oil and gas industry facilities",
-      "Telecommunications construction",
-      "Industrial construction",
-      "Energy Construction",
-      "Real Estate Management and Operation"
-    ],
-    "Medicine, pharmacy, drugstores": [
-      "Pharmacy, optics store",
-      "Veterinary pharmacy",
-      "Veterinary activities",
-      "Clinical trials",
-      "Laboratory, research center",
-      "Health care institutions",
-      "Social care and protection institution",
-      "Pharmaceutical products (marketing, wholesale)",
-      "Pharmaceutical production"
-    ],
-    "Art, culture": [
-      "Archive, library, art history research",
-      "Botanical garden, zoo, reserve",
-      "Museum, gallery, theater"
-    ],
-    "Extractive industry": [
-      "Extraction and enrichment of minerals (salt, sulfur, alumina), quarry development (sand, clay, stone), peat mining",
-      "Mining and enrichment of black ore, colored, precious, noble, rare metals",
-      "Coal mining and enrichment",
-      "Geological-Geophysical exploration"
-    ],
-    "Management of diversified assets": [
-      "Group, holding company, headquarters"
-    ],
-    "Business services": [
-      "Security, security activities",
-      "Employment agencies",
-      "Call centers, dispatching services",
-      "Consulting services",
-      "Quality control, expertise, tests and certification",
-      "Translating activities",
-      "Travel organization and booking services",
-      "Ecological services, water purification, waste utilization",
-      "Legal services"
-    ],
-    "Transportation, logistics, warehouse, international trade": [
-      "Air transportation",
-      "Automobile transportation",
-      "International trading and customs declaration",
-      "Railway transportation",
-      "Courier, postal delivery",
-      "Marine, river transportation",
-      "Warehouse services",
-      "Transport-logistics complexes, ports (air, water, rail)"
-    ],
-    "Timber industry, woodworking": [
-      "Woodworking (manufacturing)",
-      "Woodwork products (promotion, wholesale)",
-      "Carpentry-building products (promotion, wholesale)",
-      "Carpentry-building products (manufacturing)",
-      "Pulp and paper products (promotion, wholesale)",
-      "Pulp and paper manufacturing"
-    ],
-    "Energy": [
-      "Alternative Energy: Geo, Wind, Solar, Bio (Power Generation)",
-      "Nuclear Power (Power Generation, Nuclear Power Plants)",
-      "Hydropower (Power Generation, Hydroelectric Power Stations)",
-      "Energy Infrastructure Company (System Operator of the Unified Energy System, ATS, TSR, etc.)",
-      "Energy Efficiency Consulting",
-      "Transmission, Distribution of Electricity",
-      "Sale and Consumption of Electricity",
-      "Heating Supply (Thermal Power Plant)",
-      "Thermal Power (Power and Heat Generation, Thermal Power Plant)"
-    ],
-    "Metallurgy, Metalworking": [
-      "Precious, Noble and Rare Metals (Promotion, Wholesale)",
-      "Precious, Noble and Rare Metals (Production)",
-      "Metal products, Metal structures (Promotion, Wholesale)",
-      "Metal products, Metal structures (Production)",
-      "Non-ferrous Metallurgy Products (Promotion, Wholesale)",
-      "Ferrous Metallurgy Products (Promotion, Wholesale)",
-      "Non-ferrous Metallurgy (Smelting, Metal Rolling)",
-      "Ferrous Metallurgy (Production of Pig Iron, Steel, Rolling)"
-    ],
-    "Consumer Services": [
-      "Car Rental",
-      "Domestic Staff",
-      "Gambling Business",
-      "Sewing, Repair of Clothing and Footwear",
-      "Funeral Services",
-      "Beauty Salons",
-      "Sport and Fitness Clubs",
-      "Taxi",
-      "Travel Companies",
-      "Photo and Video Services",
-      "Dry Cleaning",
-      "Entertainment Centers"
-    ],
-    "State Organizations": [
-      "Government Organizations"
-    ],
-    "Industrial Equipment, Machinery, and Components Machines": [
-      "Road Construction Equipment, Agricultural and Other Special Equipment, Lifts, Loading and Unloading, Warehouse Equipment (Installation, Service, Repair)",
-      "Road Construction Equipment, Agricultural and Other Special Equipment, Lifts, Loading and Unloading, Warehouse Equipment (Promotion, Wholesale)",
-      "Road Construction Equipment, Agricultural and Other Special Equipment, Lifts, Loading and Unloading, Warehouse Equipment (Production)",
-      "Medical, Diagnostic Equipment, Instruments (Installation, Service, Repair)",
-      "Medical, Diagnostic Equipment, Instruments (Promotion, Wholesale)",
-      "Medical, Diagnostic Equipment, Instruments (Production)",
-      "Equipment for Woodworking, Logging, Pulp and Paper Industry (Installation, Service, Repair)",
-      "Equipment for Woodworking, Logging, Pulp and Paper Industry (Promotion, Wholesale)",
-      "Equipment for Woodworking, Logging, Pulp and Paper Industry (Production)",
-      "Equipment for Food Industry, Packaging, and Storage (Installation, Service, Repair)",
-      "Equipment for Food Industry, Packaging and Storage (Promotion, Wholesale)",
-      "Equipment for Food Industry, Packaging and Storage (Production)",
-      "Equipment for Restaurants, Hotels, Catering, Retail Trade (Installation, Service, Repair)",
-      "Equipment for Restaurants, Hotels, Catering, Retail Trade (Promotion, Wholesale)",
-      "Equipment for Restaurants, Hotels, Catering, Retail Trade (Production)",
-      "Equipment and Machines for Mining, Energy, Oil and Gas, Chemical Industries (Installation, Service, Repair)",
-      "Equipment and Machines for Mining, Energy, Oil and Gas, Chemical Industries (Promotion, Wholesale)",
-      "Equipment and Machines for Mining, Energy, Oil and Gas, Chemical Industries (Production)",
-      "Equipment and Machines for Metallurgy, Metalworking (Installation, Service, Repair)",
-      "Equipment and Machines for Metallurgy, Metalworking (Promotion, Wholesale)",
-      "Equipment and Machines for Metallurgy, Metalworking (Production)",
-      "Equipment and Machines for Light Industries (Installation, Service, Repair)",
-      "Equipment and Machines for Light Industries (Promotion, Wholesale)",
-      "Equipment and Machines for Light Industries (Production)"
-    ],
-    "Food Products": [
-      "Alcoholic Beverages (Promotion, Wholesale)",
-      "Non-Alcoholic Beverages (Promotion, Wholesale)",
-      "Non-Alcoholic Beverages (Production)",
-      "Wine (Production)",
-      "Baby Food (Promotion, Wholesale)",
-      "Baby Food (Production)",
-      "Confectionery (Promotion, Wholesale)",
-      "Confectionery (Production)",
-      "Canned Products (Promotion, Wholesale)",
-      "Canned Products (Production)",
-      "Animal Feed (Promotion, Wholesale)",
-      "Animal Feed (Production)",
-      "Liquor Products (Production)",
-      "Pasta Products (Promotion, Wholesale)",
-      "Pasta Products (Production)",
-      "Oil and Fat Products (Promotion, Wholesale)",
-      "Oil and Fat Products (Production)",
-      "Dairy Products (Promotion, Wholesale)",
-      "Dairy Products (Production)",
-      "Flour, Cereals (Promotion, Wholesale)",
-      "Flour, Cereals (Production)",
-      "Meat Products (Promotion, Wholesale)",
-      "Meat Products (Production)",
-      "Beer (Production)",
-      "Food Concentrates (Promotion, Wholesale)",
-      "Food Concentrates (Production)",
-      "Semi-Finished Products, Including Frozen (Promotion, Wholesale)",
-      "Semi-Finished Products, Including Frozen (Production)",
-      "Fish and Seafood (Promotion, Wholesale)",
-      "Fish and Seafood (Production)",
-      "Sugar (Promotion, Wholesale)",
-      "Sugar (Production)",
-      "Fresh Vegetables, Fruits (Promotion, Wholesale)",
-      "Snacks (Promotion, Wholesale)",
-      "Snacks (Production)",
-      "Bakery Products (Promotion, Wholesale)",
-      "Bakery Products (Production)",
-      "Tea, Coffee (Promotion, Wholesale)",
-      "Tea, Coffee (Production)"
-    ],
-    "Housing and Utilities Sector": [
-      "Landscaping and Cleaning of Territories and Buildings",
-      "Ventilation and Air Conditioning (installation, service, repair)",
-      "Water Supply and Sewerage",
-      "Elevator Maintenance (installation, service, repair)",
-      "Fire Safety, Lightning Protection",
-      "Building and Structure Repair",
-      "Low Voltage Networks (installation, service, repair)",
-      "Household Waste Disposal",
-      "Energy Supply"
-    ],
-    "Information Technology, System Integration, Internet": [
-      "Internet Company (search engines, payment systems, social networks, educational and entertainment resources, website promotion, etc.)",
-      "Internet Provider",
-      "Software Development",
-      "System Integration, Automation of Technological and Business Processes of the Enterprise, IT Consulting"
-    ],
-    "Retail Trade": [
-      "Vending (trading through machines)",
-      "Pet Shop",
-      "Online Store",
-      "Non-network Retail, Small Wholesale",
-      "Retail Network (DIY and Home Goods)",
-      "Retail Network (drogerie, everyday goods)",
-      "Retail Network (books, toys, gifts, watches, etc.)",
-      "Retail Network (furniture)",
-      "Retail Network (mobile retail)",
-      "Retail Network (clothes, shoes, accessories)",
-      "Retail Network (perfumes, cosmetics)",
-      "Retail Network (groceries)",
-      "Retail Network (sporting goods)",
-      "Retail Network (children's goods)",
-      "Retail Network (electronics, household appliances)",
-      "Retail Network (jewelry)"
-    ],
-    "Chemical Production, Fertilizers": [
-      "Agrochemistry (promotion, wholesale trade)",
-      "Agrochemistry (production)",
-      "Concrete, Brick, Glass and Other Silicates (promotion, wholesale trade)",
-      "Concrete, Brick, Glass and Other Silicates (production)",
-      "Paint and Varnish Products, Raw Materials (promotion, wholesale trade)",
-      "Paint and Varnish Products, Raw Materials (production)",
-      "Inorganic Chemistry (promotion, wholesale trade)",
-      "Inorganic Chemistry (production)",
-      "Organic Chemistry (promotion, wholesale trade)",
-      "Organic Chemistry (production)",
-      "Rubber, Plastics and Other (promotion, wholesale trade)",
-      "Rubber, Plastics and Other (production)"
-    ],
-    "Telecommunications, Communication": [
-      "Mobile Communication",
-      "Fiber Optic Communication",
-      "Satellite Communication",
-      "Fixed Communication"
-    ],
-    "Public Activity, Parties, Charity, NGO": [
-      "Association in the Field of Culture, Art",
-      "Charitable Organization",
-      "Public, Political Organization",
-      "Professional, Entrepreneurial Organization",
-      "Religious Organization",
-      "Sports Federation",
-      "Foundation, Grantor"
-    ],
-    "Heavy Machinery": [
-      "Aviation, Helicopter, Aerospace Industry",
-      "Engines (installation, service, repair)",
-      "Engines (promotion, wholesale trade)",
-      "Engines (production)",
-      "Railway Engineering, Wagon Building",
-      "Aviation, Aerospace, Helicopter Products (installation, service, repair)",
-      "Aviation, Aerospace, Helicopter Products (promotion, wholesale trade)",
-      "Railway Engineering, Wagon Building Products (installation, service, repair)",
-      "Railway Engineering, Wagon Building Products (promotion, wholesale trade)",
-      "Shipbuilding Products (promotion, wholesale trade)",
-      "Production and Repair of Military Equipment, Equipment and Weapons",
-      "Ship Repair",
-      "Shipbuilding"
-    ],
-    "Financial Sector": [
-      "Audit, Management Accounting, Financial-Legal Consulting",
-      "Bank",
-      "Collection Activities",
-      "Leasing Companies",
-      "NPF",
-      "Insurance, Reinsurance",
-      "Managing, Investment Company (asset management)",
-      "Services for Conducting Accounting and Tax Accounting, Payroll Calculation",
-      "Factoring Companies",
-      "Financial Credit Intermediation (exchange, brokerage activities, issuance and servicing of cards, risk assessment, exchange points, lending agencies, cash collection, pawnshop, payment systems)"
-    ],
-    "Finance, Accounting": [
-      "Auditor",
-      "Broker",
-      "Accountant",
-      "Treasurer",
-      "Compliance Manager",
-      "Credit Specialist",
-      "Methodologist",
-      "Debt Recovery Specialist",
-      "Financial Analyst, Investment Analyst",
-      "CFO",
-      "Financial Controller",
-      "Financial Manager",
-      "Economist"
-    ],
-    "Lawyers": [
-      "CLO",
-      "Compliance Manager",
-      "Legal Consultant",
-      "Lawyer"
-    ],
-    "Administrative Staff": [
-      "Administrator",
-      "Clerk, Archivist",
-      "Courier",
-      "AHO Manager",
-      "PC Operator, Database Operator",
-      "Office Manager",
-      "Translator",
-      "Secretary, Manager's Assistant"
-    ],
-    "Medicine, Pharmaceuticals": [
-      "Administrator",
-      "Doctor's Assistant",
-      "Veterinarian",
-      "Doctor",
-      "Chief Doctor, Head of Department",
-      "Pharmacy Manager",
-      "Laboratory Worker",
-      "Nurse",
-      "Medical Representative",
-      "Scientific Specialist, Researcher",
-      "Certification Specialist",
-      "Pharmacist"
-    ],
-    "Art, Entertainment, Mass Media": [
-      "Art Director, Creative Director",
-      "Artist, Actor, Animator",
-      "Videographer, Video Editor",
-      "Game Designer",
-      "Designer, Artist",
-      "Journalist, Correspondent",
-      "Copywriter, Editor, Proofreader",
-      "Producer",
-      "Director, Screenwriter",
-      "Photographer, Retoucher"
-    ],
-    "Retail Trade": [
-      "Store Administrator, Trade Hall Administrator",
-      "Store Director, Chain Store Director",
-      "Merchandiser",
-      "Sales Consultant, Cashier",
-      "Promoter",
-      "Supervisor",
-      "Commodity Expert"
-    ],
-    "Working Personnel": [
-      "Auto Mechanic",
-      "Driver",
-      "Loader",
-      "Warehouseman",
-      "Painter, Plasterer",
-      "Machinist",
-      "Mechanic",
-      "Installer",
-      "Production Line Operator",
-      "CNC Machine Operator",
-      "Laborer",
-      "Welder",
-      "Service Engineer, Mechanical Engineer",
-      "Fitter, Plumber",
-      "Turner, Miller, Grinder",
-      "Packer, Consignor",
-      "Electrician"
-    ],
-    "Domestic, Service Staff": [
-      "Administrator",
-      "Driver",
-      "Kindergartener, Nanny",
-      "Janitor",
-      "Courier",
-      "Waiter, Bartender, Barista",
-      "Security Guard",
-      "Cleaner"
-    ],
-    "Strategy, Investments, Consulting": [
-      "Analyst",
-      "Business Analyst",
-      "Strategy Manager/Consultant",
-      "Project Manager",
-      "Financial Analyst, Investment Analyst"
-    ],
-    "Raw Materials Extraction": [
-      "Surveyor",
-      "Geologist",
-      "Laboratory Worker",
-      "Machinist",
-      "Scientific Specialist, Researcher",
-      "Shift Supervisor, Workshop Supervisor",
-      "Technologist"
-    ],
-    "Tourism, Hotels, Restaurants": [
-      "Administrator",
-      "Tourism Manager",
-      "Restaurant Manager",
-      "AHO Manager",
-      "Waiter, Bartender, Barista",
-      "Cook, Baker, Confectioner",
-      "Cleaner",
-      "Hostess"
-    ],
-    "Security": [
-      "Military Personnel",
-      "Security Guard",
-      "Policeman",
-      "Information Security Specialist",
-      "Security Service Specialist"
-    ]
-  }
+  "specializations": [
+    {
+      "id": 1,
+      "name": "Agriculture & Natural Resources Conservation",
+      "subcategories": [
+        {
+          "id": 1,
+          "name": "Agriculture, General"
+        },
+        {
+          "id": 2,
+          "name": "Agribusiness Operations"
+        },
+        {
+          "id": 3,
+          "name": "Agricultural Business & Management"
+        },
+        {
+          "id": 4,
+          "name": "Agricultural Economics"
+        },
+        {
+          "id": 5,
+          "name": "Agricultural Mechanization"
+        },
+        {
+          "id": 6,
+          "name": "Agricultural Production"
+        },
+        {
+          "id": 7,
+          "name": "Agronomy & Crop Science"
+        },
+        {
+          "id": 8,
+          "name": "Animal Sciences"
+        },
+        {
+          "id": 9,
+          "name": "Food Sciences & Technology"
+        },
+        {
+          "id": 10,
+          "name": "Horticulture Operations & Management"
+        },
+        {
+          "id": 11,
+          "name": "Horticulture Science"
+        },
+        {
+          "id": 12,
+          "name": "Natural Resources Conservation, General"
+        },
+        {
+          "id": 13,
+          "name": "Environmental Science"
+        },
+        {
+          "id": 14,
+          "name": "Forestry"
+        },
+        {
+          "id": 15,
+          "name": "Natural Resources Management"
+        },
+        {
+          "id": 16,
+          "name": "Wildlife & Wildlands Management"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Architecture",
+      "subcategories": [
+        {
+          "id": 17,
+          "name": "Architecture, General"
+        },
+        {
+          "id": 18,
+          "name": "Architectural Environmental Design"
+        },
+        {
+          "id": 19,
+          "name": "City/Urban/Regional Planning"
+        },
+        {
+          "id": 20,
+          "name": "Interior Architecture"
+        },
+        {
+          "id": 21,
+          "name": "Landscape Architecture"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Area, Ethnic, and Multidisciplinary Studies",
+      "subcategories": [
+        {
+          "id": 22,
+          "name": "Area Studies, General (e.g., African, Middle Eastern)"
+        },
+        {
+          "id": 23,
+          "name": "Asian Area Studies"
+        },
+        {
+          "id": 24,
+          "name": "European Area Studies"
+        },
+        {
+          "id": 25,
+          "name": "Latin American Area Studies"
+        },
+        {
+          "id": 26,
+          "name": "North American Area Studies"
+        },
+        {
+          "id": 27,
+          "name": "Ethnic & Minority Studies, General"
+        },
+        {
+          "id": 28,
+          "name": "African American Studies"
+        },
+        {
+          "id": 29,
+          "name": "American Indian/Native American Studies"
+        },
+        {
+          "id": 30,
+          "name": "Latino/Chicano Studies"
+        },
+        {
+          "id": 31,
+          "name": "Women's Studies"
+        },
+        {
+          "id": 32,
+          "name": "Liberal Arts & General Studies"
+        },
+        {
+          "id": 33,
+          "name": "Library Science"
+        },
+        {
+          "id": 34,
+          "name": "Multi/Interdisciplinary Studies"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Arts: Visual & Performing",
+      "subcategories": [
+        {
+          "id": 35,
+          "name": "Art, General"
+        },
+        {
+          "id": 36,
+          "name": "Art History, Criticism & Conservation"
+        },
+        {
+          "id": 37,
+          "name": "Fine/Studio Arts"
+        },
+        {
+          "id": 38,
+          "name": "Cinema/Film"
+        },
+        {
+          "id": 39,
+          "name": "Cinematography/Film/Video Production"
+        },
+        {
+          "id": 40,
+          "name": "Dance"
+        },
+        {
+          "id": 41,
+          "name": "Design & Visual Communications, General"
+        },
+        {
+          "id": 42,
+          "name": "Fashion/Apparel Design"
+        },
+        {
+          "id": 43,
+          "name": "Graphic Design"
+        },
+        {
+          "id": 44,
+          "name": "Industrial Design"
+        },
+        {
+          "id": 45,
+          "name": "Interior Design"
+        },
+        {
+          "id": 46,
+          "name": "Music, General"
+        },
+        {
+          "id": 47,
+          "name": "Music, Performance"
+        },
+        {
+          "id": 48,
+          "name": "Music, Theory & Composition"
+        },
+        {
+          "id": 49,
+          "name": "Photography"
+        },
+        {
+          "id": 50,
+          "name": "Theatre Arts/Drama"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Business",
+      "subcategories": [
+        {
+          "id": 51,
+          "name": "Accounting"
+        },
+        {
+          "id": 52,
+          "name": "Accounting Technician"
+        },
+        {
+          "id": 53,
+          "name": "Business Administration & Management, General"
+        },
+        {
+          "id": 54,
+          "name": "Hotel/Motel Management"
+        },
+        {
+          "id": 55,
+          "name": "Human Resources Development/Training"
+        },
+        {
+          "id": 56,
+          "name": "Human Resources Management"
+        },
+        {
+          "id": 57,
+          "name": "International Business Management"
+        },
+        {
+          "id": 58,
+          "name": "Labor/Industrial Relations"
+        },
+        {
+          "id": 59,
+          "name": "Logistics & Materials Management"
+        },
+        {
+          "id": 60,
+          "name": "Marketing Management & Research"
+        },
+        {
+          "id": 61,
+          "name": "Office Supervision & Management"
+        },
+        {
+          "id": 62,
+          "name": "Operations Management & Supervision"
+        },
+        {
+          "id": 63,
+          "name": "Organizational Behavior"
+        },
+        {
+          "id": 64,
+          "name": "Purchasing/Procurement/Contracts Management"
+        },
+        {
+          "id": 65,
+          "name": "Restaurant/Food Services Management"
+        },
+        {
+          "id": 66,
+          "name": "Small Business Management/Operations"
+        },
+        {
+          "id": 67,
+          "name": "Travel/Tourism Management"
+        },
+        {
+          "id": 68,
+          "name": "Business/Management Quantitative Methods, General"
+        },
+        {
+          "id": 69,
+          "name": "Actuarial Science"
+        },
+        {
+          "id": 70,
+          "name": "Business/Managerial Economics"
+        },
+        {
+          "id": 71,
+          "name": "Finance, General"
+        },
+        {
+          "id": 72,
+          "name": "Banking & Financial Support Services"
+        },
+        {
+          "id": 73,
+          "name": "Financial Planning & Services"
+        },
+        {
+          "id": 74,
+          "name": "Insurance & Risk Management"
+        },
+        {
+          "id": 75,
+          "name": "Investments & Securities"
+        },
+        {
+          "id": 76,
+          "name": "Management Information Systems"
+        },
+        {
+          "id": 77,
+          "name": "Real Estate"
+        },
+        {
+          "id": 78,
+          "name": "Sales, Merchandising, & Marketing, General"
+        },
+        {
+          "id": 79,
+          "name": "Fashion Merchandising"
+        },
+        {
+          "id": 80,
+          "name": "Tourism & Travel Marketing"
+        },
+        {
+          "id": 81,
+          "name": "Secretarial Studies & Office Administration"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Communications",
+      "subcategories": [
+        {
+          "id": 82,
+          "name": "Communications, General"
+        },
+        {
+          "id": 83,
+          "name": "Advertising"
+        },
+        {
+          "id": 84,
+          "name": "Digital Communications/Media"
+        },
+        {
+          "id": 85,
+          "name": "Journalism, Broadcast"
+        },
+        {
+          "id": 86,
+          "name": "Journalism, Print"
+        },
+        {
+          "id": 87,
+          "name": "Mass Communications"
+        },
+        {
+          "id": 88,
+          "name": "Public Relations & Organizational Communication"
+        },
+        {
+          "id": 89,
+          "name": "Radio & Television Broadcasting"
+        },
+        {
+          "id": 90,
+          "name": "Communications Technology, General"
+        },
+        {
+          "id": 91,
+          "name": "Graphic & Printing Equipment Operation"
+        },
+        {
+          "id": 92,
+          "name": "Multimedia/Animation/Special Effects"
+        },
+        {
+          "id": 93,
+          "name": "Radio & Television Broadcasting Technology"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Community, Family, and Personal Services",
+      "subcategories": [
+        {
+          "id": 94,
+          "name": "Family & Consumer Sciences, General"
+        },
+        {
+          "id": 95,
+          "name": "Adult Development & Aging/Gerontology"
+        },
+        {
+          "id": 96,
+          "name": "Child Care Services Management"
+        },
+        {
+          "id": 97,
+          "name": "Child Development"
+        },
+        {
+          "id": 98,
+          "name": "Consumer & Family Economics"
+        },
+        {
+          "id": 99,
+          "name": "Food & Nutrition"
+        },
+        {
+          "id": 100,
+          "name": "Textile & Apparel"
+        },
+        {
+          "id": 101,
+          "name": "Parks, Recreation, & Leisure, General"
+        },
+        {
+          "id": 102,
+          "name": "Exercise Science/Physiology/Kinesiology"
+        },
+        {
+          "id": 103,
+          "name": "Health & Physical Education/Fitness"
+        },
+        {
+          "id": 104,
+          "name": "Parks/Rec/Leisure Facilities Management"
+        },
+        {
+          "id": 105,
+          "name": "Sport & Fitness Administration/Management"
+        },
+        {
+          "id": 106,
+          "name": "Personal Services, General"
+        },
+        {
+          "id": 107,
+          "name": "Cosmetology/Hairstyling"
+        },
+        {
+          "id": 108,
+          "name": "Culinary Arts/Chef Training"
+        },
+        {
+          "id": 109,
+          "name": "Funeral Services & Mortuary Science"
+        },
+        {
+          "id": 110,
+          "name": "Protective Services, General"
+        },
+        {
+          "id": 111,
+          "name": "Corrections"
+        },
+        {
+          "id": 112,
+          "name": "Criminal Justice"
+        },
+        {
+          "id": 113,
+          "name": "Fire Protection & Safety Technology"
+        },
+        {
+          "id": 114,
+          "name": "Law Enforcement"
+        },
+        {
+          "id": 115,
+          "name": "Military Technologies"
+        },
+        {
+          "id": 116,
+          "name": "Public Administration & Services, General"
+        },
+        {
+          "id": 117,
+          "name": "Community Organization & Advocacy"
+        },
+        {
+          "id": 118,
+          "name": "Public Administration"
+        },
+        {
+          "id": 119,
+          "name": "Public Affairs & Public Policy Analysis"
+        },
+        {
+          "id": 120,
+          "name": "Social Work"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Computer Science and Mathematics",
+      "subcategories": [
+        {
+          "id": 121,
+          "name": "Computer & Information Sciences, General"
+        },
+        {
+          "id": 122,
+          "name": "Computer Networking/Telecommunications"
+        },
+        {
+          "id": 123,
+          "name": "Computer Science & Programming"
+        },
+        {
+          "id": 124,
+          "name": "Computer Software & Media Applications"
+        },
+        {
+          "id": 125,
+          "name": "Computer System Administration"
+        },
+        {
+          "id": 126,
+          "name": "Data Management Technology"
+        },
+        {
+          "id": 127,
+          "name": "Information Science"
+        },
+        {
+          "id": 128,
+          "name": "Webpage Design"
+        },
+        {
+          "id": 129,
+          "name": "Mathematics, General"
+        },
+        {
+          "id": 130,
+          "name": "Applied Mathematics"
+        },
+        {
+          "id": 131,
+          "name": "Statistics"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Education",
+      "subcategories": [
+        {
+          "id": 132,
+          "name": "Counseling & Student Services"
+        },
+        {
+          "id": 133,
+          "name": "Educational Administration"
+        },
+        {
+          "id": 134,
+          "name": "Special Education"
+        },
+        {
+          "id": 135,
+          "name": "Teacher Education, General"
+        },
+        {
+          "id": 136,
+          "name": "Curriculum & Instruction"
+        },
+        {
+          "id": 137,
+          "name": "Early Childhood Education"
+        },
+        {
+          "id": 138,
+          "name": "Elementary Education"
+        },
+        {
+          "id": 139,
+          "name": "Junior High/Middle School Education"
+        },
+        {
+          "id": 140,
+          "name": "Postsecondary Education"
+        },
+        {
+          "id": 141,
+          "name": "Secondary Education"
+        },
+        {
+          "id": 142,
+          "name": "Teacher Assisting/Aide Education"
+        },
+        {
+          "id": 143,
+          "name": "Teacher Education, Subject-Specific"
+        },
+        {
+          "id": 144,
+          "name": "Agricultural Education"
+        },
+        {
+          "id": 145,
+          "name": "Art Education"
+        },
+        {
+          "id": 146,
+          "name": "Business Education"
+        },
+        {
+          "id": 147,
+          "name": "Career & Technical Education"
+        },
+        {
+          "id": 148,
+          "name": "English-as-a-Second-Language Education"
+        },
+        {
+          "id": 149,
+          "name": "English/Language Arts Education"
+        },
+        {
+          "id": 150,
+          "name": "Foreign Languages Education"
+        },
+        {
+          "id": 151,
+          "name": "Health Education"
+        },
+        {
+          "id": 152,
+          "name": "Mathematics Education"
+        },
+        {
+          "id": 153,
+          "name": "Music Education"
+        },
+        {
+          "id": 154,
+          "name": "Physical Education & Coaching"
+        },
+        {
+          "id": 155,
+          "name": "Science Education"
+        },
+        {
+          "id": 156,
+          "name": "Social Studies/Sciences Education"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Engineering",
+      "subcategories": [
+        {
+          "id": 157,
+          "name": "Engineering (Pre-Engineering), General"
+        },
+        {
+          "id": 158,
+          "name": "Aerospace/Aeronautical Engineering"
+        },
+        {
+          "id": 159,
+          "name": "Agricultural/Bioengineering"
+        },
+        {
+          "id": 160,
+          "name": "Architectural Engineering"
+        },
+        {
+          "id": 161,
+          "name": "Biomedical Engineering"
+        },
+        {
+          "id": 162,
+          "name": "Chemical Engineering"
+        },
+        {
+          "id": 163,
+          "name": "Civil Engineering"
+        },
+        {
+          "id": 164,
+          "name": "Computer Engineering"
+        },
+        {
+          "id": 165,
+          "name": "Construction Engineering/Management"
+        },
+        {
+          "id": 166,
+          "name": "Electrical, Electronics & Communications Engineering"
+        },
+        {
+          "id": 167,
+          "name": "Environmental Health Engineering"
+        },
+        {
+          "id": 168,
+          "name": "Industrial Engineering"
+        },
+        {
+          "id": 169,
+          "name": "Mechanical Engineering"
+        },
+        {
+          "id": 170,
+          "name": "Nuclear Engineering"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Engineering Technology and Drafting",
+      "subcategories": [
+        {
+          "id": 171,
+          "name": "Drafting/CAD Technology, General"
+        },
+        {
+          "id": 172,
+          "name": "Architectural Drafting/CAD Technology"
+        },
+        {
+          "id": 173,
+          "name": "Mechanical Drafting/CAD Technology"
+        },
+        {
+          "id": 174,
+          "name": "Engineering Technology, General"
+        },
+        {
+          "id": 175,
+          "name": "Aeronautical/Aerospace Engineering Technologies"
+        },
+        {
+          "id": 176,
+          "name": "Architectural Engineering Technology"
+        },
+        {
+          "id": 177,
+          "name": "Automotive Engineering Technology"
+        },
+        {
+          "id": 178,
+          "name": "Civil Engineering Technology"
+        },
+        {
+          "id": 179,
+          "name": "Computer Engineering Technology"
+        },
+        {
+          "id": 180,
+          "name": "Construction/Building Technology"
+        },
+        {
+          "id": 181,
+          "name": "Electrical, Electronics Engineering Technologies"
+        },
+        {
+          "id": 182,
+          "name": "Electromechanical/Biomedical Engineering Technologies"
+        },
+        {
+          "id": 183,
+          "name": "Environmental Control Technologies"
+        },
+        {
+          "id": 184,
+          "name": "Industrial Production Technologies"
+        },
+        {
+          "id": 185,
+          "name": "Mechanical Engineering Technology"
+        },
+        {
+          "id": 186,
+          "name": "Quality Control & Safety Technologies"
+        },
+        {
+          "id": 187,
+          "name": "Surveying Technology"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "English and Foreign Languages",
+      "subcategories": [
+        {
+          "id": 188,
+          "name": "English Language & Literature, General"
+        },
+        {
+          "id": 189,
+          "name": "American/English Literature"
+        },
+        {
+          "id": 190,
+          "name": "Creative Writing"
+        },
+        {
+          "id": 191,
+          "name": "Public Speaking"
+        },
+        {
+          "id": 192,
+          "name": "Foreign Languages/Literatures, General"
+        },
+        {
+          "id": 193,
+          "name": "Asian Languages & Literatures"
+        },
+        {
+          "id": 194,
+          "name": "Classical/Ancient Languages & Literatures"
+        },
+        {
+          "id": 195,
+          "name": "Comparative Literature"
+        },
+        {
+          "id": 196,
+          "name": "French Language & Literature"
+        },
+        {
+          "id": 197,
+          "name": "German Language & Literature"
+        },
+        {
+          "id": 198,
+          "name": "Linguistics"
+        },
+        {
+          "id": 199,
+          "name": "Middle Eastern Languages & Literatures"
+        },
+        {
+          "id": 200,
+          "name": "Spanish Language & Literature"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Health Administration and Assisting",
+      "subcategories": [
+        {
+          "id": 201,
+          "name": "Health Services Administration, General"
+        },
+        {
+          "id": 202,
+          "name": "Hospital/Facilities Administration"
+        },
+        {
+          "id": 203,
+          "name": "Medical Office/Secretarial"
+        },
+        {
+          "id": 204,
+          "name": "Medical Records"
+        },
+        {
+          "id": 205,
+          "name": "Medical/Clinical Assisting, General"
+        },
+        {
+          "id": 206,
+          "name": "Dental Assisting"
+        },
+        {
+          "id": 207,
+          "name": "Medical Assisting"
+        },
+        {
+          "id": 208,
+          "name": "Occupational Therapy Assisting"
+        },
+        {
+          "id": 209,
+          "name": "Physical Therapy Assisting"
+        },
+        {
+          "id": 210,
+          "name": "Veterinarian Assisting/Technology"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Health Sciences and Technologies",
+      "subcategories": [
+        {
+          "id": 211,
+          "name": "Chiropractic (Pre-Chiropractic)"
+        },
+        {
+          "id": 212,
+          "name": "Dental Hygiene"
+        },
+        {
+          "id": 213,
+          "name": "Dentistry (Pre-Dentistry)"
+        },
+        {
+          "id": 214,
+          "name": "Emergency Medical Technology"
+        },
+        {
+          "id": 215,
+          "name": "Health-Related Professions & Services, General"
+        },
+        {
+          "id": 216,
+          "name": "Athletic Training"
+        },
+        {
+          "id": 217,
+          "name": "Communication Disorder Services (e.g., Speech Pathology)"
+        },
+        {
+          "id": 218,
+          "name": "Public Health"
+        },
+        {
+          "id": 219,
+          "name": "Health/Medical Technology, General"
+        },
+        {
+          "id": 220,
+          "name": "Medical Laboratory Technology"
+        },
+        {
+          "id": 221,
+          "name": "Medical Radiologic Technology"
+        },
+        {
+          "id": 222,
+          "name": "Nuclear Medicine Technology"
+        },
+        {
+          "id": 223,
+          "name": "Respiratory Therapy Technology"
+        },
+        {
+          "id": 224,
+          "name": "Surgical Technology"
+        },
+        {
+          "id": 225,
+          "name": "Medicine (Pre-Medicine)"
+        },
+        {
+          "id": 226,
+          "name": "Nursing, Practical/Vocational"
+        },
+        {
+          "id": 227,
+          "name": "Nursing, Registered"
+        },
+        {
+          "id": 228,
+          "name": "Optometry (Pre-Optometry)"
+        },
+        {
+          "id": 229,
+          "name": "Osteopathic Medicine"
+        },
+        {
+          "id": 230,
+          "name": "Pharmacy (Pre-Pharmacy)"
+        },
+        {
+          "id": 231,
+          "name": "Physician Assisting"
+        },
+        {
+          "id": 232,
+          "name": "Therapy & Rehabilitation, General"
+        },
+        {
+          "id": 233,
+          "name": "Alcohol/Drug Abuse Counseling"
+        },
+        {
+          "id": 234,
+          "name": "Massage Therapy"
+        },
+        {
+          "id": 235,
+          "name": "Mental Health Counseling"
+        },
+        {
+          "id": 236,
+          "name": "Occupational Therapy"
+        },
+        {
+          "id": 237,
+          "name": "Physical Therapy (Pre-Physical Therapy)"
+        },
+        {
+          "id": 238,
+          "name": "Psychiatric/Mental Health Technician"
+        },
+        {
+          "id": 239,
+          "name": "Rehabilitation Therapy"
+        },
+        {
+          "id": 240,
+          "name": "Vocational Rehabilitation Counseling"
+        },
+        {
+          "id": 241,
+          "name": "Veterinary Medicine (Pre-Veterinarian)"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Philosophy, Religion, and Theology",
+      "subcategories": [
+        {
+          "id": 242,
+          "name": "Philosophy"
+        },
+        {
+          "id": 243,
+          "name": "Religion"
+        },
+        {
+          "id": 244,
+          "name": "Theology, General"
+        },
+        {
+          "id": 245,
+          "name": "Bible/Biblical Studies"
+        },
+        {
+          "id": 246,
+          "name": "Divinity/Ministry"
+        },
+        {
+          "id": 247,
+          "name": "Religious Education"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Repair, Production and Construction",
+      "subcategories": [
+        {
+          "id": 248,
+          "name": "Aviation & Airway Science, General"
+        },
+        {
+          "id": 249,
+          "name": "Aircraft Piloting & Navigation"
+        },
+        {
+          "id": 250,
+          "name": "Aviation Management & Operations"
+        },
+        {
+          "id": 251,
+          "name": "Construction Trades (e.g., carpentry, plumbing, electrical)"
+        },
+        {
+          "id": 252,
+          "name": "Mechanics & Repairers, General"
+        },
+        {
+          "id": 253,
+          "name": "Aircraft Mechanics/Technology"
+        },
+        {
+          "id": 254,
+          "name": "Autobody Repair/Technology"
+        },
+        {
+          "id": 255,
+          "name": "Automotive Mechanics/Technology"
+        },
+        {
+          "id": 256,
+          "name": "Avionics Technology"
+        },
+        {
+          "id": 257,
+          "name": "Diesel Mechanics/Technology"
+        },
+        {
+          "id": 258,
+          "name": "Electrical/Electronics Equip Installation & Repair"
+        },
+        {
+          "id": 259,
+          "name": "Heating/Air Conditioner/Refrigeration Install/Repair"
+        },
+        {
+          "id": 260,
+          "name": "Precision Production Trades, General"
+        },
+        {
+          "id": 261,
+          "name": "Machine Tool Technology"
+        },
+        {
+          "id": 262,
+          "name": "Welding Technology"
+        },
+        {
+          "id": 263,
+          "name": "Transportation & Materials Moving (e.g., air, ground, & marine)"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Sciences: Biological and Physical",
+      "subcategories": [
+        {
+          "id": 264,
+          "name": "Biology, General"
+        },
+        {
+          "id": 265,
+          "name": "Biochemistry & Biophysics"
+        },
+        {
+          "id": 266,
+          "name": "Cell/Cellular Biology"
+        },
+        {
+          "id": 267,
+          "name": "Ecology"
+        },
+        {
+          "id": 268,
+          "name": "Genetics"
+        },
+        {
+          "id": 269,
+          "name": "Marine/Aquatic Biology"
+        },
+        {
+          "id": 270,
+          "name": "Microbiology & Immunology"
+        },
+        {
+          "id": 271,
+          "name": "Zoology"
+        },
+        {
+          "id": 272,
+          "name": "Physical Sciences, General"
+        },
+        {
+          "id": 273,
+          "name": "Astronomy"
+        },
+        {
+          "id": 274,
+          "name": "Atmospheric Sciences & Meteorology"
+        },
+        {
+          "id": 275,
+          "name": "Chemistry"
+        },
+        {
+          "id": 276,
+          "name": "Geological & Earth Sciences"
+        },
+        {
+          "id": 277,
+          "name": "Physics"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Social Sciences and Law",
+      "subcategories": [
+        {
+          "id": 278,
+          "name": "Legal Studies, General"
+        },
+        {
+          "id": 279,
+          "name": "Court Reporting"
+        },
+        {
+          "id": 280,
+          "name": "Law (Pre-Law)"
+        },
+        {
+          "id": 281,
+          "name": "Legal Administrative Assisting/Secretarial"
+        },
+        {
+          "id": 282,
+          "name": "Paralegal/Legal Assistant"
+        },
+        {
+          "id": 283,
+          "name": "Social Sciences, General"
+        },
+        {
+          "id": 284,
+          "name": "Anthropology"
+        },
+        {
+          "id": 285,
+          "name": "Criminology"
+        },
+        {
+          "id": 286,
+          "name": "Economics"
+        },
+        {
+          "id": 287,
+          "name": "Geography"
+        },
+        {
+          "id": 288,
+          "name": "History"
+        },
+        {
+          "id": 289,
+          "name": "International Relations & Affairs"
+        },
+        {
+          "id": 290,
+          "name": "Political Science & Government"
+        },
+        {
+          "id": 291,
+          "name": "Psychology, Clinical & Counseling"
+        },
+        {
+          "id": 292,
+          "name": "Psychology, General"
+        },
+        {
+          "id": 293,
+          "name": "Sociology"
+        },
+        {
+          "id": 294,
+          "name": "Urban Studies/Urban Affairs"
+        }
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "id": 1,
+      "name": "Education",
+      "subcategories": [
+        {
+          "id": 1,
+          "name": "Education Management"
+        },
+        {
+          "id": 2,
+          "name": "E-Learning"
+        },
+        {
+          "id": 3,
+          "name": "Higher Education"
+        },
+        {
+          "id": 4,
+          "name": "Primary/Secondary Education"
+        },
+        {
+          "id": 5,
+          "name": "Research"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Construction",
+      "subcategories": [
+        {
+          "id": 6,
+          "name": "Building Materials"
+        },
+        {
+          "id": 7,
+          "name": "Civil Engineering"
+        },
+        {
+          "id": 8,
+          "name": "Construction"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Design",
+      "subcategories": [
+        {
+          "id": 9,
+          "name": "Architecture & Planning"
+        },
+        {
+          "id": 10,
+          "name": "Design"
+        },
+        {
+          "id": 11,
+          "name": "Graphic Design"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Corporate Services",
+      "subcategories": [
+        {
+          "id": 12,
+          "name": "Accounting"
+        },
+        {
+          "id": 13,
+          "name": "Business Supplies & Equipment"
+        },
+        {
+          "id": 14,
+          "name": "Environmental Services"
+        },
+        {
+          "id": 15,
+          "name": "Events Services"
+        },
+        {
+          "id": 16,
+          "name": "Executive Office"
+        },
+        {
+          "id": 17,
+          "name": "Facilities Services"
+        },
+        {
+          "id": 18,
+          "name": "Human Resources"
+        },
+        {
+          "id": 19,
+          "name": "Information Services"
+        },
+        {
+          "id": 20,
+          "name": "Management Consulting"
+        },
+        {
+          "id": 21,
+          "name": "Outsourcing/Offshoring"
+        },
+        {
+          "id": 22,
+          "name": "Professional Training & Coaching"
+        },
+        {
+          "id": 23,
+          "name": "Security & Investigations"
+        },
+        {
+          "id": 24,
+          "name": "Staffing & Recruiting"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Retail",
+      "subcategories": [
+        {
+          "id": 25,
+          "name": "Retail"
+        },
+        {
+          "id": 26,
+          "name": "Supermarkets"
+        },
+        {
+          "id": 27,
+          "name": "Wholesale"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Energy & Mining",
+      "subcategories": [
+        {
+          "id": 28,
+          "name": "Mining & Metals"
+        },
+        {
+          "id": 29,
+          "name": "Oil & Energy"
+        },
+        {
+          "id": 30,
+          "name": "Utilities"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Manufacturing",
+      "subcategories": [
+        {
+          "id": 31,
+          "name": "Automotive"
+        },
+        {
+          "id": 32,
+          "name": "Aviation & Aerospace"
+        },
+        {
+          "id": 33,
+          "name": "Chemicals"
+        },
+        {
+          "id": 34,
+          "name": "Defense & Space"
+        },
+        {
+          "id": 35,
+          "name": "Electrical & Electronic Manufacturing"
+        },
+        {
+          "id": 36,
+          "name": "Food Production"
+        },
+        {
+          "id": 37,
+          "name": "Glass, Ceramics & Concrete"
+        },
+        {
+          "id": 38,
+          "name": "Industrial Automation"
+        },
+        {
+          "id": 39,
+          "name": "Machinery"
+        },
+        {
+          "id": 40,
+          "name": "Mechanical or Industrial Engineering"
+        },
+        {
+          "id": 41,
+          "name": "Packaging & Containers"
+        },
+        {
+          "id": 42,
+          "name": "Paper & Forest Products"
+        },
+        {
+          "id": 43,
+          "name": "Plastics"
+        },
+        {
+          "id": 44,
+          "name": "Railroad Manufacture"
+        },
+        {
+          "id": 45,
+          "name": "Renewables & Environment"
+        },
+        {
+          "id": 46,
+          "name": "Shipbuilding"
+        },
+        {
+          "id": 47,
+          "name": "Textiles"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Finance",
+      "subcategories": [
+        {
+          "id": 48,
+          "name": "Banking"
+        },
+        {
+          "id": 49,
+          "name": "Capital Markets"
+        },
+        {
+          "id": 50,
+          "name": "Financial Services"
+        },
+        {
+          "id": 51,
+          "name": "Insurance"
+        },
+        {
+          "id": 52,
+          "name": "Investment Banking"
+        },
+        {
+          "id": 53,
+          "name": "Investment Management"
+        },
+        {
+          "id": 54,
+          "name": "Venture Capital & Private Equity"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Recreation & Travel",
+      "subcategories": [
+        {
+          "id": 55,
+          "name": "Airlines/Aviation"
+        },
+        {
+          "id": 56,
+          "name": "Gambling & Casinos"
+        },
+        {
+          "id": 57,
+          "name": "Hospitality"
+        },
+        {
+          "id": 58,
+          "name": "Leisure, Travel & Tourism"
+        },
+        {
+          "id": 59,
+          "name": "Restaurants"
+        },
+        {
+          "id": 60,
+          "name": "Recreational Facilities & Services"
+        },
+        {
+          "id": 61,
+          "name": "Sports"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Arts",
+      "subcategories": [
+        {
+          "id": 62,
+          "name": "Arts & Crafts"
+        },
+        {
+          "id": 63,
+          "name": "Fine Art"
+        },
+        {
+          "id": 64,
+          "name": "Performing Arts"
+        },
+        {
+          "id": 65,
+          "name": "Photography"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Health Care",
+      "subcategories": [
+        {
+          "id": 66,
+          "name": "Biotechnology"
+        },
+        {
+          "id": 67,
+          "name": "Hospital & Health Care"
+        },
+        {
+          "id": 68,
+          "name": "Medical Device"
+        },
+        {
+          "id": 69,
+          "name": "Medical Practice"
+        },
+        {
+          "id": 70,
+          "name": "Mental Health Care"
+        },
+        {
+          "id": 71,
+          "name": "Pharmaceuticals"
+        },
+        {
+          "id": 72,
+          "name": "Veterinary"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Hardware & Networking",
+      "subcategories": [
+        {
+          "id": 73,
+          "name": "Computer Hardware"
+        },
+        {
+          "id": 74,
+          "name": "Computer Networking"
+        },
+        {
+          "id": 75,
+          "name": "Nanotechnology"
+        },
+        {
+          "id": 76,
+          "name": "Semiconductors"
+        },
+        {
+          "id": 77,
+          "name": "Telecommunications"
+        },
+        {
+          "id": 78,
+          "name": "Wireless"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Real Estate",
+      "subcategories": [
+        {
+          "id": 79,
+          "name": "Commercial Real Estate"
+        },
+        {
+          "id": 80,
+          "name": "Real Estate"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Legal",
+      "subcategories": [
+        {
+          "id": 81,
+          "name": "Alternative Dispute Resolution"
+        },
+        {
+          "id": 82,
+          "name": "Law Practice"
+        },
+        {
+          "id": 83,
+          "name": "Legal Services"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Consumer Goods",
+      "subcategories": [
+        {
+          "id": 84,
+          "name": "Apparel & Fashion"
+        },
+        {
+          "id": 85,
+          "name": "Consumer Electronics"
+        },
+        {
+          "id": 86,
+          "name": "Consumer Goods"
+        },
+        {
+          "id": 87,
+          "name": "Consumer Services"
+        },
+        {
+          "id": 88,
+          "name": "Cosmetics"
+        },
+        {
+          "id": 89,
+          "name": "Food & Beverages"
+        },
+        {
+          "id": 90,
+          "name": "Furniture"
+        },
+        {
+          "id": 91,
+          "name": "Luxury Goods & Jewelry"
+        },
+        {
+          "id": 92,
+          "name": "Sporting Goods"
+        },
+        {
+          "id": 93,
+          "name": "Tobacco"
+        },
+        {
+          "id": 94,
+          "name": "Wine and Spirits"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Agriculture",
+      "subcategories": [
+        {
+          "id": 95,
+          "name": "Dairy"
+        },
+        {
+          "id": 96,
+          "name": "Farming"
+        },
+        {
+          "id": 97,
+          "name": "Fishery"
+        },
+        {
+          "id": 98,
+          "name": "Ranching"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Media & Communications",
+      "subcategories": [
+        {
+          "id": 99,
+          "name": "Market Research"
+        },
+        {
+          "id": 100,
+          "name": "Marketing & Advertising"
+        },
+        {
+          "id": 101,
+          "name": "Newspapers"
+        },
+        {
+          "id": 102,
+          "name": "Online Media"
+        },
+        {
+          "id": 103,
+          "name": "Printing"
+        },
+        {
+          "id": 104,
+          "name": "Public Relations & Communications"
+        },
+        {
+          "id": 105,
+          "name": "Publishing"
+        },
+        {
+          "id": 106,
+          "name": "Translation & Localization"
+        },
+        {
+          "id": 107,
+          "name": "Writing & Editing"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Nonprofit",
+      "subcategories": [
+        {
+          "id": 108,
+          "name": "Civic & Social Organization"
+        },
+        {
+          "id": 109,
+          "name": "Fundraising"
+        },
+        {
+          "id": 110,
+          "name": "Individual & Family Services"
+        },
+        {
+          "id": 111,
+          "name": "International Trade & Development"
+        },
+        {
+          "id": 112,
+          "name": "Libraries"
+        },
+        {
+          "id": 113,
+          "name": "Museums & Institutions"
+        },
+        {
+          "id": 114,
+          "name": "Non-Profit Organization Management"
+        },
+        {
+          "id": 115,
+          "name": "Philanthropy"
+        },
+        {
+          "id": 116,
+          "name": "Program Development"
+        },
+        {
+          "id": 117,
+          "name": "Religious Institutions"
+        },
+        {
+          "id": 118,
+          "name": "Think Tanks"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Software & IT Services",
+      "subcategories": [
+        {
+          "id": 119,
+          "name": "Computer & Network Security"
+        },
+        {
+          "id": 120,
+          "name": "Computer Software"
+        },
+        {
+          "id": 121,
+          "name": "Information Technology & Services"
+        },
+        {
+          "id": 122,
+          "name": "Internet"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Transportation & Logistics",
+      "subcategories": [
+        {
+          "id": 123,
+          "name": "Import & Export"
+        },
+        {
+          "id": 124,
+          "name": "Logistics & Supply Chain"
+        },
+        {
+          "id": 125,
+          "name": "Maritime"
+        },
+        {
+          "id": 126,
+          "name": "Package/Freight Delivery"
+        },
+        {
+          "id": 127,
+          "name": "Transportation/Trucking/Railroad"
+        },
+        {
+          "id": 128,
+          "name": "Warehousing"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Entertainment",
+      "subcategories": [
+        {
+          "id": 129,
+          "name": "Animation"
+        },
+        {
+          "id": 130,
+          "name": "Broadcast Media"
+        },
+        {
+          "id": 131,
+          "name": "Computer Games"
+        },
+        {
+          "id": 132,
+          "name": "Entertainment"
+        },
+        {
+          "id": 133,
+          "name": "Media Production"
+        },
+        {
+          "id": 134,
+          "name": "Mobile Games"
+        },
+        {
+          "id": 135,
+          "name": "Motion Pictures & Film"
+        },
+        {
+          "id": 136,
+          "name": "Music"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Wellness & Fitness",
+      "subcategories": [
+        {
+          "id": 137,
+          "name": "Alternative Medicine"
+        },
+        {
+          "id": 138,
+          "name": "Health, Wellness & Fitness"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Public Safety",
+      "subcategories": [
+        {
+          "id": 139,
+          "name": "Law Enforcement"
+        },
+        {
+          "id": 140,
+          "name": "Military"
+        },
+        {
+          "id": 141,
+          "name": "Public Safety"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Public Administration",
+      "subcategories": [
+        {
+          "id": 142,
+          "name": "Government Administration"
+        },
+        {
+          "id": 143,
+          "name": "Government Relations"
+        },
+        {
+          "id": 144,
+          "name": "International Affairs"
+        },
+        {
+          "id": 145,
+          "name": "Judiciary"
+        },
+        {
+          "id": 146,
+          "name": "Legislative Office"
+        },
+        {
+          "id": 147,
+          "name": "Political Organization"
+        },
+        {
+          "id": 148,
+          "name": "Public Policy"
+        }
+      ]
+    }
+  ]
 }

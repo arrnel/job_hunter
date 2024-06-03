@@ -1,7 +1,6 @@
 package com.jobhunter.specification.fieldSpecification.impl;
 
-import com.jobhunter.helper.NumbersHelper;
-import com.jobhunter.specification.fieldSpecification.UserIdParamSpecification;
+import com.jobhunter.specification.fieldSpecification.UserParamSpecification;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
@@ -9,8 +8,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.jobhunter.helper.NumbersHelper.isNotNullOrZero;
+
 @Component
-public class UserIdParamSpecificationImpl implements UserIdParamSpecification {
+public class UserParamSpecificationImpl implements UserParamSpecification {
 
     @Override
     public List<Predicate> specify(
@@ -19,8 +20,8 @@ public class UserIdParamSpecificationImpl implements UserIdParamSpecification {
             , CriteriaBuilder criteriaBuilder
             , List<Predicate> predicates
     ) {
-        if (NumbersHelper.isNotNullOrZero(user))
-            predicates.add(criteriaBuilder.equal(root.get("user"), user));
+        if (isNotNullOrZero(user))
+            predicates.add(criteriaBuilder.equal(root.get("userId"), user));
         return predicates;
     }
 

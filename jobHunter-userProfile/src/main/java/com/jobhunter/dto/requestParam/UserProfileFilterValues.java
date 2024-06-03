@@ -1,10 +1,8 @@
 package com.jobhunter.dto.requestParam;
 
-import com.jobhunter.model.UserProfileStatusEntity;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 @Data
@@ -13,23 +11,22 @@ import java.util.Set;
 @AllArgsConstructor
 @Accessors(chain = true)
 @ToString
-public class UserProfileFilter {
+public class UserProfileFilterValues {
 
     private String partialTitle;
     private String partialDescription;
     private String partialContent;
-    private Long userProfile;
     private String statusName;
     private Integer statusId;
-    private UserProfileStatusEntity status;
     private Long user;
     private String email;
-    private Integer age;
+    private Integer ageMin;
+    private Integer ageMax;
     private Integer city;
     private Integer region;
     private Integer country;
     private Set<String> partExperienceTitle; //???
-    private LocalDate dateFrom;
-    private LocalDate dateTo;
+    private String from;
+    private String to;
 
 }

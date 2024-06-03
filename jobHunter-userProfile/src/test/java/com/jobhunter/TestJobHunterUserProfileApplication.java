@@ -1,6 +1,5 @@
-package com.jobhunter.jobhuntercv;
+package com.jobhunter;
 
-import com.jobhunter.JobHunterCvApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -9,7 +8,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-public class TestJobHunterCvApplication {
+public class TestJobHunterUserProfileApplication {
 
     @Bean
     @ServiceConnection
@@ -18,7 +17,7 @@ public class TestJobHunterCvApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.from(JobHunterCvApplication::main).with(TestJobHunterCvApplication.class).run(args);
+        SpringApplication.from(JobHunterUserProfileApplication::main).with(TestJobHunterUserProfileApplication.class).run(args);
     }
 
 }

@@ -1,31 +1,71 @@
 package com.jobhunter.service.impl;
 
-import com.jobhunter.dto.requestParam.ExperienceFilter;
-import com.jobhunter.model.ExperienceEntity;
-import com.jobhunter.model.UserProfile;
-import com.jobhunter.repository.ExperienceRepository;
-import com.jobhunter.service.ExperienceService;
-import com.jobhunter.specification.modelSpecification.ExperienceSpecification;
+import com.jobhunter.dto.StatusDTO;
+import com.jobhunter.exception.ExperienceNotFoundException;
+import com.jobhunter.exception.UserProfileNotFoundException;
+import com.jobhunter.mapper.EducationEntityUpdater;
+import com.jobhunter.model.EducationEntity;
+import com.jobhunter.repository.EducationRepository;
+import com.jobhunter.service.EducationService;
+import com.jobhunter.service.UserProfileService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
-public class ExperienceServiceImpl implements ExperienceService {
+public class EducationServiceImpl implements EducationService {
 
-    private final ExperienceRepository experienceRepository;
-    private final ExperienceSpecification experienceSpecification;
+    private final UserProfileService userProfileService;
+    private final EducationRepository educationRepository;
+    private final EducationEntityUpdater educationEntityUpdater;
 
-    public Optional<ExperienceEntity> getExperienceById(@NonNull Long id){
-        return experienceRepository.findById(id);
+    @Override
+    public EducationEntity create(EducationEntity course) {
+        return educationRepository.save(course);
     }
 
-    public Set<ExperienceEntity> getExperiences(ExperienceFilter filter){
-        return experienceRepository.findAll(experienceSpecification.findByCriteria(filter));
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<EducationEntity> getById(Long id) {
+        return educationRepository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Set<EducationEntity> getByUserProfile(Long id) {
+        return educationRepository.findByUserProfile(
+                userProfileService.getById(id)
+                        .orElseThrow(() -> new UserProfileNotFoundException("User profile with id = [" + id + "] not found"))
+        );
+    }
+
+    @Override
+    public EducationEntity update(@NonNull Long id, EducationEntity newCourse) {
+
+        return educationRepository.save(
+                educationEntityUpdater.update(
+                        educationRepository.findById(id)
+                                .orElseThrow(() -> new ExperienceNotFoundException(
+                                        "Experience with id = [" + id + "] not found"
+                                        , HttpStatus.BAD_REQUEST
+                                ))
+                        , newCourse));
+    }
+
+    @Override
+    public StatusDTO delete(Long id) {
+        educationRepository.delete(
+                educationRepository.findById(id).orElseThrow(() -> new ExperienceNotFoundException(
+                        "Experience with id = [" + id + "] not found"
+                        , HttpStatus.BAD_REQUEST
+                )));
+        return new StatusDTO(true);
     }
 
 }

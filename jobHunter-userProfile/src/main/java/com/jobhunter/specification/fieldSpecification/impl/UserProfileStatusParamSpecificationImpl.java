@@ -1,6 +1,7 @@
 package com.jobhunter.specification.fieldSpecification.impl;
 
-import com.jobhunter.specification.fieldSpecification.UserProfileParamSpecification;
+import com.jobhunter.model.UserProfileStatusEntity;
+import com.jobhunter.specification.fieldSpecification.UserProfileStatusParamSpecification;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
@@ -8,20 +9,18 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.jobhunter.helper.NumbersHelper.isNotNullOrZero;
-
 @Component
-public class UserProfileParamSpecificationImpl implements UserProfileParamSpecification {
+public class UserProfileStatusParamSpecificationImpl implements UserProfileStatusParamSpecification {
 
     @Override
     public List<Predicate> specify(
-            Long userProfile
+            UserProfileStatusEntity status
             , Root<?> root
             , CriteriaBuilder criteriaBuilder
             , List<Predicate> predicates
     ) {
-        if (isNotNullOrZero(userProfile))
-            predicates.add(criteriaBuilder.equal(root.get("user_profile"), userProfile));
+        if (status != null)
+            predicates.add(criteriaBuilder.equal(root.get("status"), status));
         return predicates;
     }
 

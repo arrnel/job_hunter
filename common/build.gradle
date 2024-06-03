@@ -10,9 +10,14 @@ repositories {
     mavenCentral()
 }
 
+ext{
+    springWebVersion = '6.1.5'
+}
+
 dependencies {
     implementation(
             "org.aeonbits.owner:owner-java8:${project.ext.ownerVersion}"
+            , "org.springframework:spring-web:${springWebVersion}"
     )
 }
 

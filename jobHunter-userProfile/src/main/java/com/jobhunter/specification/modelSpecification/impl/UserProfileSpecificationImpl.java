@@ -1,11 +1,9 @@
 package com.jobhunter.specification.modelSpecification.impl;
 
-import com.jobhunter.dto.requestParam.ExperienceFilter;
-import com.jobhunter.model.ExperienceEntity;
-import com.jobhunter.specification.fieldSpecification.IdsParamSpecification;
-import com.jobhunter.specification.fieldSpecification.UserIdParamSpecification;
-import com.jobhunter.specification.fieldSpecification.UserProfileParamSpecification;
-import com.jobhunter.specification.modelSpecification.ExperienceSpecification;
+import com.jobhunter.dto.requestParam.UserProfileFilter;
+import com.jobhunter.model.UserProfile;
+import com.jobhunter.specification.fieldSpecification.*;
+import com.jobhunter.specification.modelSpecification.UserProfileSpecification;
 import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
@@ -16,33 +14,68 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class ExperienceSpecificationImpl implements ExperienceSpecification {
+public class UserProfileSpecificationImpl implements UserProfileSpecification {
 
-    private final IdsParamSpecification idsParamSpecification;
+    private final NameParamSpecification nameParamSpecification;
     private final UserProfileParamSpecification userProfileParamSpecification;
-    private final UserIdParamSpecification userIdParamSpecification;
+    private final UserProfileStatusParamSpecification userProfileStatusParamSpecification;
+    private final UserParamSpecification userParamSpecification;
+    private final EmailParamSpecification emailParamSpecification;
+    private final AgeParamSpecification ageParamSpecification;
+    private final LocationParamSpecification locationParamSpecification;
+    private final DatesRangeParamSpecification datesRangeParamSpecification;
 
     @Override
-    public Specification<ExperienceEntity> findByCriteria(ExperienceFilter requestParams) {
+    public Specification<UserProfile> findByCriteria(UserProfileFilter source) {
 
         return (root, query, criteriaBuilder) -> {
 
             List<Predicate> predicates = new ArrayList<>();
-            predicates = idsParamSpecification.specify(
-                    requestParams.getIds()
+            predicates = nameParamSpecification.specify(
+                    source.getPartialTitle()
+                    , source.getPartialDescription()
+                    , source.getPartialContent()
                     , root
                     , criteriaBuilder
                     , predicates
             );
 
-            predicates = userProfileParamSpecification.specify(
-                    requestParams.getUserProfile()
+            predicates = userParamSpecification.specify(
+                    source.getUser()
                     , root
                     , criteriaBuilder
                     , predicates);
 
-            predicates = userIdParamSpecification.specify(
-                    requestParams.getUser()
+            predicates = emailParamSpecification.specify(
+                    source.getEmail()
+                    , root
+                    , criteriaBuilder
+                    , predicates);
+
+            predicates = ageParamSpecification.specify(
+                    source.getAgeMin()
+                    , source.getAgeMax()
+                    , root
+                    , criteriaBuilder
+                    , predicates);
+
+            predicates = locationParamSpecification.specify(
+                    source.getCity()
+                    , source.getRegion()
+                    , source.getCountry()
+                    , root
+                    , criteriaBuilder
+                    , predicates);
+
+            predicates = datesRangeParamSpecification.specify(
+                    source.getFrom()
+                    , source.getTo()
+                    , root
+                    , criteriaBuilder
+                    , predicates);
+
+            predicates = userProfileStatusParamSpecification.specify(
+                    source.getStatus()
                     , root
                     , criteriaBuilder
                     , predicates);

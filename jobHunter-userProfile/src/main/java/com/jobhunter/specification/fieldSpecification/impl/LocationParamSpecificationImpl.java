@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.jobhunter.helper.NumbersHelper.isNotNullOrZero;
+
 @Component
 public class LocationParamSpecificationImpl implements LocationParamSpecification {
 
@@ -21,11 +23,11 @@ public class LocationParamSpecificationImpl implements LocationParamSpecificatio
             , List<Predicate> predicates
     ) {
 
-        if (cityId != null && cityId > 0)
+        if (isNotNullOrZero(cityId))
             predicates.add(criteriaBuilder.equal(root.get("city_id"), cityId));
-        if (regionId != null && regionId > 0)
+        if (isNotNullOrZero(regionId))
             predicates.add(criteriaBuilder.equal(root.get("region_id"), regionId));
-        if (countryId != null && countryId > 0)
+        if (isNotNullOrZero(countryId))
             predicates.add(criteriaBuilder.equal(root.get("country_id"), countryId));
 
         return predicates;

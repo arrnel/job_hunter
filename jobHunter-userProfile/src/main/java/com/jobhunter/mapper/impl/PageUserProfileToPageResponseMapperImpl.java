@@ -1,7 +1,7 @@
 package com.jobhunter.mapper.impl;
 
 import com.jobhunter.dto.PageResponse;
-import com.jobhunter.mapper.PageUserProfileToPageUserProfileResponseMapper;
+import com.jobhunter.mapper.PageUserProfileToPageResponseMapper;
 import com.jobhunter.mapper.UserProfileToUserProfileResponseMapper;
 import com.jobhunter.model.UserProfile;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class PageUserProfileToPageUserProfileResponseMapperImpl implements PageUserProfileToPageUserProfileResponseMapper {
+public class PageUserProfileToPageResponseMapperImpl implements PageUserProfileToPageResponseMapper {
 
     private final UserProfileToUserProfileResponseMapper userProfileResponseMapper;
 

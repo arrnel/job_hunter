@@ -1,10 +1,10 @@
 package com.jobhunter.mapper;
 
-import com.jobhunter.model.CourseEntity;
+import com.jobhunter.model.EducationEntity;
 
-public interface CourseEntityUpdater extends Updater<CourseEntity>{
+public interface EducationEntityUpdater extends Updater<EducationEntity>{
 
     @Override
-    CourseEntity update(CourseEntity oldCourse, CourseEntity newCourse);
+    EducationEntity update(EducationEntity oldSource, EducationEntity newSource);
 
 }

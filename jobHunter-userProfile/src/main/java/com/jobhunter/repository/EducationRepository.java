@@ -1,17 +1,20 @@
 package com.jobhunter.repository;
 
-import com.jobhunter.model.ExperienceEntity;
-import lombok.NonNull;
-import org.springframework.data.jpa.domain.Specification;
+import com.jobhunter.model.EducationEntity;
+import com.jobhunter.model.UserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.Set;
 
-public interface ExperienceRepository extends JpaRepository<ExperienceEntity, Long>, JpaSpecificationExecutor<ExperienceEntity> {
+public interface EducationRepository extends JpaRepository<EducationEntity, Long> {
 
-    @NonNull
-    Set<ExperienceEntity> findAll(Specification<ExperienceEntity> specification);
-
+    Set<EducationEntity> findByUserProfile(UserProfile userProfile);
 
 }
+
+// public interface EducationRepository extends JpaRepository<EducationRepository, Long>, JpaSpecificationExecutor<ExperienceEntity> {
+// @NonNull
+//    Set<ExperienceEntity> findAll(Specification<ExperienceEntity> specification);
+// }
+
+

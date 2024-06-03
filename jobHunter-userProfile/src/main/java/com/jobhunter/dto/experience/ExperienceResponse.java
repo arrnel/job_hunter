@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.experience;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,7 +20,7 @@ public class ExperienceResponse {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("user_profile")
+    @JsonProperty("user_profile_id")
     private Long userProfileId;
 
     @JsonProperty("user")
@@ -32,7 +32,7 @@ public class ExperienceResponse {
     @JsonProperty("company_name")
     private String companyName;
 
-    @JsonProperty("title")
+    @JsonProperty("position")
     private String position;
 
     @JsonProperty("description")

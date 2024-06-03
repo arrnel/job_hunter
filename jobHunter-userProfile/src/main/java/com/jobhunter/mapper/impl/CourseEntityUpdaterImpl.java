@@ -1,73 +1,47 @@
 package com.jobhunter.mapper.impl;
 
-import com.jobhunter.helper.CollectionHelper;
+import com.jobhunter.helper.NumbersHelper;
 import com.jobhunter.helper.StringHelper;
-import com.jobhunter.mapper.UserProfileUpdater;
-import com.jobhunter.model.UserProfile;
+import com.jobhunter.mapper.CourseEntityUpdater;
+import com.jobhunter.model.CourseEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class UserProfileUpdaterImpl implements UserProfileUpdater {
+public class CourseEntityUpdaterImpl implements CourseEntityUpdater {
 
     @Override
-    public UserProfile update(UserProfile oldUserProfile, UserProfile newUserProfile) {
+    public CourseEntity update(CourseEntity oldSource, CourseEntity newSource) {
 
-        return oldUserProfile.setEmail(
-                        StringHelper.isNullOrBlank(newUserProfile.getEmail())
-                                ? oldUserProfile.getEmail()
-                                : newUserProfile.getEmail()
+        return oldSource.setCompanyId(
+                        NumbersHelper.isNullOrZero(newSource.getCompanyId())
+                                ? oldSource.getCompanyId()
+                                : newSource.getCompanyId()
                 )
-                .setFirstName(
-                        StringHelper.isNullOrBlank(newUserProfile.getFirstName())
-                                ? oldUserProfile.getFirstName()
-                                : newUserProfile.getFirstName()
-                )
-                .setLastName(
-                        StringHelper.isNullOrBlank(newUserProfile.getLastName())
-                                ? oldUserProfile.getLastName()
-                                : newUserProfile.getLastName()
+                .setCompanyName(
+                        StringHelper.isNullOrBlank(newSource.getCompanyName())
+                                ? oldSource.getCompanyName()
+                                : newSource.getCompanyName()
                 )
                 .setPosition(
-                        StringHelper.isNullOrBlank(newUserProfile.getLastName())
-                                ? oldUserProfile.getLastName()
-                                : newUserProfile.getLastName()
+                        StringHelper.isNullOrBlank(newSource.getPosition())
+                                ? oldSource.getPosition()
+                                : newSource.getPosition()
                 )
                 .setDescription(
-                        StringHelper.isNullOrBlank(newUserProfile.getLastName())
-                                ? oldUserProfile.getLastName()
-                                : newUserProfile.getLastName()
+                        StringHelper.isNullOrBlank(newSource.getDescription())
+                                ? oldSource.getDescription()
+                                : newSource.getDescription()
                 )
-                .setBirthDate(
-                        newUserProfile.getBirthDate() == null
-                                ? oldUserProfile.getBirthDate()
-                                : newUserProfile.getBirthDate()
+                .setFrom(
+                        newSource.getFrom() == null
+                                ? oldSource.getFrom()
+                                : newSource.getFrom()
                 )
-                .setIsBirthDateVisible(
-                        newUserProfile.getIsBirthDateVisible() == null
-                                ? oldUserProfile.getIsBirthDateVisible()
-                                : newUserProfile.getIsBirthDateVisible()
-                )
-                .setCityId(
-                        newUserProfile.getCityId() == null || newUserProfile.getCityId() <= 0
-                                ? oldUserProfile.getCityId()
-                                : newUserProfile.getCityId()
-                )
-                .setAvatarId(
-                        newUserProfile.getAvatarId() == null || newUserProfile.getAvatarId() <= 0
-                                ? oldUserProfile.getAvatarId()
-                                : newUserProfile.getAvatarId()
-                )
-                .setStatus(
-                        newUserProfile.getStatus() == null
-                                ? oldUserProfile.getStatus()
-                                : newUserProfile.getStatus()
-                )
-                .setExperiences(
-                        CollectionHelper.isNullOrEmpty(newUserProfile.getExperiences())
-                                ? oldUserProfile.getExperiences()
-                                : newUserProfile.getExperiences()
-                )
-                .setDateCreated(oldUserProfile.getDateCreated());
+                .setTo(
+                        newSource.getTo() == null
+                                ? oldSource.getTo()
+                                : newSource.getTo()
+                );
 
     }
 }

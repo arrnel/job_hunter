@@ -1,6 +1,6 @@
 package com.jobhunter.specification.fieldSpecification.impl;
 
-import com.jobhunter.specification.fieldSpecification.UserProfileParamSpecification;
+import com.jobhunter.specification.fieldSpecification.EmailParamSpecification;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
@@ -8,18 +8,20 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.jobhunter.helper.StringHelper.isNotNullOrBlank;
+
 @Component
-public class UserProfileParamSpecificationImpl implements UserProfileParamSpecification {
+public class EmailParamSpecificationImpl implements EmailParamSpecification {
 
     @Override
     public List<Predicate> specify(
-            Long userProfile
+            String email
             , Root<?> root
             , CriteriaBuilder criteriaBuilder
             , List<Predicate> predicates
     ) {
-        if (userProfile != null)
-            predicates.add(criteriaBuilder.equal(root.get("user_profile"), userProfile));
+        if (isNotNullOrBlank(email))
+            predicates.add(criteriaBuilder.equal(root.get("email"), email));
         return predicates;
     }
 

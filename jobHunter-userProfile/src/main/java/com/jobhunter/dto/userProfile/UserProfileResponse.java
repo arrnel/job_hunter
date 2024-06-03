@@ -1,7 +1,10 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.userProfile;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jobhunter.dto.experience.ExperienceResponseShort;
+import com.jobhunter.dto.course.CourseResponseShort;
+import com.jobhunter.dto.education.EducationResponseShort;
 import com.jobhunter.enums.UserProfileStatus;
 import lombok.*;
 import lombok.experimental.Accessors;

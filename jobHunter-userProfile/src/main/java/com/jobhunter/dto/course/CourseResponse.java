@@ -1,16 +1,13 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.course;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jobhunter.model.UserProfile;
-import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.Set;
 
 // INFO: Use for create, get and update course
 @Data
@@ -24,7 +21,7 @@ public class CourseResponse {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("user_profile")
+    @JsonProperty("user_profile_id")
     private UserProfile userProfile;
 
     @JsonProperty("user")
@@ -42,12 +39,12 @@ public class CourseResponse {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("from")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonProperty("date_from")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private LocalDate from;
 
-    @JsonProperty("to")
-    @JsonFormat(pattern = "dd.MM.yyyy")
+    @JsonProperty("date_to")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private LocalDate to;
 
     @JsonProperty("date_created")

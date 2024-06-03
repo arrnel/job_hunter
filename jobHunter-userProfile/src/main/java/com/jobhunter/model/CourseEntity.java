@@ -6,26 +6,32 @@ import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(schema = "profiles", name = "experience")
+@Table(schema = "profiles", name = "course")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
 @ToString
-public class ExperienceEntity {
+@EqualsAndHashCode
+public class CourseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @Column(name = "user_profile", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_profile_id")
     private UserProfile userProfile;
 
-    @Column(name = "company_name")
+    @Column(name = "user_id", nullable = false)
+    private Long user;
+
+    @Column(name = "company_id", nullable = false)
     private Long companyId;
 
     @Column(name = "company_name", nullable = false)
@@ -34,13 +40,13 @@ public class ExperienceEntity {
     @Column(name = "position", nullable = false)
     private String position;
 
-    @Column(name = "position", nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "from", nullable = false)
+    @Column(name = "date_from", nullable = false)
     private LocalDate from;
 
-    @Column(name = "to", nullable = false)
+    @Column(name = "date_to", nullable = false)
     private LocalDate to;
 
     @Column(name = "date_created", nullable = false)

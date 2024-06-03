@@ -1,13 +1,11 @@
 package com.jobhunter.mapper;
 
-import com.jobhunter.dto.ExperienceResponse;
-import com.jobhunter.dto.requestParam.UserProfileFilter;
-import com.jobhunter.dto.requestParam.UserProfileFilterValues;
+import com.jobhunter.dto.experience.ExperienceResponseShort;
 import com.jobhunter.model.ExperienceEntity;
 
-public interface ExperienceEntityToExperienceResponseMapper extends Mapper<ExperienceResponse, ExperienceEntity>{
+public interface ExperienceEntityToExperienceResponseShortMapper extends Mapper<ExperienceResponseShort, ExperienceEntity>{
 
     @Override
-    ExperienceResponse map(ExperienceEntity source);
+    ExperienceResponseShort map(ExperienceEntity source);
 
 }

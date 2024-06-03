@@ -1,12 +1,12 @@
 package com.jobhunter.specification.modelSpecification;
 
-import com.jobhunter.dto.requestParam.ExperienceFilter;
-import com.jobhunter.model.ExperienceEntity;
+import com.jobhunter.dto.requestParam.UserProfileFilter;
+import com.jobhunter.model.UserProfile;
 import com.jobhunter.specification.EntitySpecification;
 import org.springframework.data.jpa.domain.Specification;
 
-public interface ExperienceSpecification extends EntitySpecification<Specification<ExperienceEntity>, ExperienceFilter> {
+public interface UserProfileSpecification extends EntitySpecification<Specification<UserProfile>, UserProfileFilter> {
 
-    Specification<ExperienceEntity> findByCriteria(ExperienceFilter requestParams);
+    Specification<UserProfile> findByCriteria(UserProfileFilter requestParams);
 
 }

@@ -1,16 +1,25 @@
 package com.jobhunter.service;
 
+import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.requestParam.ExperienceFilter;
+import com.jobhunter.model.CourseEntity;
+import com.jobhunter.model.EducationEntity;
 import com.jobhunter.model.ExperienceEntity;
 import lombok.NonNull;
 
 import java.util.Optional;
 import java.util.Set;
 
-public interface ExperienceService {
+public interface EducationService {
 
-    Optional<ExperienceEntity> getExperienceById(@NonNull Long id);
+    EducationEntity create(EducationEntity course);
 
-    Set<ExperienceEntity> getExperiences(ExperienceFilter filter);
+    Optional<EducationEntity> getById(Long id);
+
+    Set<EducationEntity> getByUserProfile(Long id);
+
+    EducationEntity update(@NonNull Long id, EducationEntity newCourse);
+
+    StatusDTO delete(Long id);
 
 }

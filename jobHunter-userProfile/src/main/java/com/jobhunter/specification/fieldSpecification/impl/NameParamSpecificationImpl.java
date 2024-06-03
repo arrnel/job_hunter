@@ -1,6 +1,5 @@
 package com.jobhunter.specification.fieldSpecification.impl;
 
-import com.jobhunter.helper.StringHelper;
 import com.jobhunter.specification.fieldSpecification.NameParamSpecification;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Predicate;
@@ -25,9 +24,9 @@ public class NameParamSpecificationImpl implements NameParamSpecification {
     ) {
 
         if (isNotNullOrBlank(partialTitle))
-            predicates.add(criteriaBuilder.like(root.get("name"), partialTitle));
+            predicates.add(criteriaBuilder.like(root.get("title"), partialTitle));
         if (isNotNullOrBlank(partialDescription))
-            predicates.add(criteriaBuilder.like(root.get("name"), partialDescription));
+            predicates.add(criteriaBuilder.like(root.get("description"), partialDescription));
         if (isNotNullOrBlank(partialContent))
             predicates.add(criteriaBuilder
                     .or(

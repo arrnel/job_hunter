@@ -19,7 +19,6 @@ create table if not exists jobs.job
     date_created                  timestamp(3)   not null,
     date_updated                  timestamp(3),
     primary key (id)
-
 );
 
 create table if not exists jobs.job_type
@@ -39,10 +38,7 @@ create table if not exists jobs.price_type
 create table if not exists jobs.job_job_type
 (
     job_id      bigint not null,
-    job_type_id bigint not null,
-    primary key (job_id, job_type_id),
-    foreign key (job_id) references jobs.job (id),
-    foreign key (job_type_id) references jobs.job_type (id)
+    job_type_id int    not null
 );
 
 create table if not exists categories.industry_category
@@ -63,14 +59,13 @@ create table if not exists categories.industry_subcategory
 create table if not exists jobs.job_industry_subcategory
 (
     job_id         bigint not null,
-    subcategory_id int    not null,
-    primary key (job_id, subcategory_id)
+    subcategory_id int    not null
 );
 
 create table if not exists categories.specialization_category
 (
     id   serial unique not null,
-    name varchar(255)  not null unique,
+    name varchar(255)   not null unique,
     primary key (id)
 );
 
@@ -85,8 +80,7 @@ create table if not exists categories.specialization_subcategory
 create table if not exists jobs.job_specialization_subcategory
 (
     job_id         bigint not null,
-    subcategory_id int    not null,
-    primary key (job_id, subcategory_id)
+    subcategory_id int    not null
 );
 
 alter table jobs.job
@@ -125,18 +119,11 @@ alter table jobs.job_specialization_subcategory
     add constraint job_specialization_subcategory__specialization_subcategory_fk
         foreign key (subcategory_id) references categories.specialization_subcategory (id);
 
-delete
-from jobs.job_type;
-insert into jobs.job_type(name)
-values ('OFFICE');
-insert into jobs.job_type(name)
-values ('REMOTE');
-insert into jobs.job_type(name)
-values ('HYBRID');
+delete from jobs.job_type;
+insert into jobs.job_type(name) values ('OFFICE');
+insert into jobs.job_type(name) values ('REMOTE');
+insert into jobs.job_type(name) values ('HYBRID');
 
-delete
-from jobs.price_type;
-insert into jobs.price_type(name)
-values ('BEFORE_TAXES');
-insert into jobs.price_type(name)
-values ('AFTER_TAX');
+delete from jobs.price_type;
+insert into jobs.price_type(name) values ('BEFORE_TAXES');
+insert into jobs.price_type(name) values ('AFTER_TAX');

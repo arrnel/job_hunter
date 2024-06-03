@@ -1,2 +1,5 @@
-package com.jobhunter.enums;public class UserProfileStatus {
+package com.jobhunter.enums;
+
+public enum UserProfileStatus {
+    PUBLIC, PRIVATE
 }

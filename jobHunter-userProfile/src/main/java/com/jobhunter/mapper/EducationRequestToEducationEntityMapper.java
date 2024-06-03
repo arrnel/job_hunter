@@ -1,11 +1,11 @@
 package com.jobhunter.mapper;
 
-import com.jobhunter.dto.EducationResponse;
+import com.jobhunter.dto.education.EducationRequest;
 import com.jobhunter.model.EducationEntity;
 
-public interface EducationEntityToEducationResponseMapper extends Mapper<EducationResponse, EducationEntity>{
+public interface EducationRequestToEducationEntityMapper extends Mapper<EducationEntity, EducationRequest>{
 
     @Override
-    EducationResponse map(EducationEntity source);
+    EducationEntity map(EducationRequest source);
 
 }

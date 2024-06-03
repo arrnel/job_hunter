@@ -1,10 +1,10 @@
-package com.jobhunter.jobhuntercv;
+package com.jobhunter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JobHunterCvApplicationTests {
+class JobHunterUserProfileApplicationTests {
 
     @Test
     void contextLoads() {

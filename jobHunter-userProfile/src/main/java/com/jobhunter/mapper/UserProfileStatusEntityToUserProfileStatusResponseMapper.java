@@ -1,11 +1,11 @@
 package com.jobhunter.mapper;
 
-import com.jobhunter.dto.UserProfileResponse;
-import com.jobhunter.model.UserProfile;
+import com.jobhunter.dto.userProfile.UserProfileStatusResponse;
+import com.jobhunter.model.UserProfileStatusEntity;
 
-public interface UserProfileToUserProfileResponseMapper extends Mapper<UserProfileResponse, UserProfile> {
+public interface UserProfileStatusEntityToUserProfileStatusResponseMapper extends Mapper<UserProfileStatusResponse, UserProfileStatusEntity> {
 
     @Override
-    UserProfileResponse map(UserProfile userProfile);
+    UserProfileStatusResponse map(UserProfileStatusEntity userProfile);
 
 }

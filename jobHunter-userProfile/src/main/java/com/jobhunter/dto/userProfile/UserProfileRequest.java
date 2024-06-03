@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.userProfile;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,8 +6,6 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 @Data
 @Builder

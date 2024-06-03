@@ -3,26 +3,26 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class EducationNotFoundException extends GlobalException {
+public class CourseNotFoundException extends GlobalException {
 
-    public EducationNotFoundException(ECode code) {
+    public CourseNotFoundException(ECode code) {
         super(code);
     }
 
-    public EducationNotFoundException(ECode code, String message) {
+    public CourseNotFoundException(ECode code, String message) {
         super(code, message);
     }
 
-    public EducationNotFoundException(String message){
-        super(ECode.USER_PROFILE_NOT_FOUND, message);
+    public CourseNotFoundException(String message){
+        super(ECode.COURSE_NOT_FOUND, message);
     }
 
-    public EducationNotFoundException(ECode code, String message, HttpStatus status) {
+    public CourseNotFoundException(ECode code, String message, HttpStatus status) {
         super(code, message, status.value());
     }
 
-    public EducationNotFoundException(String message, HttpStatus status) {
-        super(ECode.USER_PROFILE_NOT_FOUND, message, status.value());
+    public CourseNotFoundException(String message, HttpStatus status) {
+        super(ECode.COURSE_NOT_FOUND, message, status.value());
     }
 
 }

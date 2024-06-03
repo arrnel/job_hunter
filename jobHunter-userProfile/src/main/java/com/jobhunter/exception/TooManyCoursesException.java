@@ -3,26 +3,30 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class CourseNotFoundException extends GlobalException {
+public class TooManyCoursesException extends GlobalException {
 
-    public CourseNotFoundException(ECode code) {
+    public TooManyCoursesException() {
+        super(ECode.EXCEEDED_THE_COURSE_LIMIT);
+    }
+
+    public TooManyCoursesException(ECode code) {
         super(code);
     }
 
-    public CourseNotFoundException(ECode code, String message) {
+    public TooManyCoursesException(ECode code, String message) {
         super(code, message);
     }
 
-    public CourseNotFoundException(String message){
-        super(ECode.COURSE_NOT_FOUND, message);
+    public TooManyCoursesException(String message){
+        super(ECode.EXCEEDED_THE_COURSE_LIMIT, message);
     }
 
-    public CourseNotFoundException(ECode code, String message, HttpStatus status) {
+    public TooManyCoursesException(ECode code, String message, HttpStatus status) {
         super(code, message, status.value());
     }
 
-    public CourseNotFoundException(String message, HttpStatus status) {
-        super(ECode.COURSE_NOT_FOUND, message, status.value());
+    public TooManyCoursesException(String message, HttpStatus status) {
+        super(ECode.EXCEEDED_THE_COURSE_LIMIT, message, status.value());
     }
 
 }

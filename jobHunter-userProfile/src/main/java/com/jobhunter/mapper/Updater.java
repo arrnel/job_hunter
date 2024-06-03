@@ -1,5 +1,5 @@
 package com.jobhunter.mapper;
 
-public interface Mapper<D, S> {
-    D map(S source);
+public interface Updater<S> {
+    S update(S oldSource, S newSource);
 }

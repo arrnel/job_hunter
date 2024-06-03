@@ -8,24 +8,25 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(schema = "profiles", name = "course")
+@Table(schema = "profiles", name = "education")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
 @ToString
+@EqualsAndHashCode
 public class EducationEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @Column(name = "user_profile", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_profile_id")
     private UserProfile userProfile;
 
-    @Column(name = "user", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Long user;
 
     @Column(name = "company_id", nullable = false)
@@ -37,13 +38,13 @@ public class EducationEntity {
     @Column(name = "position", nullable = false)
     private String position;
 
-    @Column(name = "position", nullable = false)
+    @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "from", nullable = false)
+    @Column(name = "date_from", nullable = false)
     private LocalDate from;
 
-    @Column(name = "to", nullable = false)
+    @Column(name = "date_to", nullable = false)
     private LocalDate to;
 
     @Column(name = "date_created", nullable = false)

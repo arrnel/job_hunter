@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.education;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -20,7 +20,7 @@ public class EducationResponseShort {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("user_profile")
+    @JsonProperty("user_profile_id")
     private UserProfile userProfile;
 
     @JsonProperty("user")
@@ -38,11 +38,11 @@ public class EducationResponseShort {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("from")
+    @JsonProperty("date_from")
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate from;
 
-    @JsonProperty("to")
+    @JsonProperty("date_to")
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate to;
 

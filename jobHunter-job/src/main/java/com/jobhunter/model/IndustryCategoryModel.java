@@ -20,4 +20,5 @@ public class IndustryCategoryModel {
 
     @Column(nullable = false, unique = true)
     private String name;
+
 }

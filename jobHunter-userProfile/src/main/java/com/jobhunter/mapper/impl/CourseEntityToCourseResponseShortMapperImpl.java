@@ -1,16 +1,18 @@
 package com.jobhunter.mapper.impl;
 
-import com.jobhunter.dto.ExperienceResponseShort;
-import com.jobhunter.mapper.ExperienceEntityToExperienceResponseShortMapper;
-import com.jobhunter.model.ExperienceEntity;
+import com.jobhunter.dto.course.CourseResponseShort;
+import com.jobhunter.mapper.CourseEntityToCourseResponseShortMapper;
+import com.jobhunter.model.CourseEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class ExperienceEntityToExperienceResponseShortMapperImpl implements ExperienceEntityToExperienceResponseShortMapper {
+@Transactional
+public class CourseEntityToCourseResponseShortMapperImpl implements CourseEntityToCourseResponseShortMapper {
 
     @Override
-    public ExperienceResponseShort map(ExperienceEntity source) {
-        return ExperienceResponseShort.builder()
+    public CourseResponseShort map(CourseEntity source) {
+        return CourseResponseShort.builder()
                 .id(source.getId())
                 .companyId(source.getCompanyId())
                 .companyName(source.getCompanyName())

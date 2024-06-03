@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.course;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @ToString
 public class CourseRequest {
 
-    @JsonProperty("user_profile")
+    @JsonProperty("user_profile_id")
     private Long userProfileId;
 
     @JsonProperty("company_id")
@@ -31,11 +31,11 @@ public class CourseRequest {
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("from")
+    @JsonProperty("date_from")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private LocalDate from;
 
-    @JsonProperty("to")
+    @JsonProperty("date_to")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy")
     private LocalDate to;
 

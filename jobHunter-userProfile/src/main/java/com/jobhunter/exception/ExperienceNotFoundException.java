@@ -3,26 +3,26 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class UserProfileNotFoundException extends GlobalException {
+public class ExperienceNotFoundException extends GlobalException {
 
-    public UserProfileNotFoundException(ECode code) {
+    public ExperienceNotFoundException(ECode code) {
         super(code);
     }
 
-    public UserProfileNotFoundException(ECode code, String message) {
+    public ExperienceNotFoundException(ECode code, String message) {
         super(code, message);
     }
 
-    public UserProfileNotFoundException(String message){
-        super(ECode.USER_PROFILE_NOT_FOUND, message);
+    public ExperienceNotFoundException(String message){
+        super(ECode.EXPERIENCE_NOT_FOUND, message);
     }
 
-    public UserProfileNotFoundException(ECode code, String message, HttpStatus status) {
+    public ExperienceNotFoundException(ECode code, String message, HttpStatus status) {
         super(code, message, status.value());
     }
 
-    public UserProfileNotFoundException(String message, HttpStatus status) {
-        super(ECode.USER_PROFILE_NOT_FOUND, message, status.value());
+    public ExperienceNotFoundException(String message, HttpStatus status) {
+        super(ECode.EXPERIENCE_NOT_FOUND, message, status.value());
     }
 
 }

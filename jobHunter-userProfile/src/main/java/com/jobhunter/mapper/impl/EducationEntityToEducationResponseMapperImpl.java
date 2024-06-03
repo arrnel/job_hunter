@@ -1,19 +1,18 @@
 package com.jobhunter.mapper.impl;
 
-import com.jobhunter.dto.CourseResponse;
-import com.jobhunter.dto.ExperienceResponse;
-import com.jobhunter.mapper.CourseEntityToCourseResponseMapper;
-import com.jobhunter.mapper.ExperienceEntityToExperienceResponseMapper;
-import com.jobhunter.model.CourseEntity;
-import com.jobhunter.model.ExperienceEntity;
+import com.jobhunter.dto.education.EducationResponse;
+import com.jobhunter.mapper.EducationEntityToEducationResponseMapper;
+import com.jobhunter.model.EducationEntity;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class CourseEntityToCourseResponseMapperImpl implements CourseEntityToCourseResponseMapper {
+@Transactional
+public class EducationEntityToEducationResponseMapperImpl implements EducationEntityToEducationResponseMapper {
 
     @Override
-    public CourseResponse map(CourseEntity source) {
-        return CourseResponse.builder()
+    public EducationResponse map(EducationEntity source) {
+        return EducationResponse.builder()
                 .id(source.getId())
                 .userProfile(source.getUserProfile())
                 .user(source.getUser())

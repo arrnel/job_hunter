@@ -3,29 +3,29 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class TooManyCoursesException extends GlobalException {
+public class TooManyUserProfilesException extends GlobalException {
 
-    public TooManyCoursesException() {
+    public TooManyUserProfilesException() {
         super(ECode.EXCEEDED_THE_COURSE_LIMIT);
     }
 
-    public TooManyCoursesException(ECode code) {
+    public TooManyUserProfilesException(ECode code) {
         super(code);
     }
 
-    public TooManyCoursesException(ECode code, String message) {
+    public TooManyUserProfilesException(ECode code, String message) {
         super(code, message);
     }
 
-    public TooManyCoursesException(String message){
+    public TooManyUserProfilesException(String message){
         super(ECode.EXCEEDED_THE_COURSE_LIMIT, message);
     }
 
-    public TooManyCoursesException(ECode code, String message, HttpStatus status) {
+    public TooManyUserProfilesException(ECode code, String message, HttpStatus status) {
         super(code, message, status.value());
     }
 
-    public TooManyCoursesException(String message, HttpStatus status) {
+    public TooManyUserProfilesException(String message, HttpStatus status) {
         super(ECode.EXCEEDED_THE_COURSE_LIMIT, message, status.value());
     }
 

@@ -3,44 +3,46 @@ package com.jobhunter.mapper.impl;
 import com.jobhunter.helper.NumbersHelper;
 import com.jobhunter.helper.StringHelper;
 import com.jobhunter.mapper.CourseEntityUpdater;
+import com.jobhunter.mapper.EducationEntityUpdater;
 import com.jobhunter.model.CourseEntity;
+import com.jobhunter.model.EducationEntity;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CourseEntityUpdaterImpl implements CourseEntityUpdater {
+public class EducationEntityUpdaterImpl implements EducationEntityUpdater {
 
     @Override
-    public CourseEntity update(CourseEntity oldCourse, CourseEntity newCourse) {
+    public EducationEntity update(EducationEntity oldSource, EducationEntity newSource) {
 
-        return oldCourse.setCompanyId(
-                        NumbersHelper.isNullOrZero(newCourse.getCompanyId())
-                                ? oldCourse.getCompanyId()
-                                : newCourse.getCompanyId()
+        return oldSource.setCompanyId(
+                        NumbersHelper.isNullOrZero(newSource.getCompanyId())
+                                ? oldSource.getCompanyId()
+                                : newSource.getCompanyId()
                 )
                 .setCompanyName(
-                        StringHelper.isNullOrBlank(newCourse.getCompanyName())
-                                ? oldCourse.getCompanyName()
-                                : newCourse.getCompanyName()
+                        StringHelper.isNullOrBlank(newSource.getCompanyName())
+                                ? oldSource.getCompanyName()
+                                : newSource.getCompanyName()
                 )
                 .setPosition(
-                        StringHelper.isNullOrBlank(newCourse.getPosition())
-                                ? oldCourse.getPosition()
-                                : newCourse.getPosition()
+                        StringHelper.isNullOrBlank(newSource.getPosition())
+                                ? oldSource.getPosition()
+                                : newSource.getPosition()
                 )
                 .setDescription(
-                        StringHelper.isNullOrBlank(newCourse.getDescription())
-                                ? oldCourse.getDescription()
-                                : newCourse.getDescription()
+                        StringHelper.isNullOrBlank(newSource.getDescription())
+                                ? oldSource.getDescription()
+                                : newSource.getDescription()
                 )
                 .setFrom(
-                        newCourse.getFrom() == null
-                                ? oldCourse.getFrom()
-                                : newCourse.getFrom()
+                        newSource.getFrom() == null
+                                ? oldSource.getFrom()
+                                : newSource.getFrom()
                 )
                 .setTo(
-                        newCourse.getTo() == null
-                                ? oldCourse.getTo()
-                                : newCourse.getTo()
+                        newSource.getTo() == null
+                                ? oldSource.getTo()
+                                : newSource.getTo()
                 );
 
     }

@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.experience;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,7 +6,6 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 // INFO: Use for get user profile
 @Data
@@ -26,7 +25,7 @@ public class ExperienceResponseShort {
     @JsonProperty("company_name")
     private String companyName;
 
-    @JsonProperty("title")
+    @JsonProperty("position")
     private String position;
 
     @JsonProperty("description")

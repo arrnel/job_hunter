@@ -4,6 +4,7 @@ import com.jobhunter.model.SpecializationCategoryModel;
 import com.jobhunter.model.SpecializationSubCategoryModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
 import java.util.Set;
 
 public interface SpecializationSubRepository extends JpaRepository<SpecializationSubCategoryModel, Integer> {
@@ -11,5 +12,7 @@ public interface SpecializationSubRepository extends JpaRepository<Specializatio
     Set<SpecializationSubCategoryModel> findByCategory(SpecializationCategoryModel category);
 
     Set<SpecializationSubCategoryModel> findByIdIn(Set<Integer> ids);
+
+    Optional<SpecializationSubCategoryModel> findByName(String name);
 
 }

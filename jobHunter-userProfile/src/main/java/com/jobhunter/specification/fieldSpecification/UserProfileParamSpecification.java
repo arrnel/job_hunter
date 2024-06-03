@@ -5,12 +5,11 @@ import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
 
 import java.util.List;
-import java.util.Set;
 
-public interface UserProfileSpecification {
+public interface UserProfileParamSpecification {
 
     List<Predicate> specify(
-            Set<Long> ids
+            Long userProfile
             , Root<?> root
             , CriteriaBuilder criteriaBuilder
             , List<Predicate> predicates

@@ -1,4 +1,4 @@
-package com.jobhunter.dto;
+package com.jobhunter.dto.userProfile;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jobhunter.enums.UserProfileStatus;

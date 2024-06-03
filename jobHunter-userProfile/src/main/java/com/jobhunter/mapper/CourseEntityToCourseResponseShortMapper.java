@@ -1,11 +1,11 @@
 package com.jobhunter.mapper;
 
-import com.jobhunter.dto.ExperienceResponseShort;
-import com.jobhunter.model.ExperienceEntity;
+import com.jobhunter.dto.course.CourseResponseShort;
+import com.jobhunter.model.CourseEntity;
 
-public interface ExperienceEntityToExperienceResponseShortMapper extends Mapper<ExperienceResponseShort, ExperienceEntity>{
+public interface CourseEntityToCourseResponseShortMapper extends Mapper<CourseResponseShort, CourseEntity>{
 
     @Override
-    ExperienceResponseShort map(ExperienceEntity source);
+    CourseResponseShort map(CourseEntity source);
 
 }

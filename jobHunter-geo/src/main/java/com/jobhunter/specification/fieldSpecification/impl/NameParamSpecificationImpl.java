@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import static com.jobhunter.helper.StringHelper.isEmptyOrBlank;
+import static com.jobhunter.helper.StringHelper.isNotNullOrBlank;
 
 @Component
 public class NameParamSpecificationImpl implements NameParamSpecification {
@@ -18,11 +18,11 @@ public class NameParamSpecificationImpl implements NameParamSpecification {
     @Override
     public List<Predicate> specify(String name, String partialName, Root<?> root, CriteriaBuilder criteriaBuilder, List<Predicate> predicates) {
 
-        if (!isEmptyOrBlank(name) && !isEmptyOrBlank(partialName)) {
+        if (isNotNullOrBlank(name) && isNotNullOrBlank(partialName)) {
             throw new InvalidRequestParamException(ECode.INVALID_REQUEST_PARAM, "Unable to search with contains partial name and equals name");
-        } else if (!isEmptyOrBlank(name)) {
+        } else if (isNotNullOrBlank(name)) {
             predicates.add(criteriaBuilder.equal(root.get("name"), name));
-        } else if (!isEmptyOrBlank(partialName)) {
+        } else if (isNotNullOrBlank(partialName)) {
             predicates.add(criteriaBuilder.like(root.get("name"), "%" + partialName + "%"));
         }
 
