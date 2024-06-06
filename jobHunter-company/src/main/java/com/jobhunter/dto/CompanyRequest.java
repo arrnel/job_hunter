@@ -1,2 +1,4 @@
-package com.jobhunter.dto;public class CompanyRequest {
+package com.jobhunter.dto;
+
+public class CompanyRequest {
 }

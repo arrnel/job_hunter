@@ -13,7 +13,7 @@ public class CompanyNotExistsException extends GlobalException {
         super(code, message);
     }
 
-    public CompanyNotExistsException(String message){
+    public CompanyNotExistsException(String message) {
         super(ECode.COMPANY_NOT_FOUND, message);
     }
 

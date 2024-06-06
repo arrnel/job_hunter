@@ -5,7 +5,6 @@ import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.requestParams.JobsFilter;
 import com.jobhunter.exception.JobAlreadyExistsInCompanyException;
 import com.jobhunter.exception.JobNotFoundException;
-import com.jobhunter.helper.StringHelper;
 import com.jobhunter.mapper.JobUpdater;
 import com.jobhunter.model.Job;
 import com.jobhunter.repository.JobRepository;

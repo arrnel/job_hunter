@@ -17,7 +17,7 @@ public class TooManyEducationsException extends GlobalException {
         super(code, message);
     }
 
-    public TooManyEducationsException(String message){
+    public TooManyEducationsException(String message) {
         super(ECode.EXCEEDED_THE_EDUCATION_LIMIT, message);
     }
 

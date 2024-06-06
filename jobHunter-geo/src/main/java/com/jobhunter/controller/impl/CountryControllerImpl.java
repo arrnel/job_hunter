@@ -55,11 +55,11 @@ public class CountryControllerImpl implements CountryController {
                 , name, partialName, pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort()));
         return pageCountryToPageResponseMapper.map(
                 countryService.getCountries(
-                    CountriesFilter.builder()
-                            .name(name)
-                            .partialName(partialName)
-                            .build()
-                    , pageable));
+                        CountriesFilter.builder()
+                                .name(name)
+                                .partialName(partialName)
+                                .build()
+                        , pageable));
     }
 
     @Override

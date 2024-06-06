@@ -59,13 +59,13 @@ public class JobHunterAuthServiceConfig {
 
     @Autowired
     public JobHunterAuthServiceConfig(KeyManager keyManager,
-                                    @Value("${job_hunter_front.base_url}") String jobHunterFrontUri,
-                                    @Value("${job_hunter_auth.base_url}") String jobHunterAuthUri,
-                                    @Value("${oauth2.client-id}") String clientId,
-                                    @Value("${oauth2.client-secret}") String clientSecret,
-                                    @Value("${server.port}") String serverPort,
-                                    CorsCustomizer corsCustomizer,
-                                    Environment environment) {
+                                      @Value("${job_hunter_front.base_url}") String jobHunterFrontUri,
+                                      @Value("${job_hunter_auth.base_url}") String jobHunterAuthUri,
+                                      @Value("${oauth2.client-id}") String clientId,
+                                      @Value("${oauth2.client-secret}") String clientSecret,
+                                      @Value("${server.port}") String serverPort,
+                                      CorsCustomizer corsCustomizer,
+                                      Environment environment) {
         this.keyManager = keyManager;
         this.jobHunterFrontUri = jobHunterFrontUri;
         this.jobHunterAuthUri = jobHunterAuthUri;

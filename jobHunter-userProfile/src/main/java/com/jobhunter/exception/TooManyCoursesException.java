@@ -17,7 +17,7 @@ public class TooManyCoursesException extends GlobalException {
         super(code, message);
     }
 
-    public TooManyCoursesException(String message){
+    public TooManyCoursesException(String message) {
         super(ECode.EXCEEDED_THE_COURSE_LIMIT, message);
     }
 

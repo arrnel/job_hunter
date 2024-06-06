@@ -13,7 +13,7 @@ public class InvalidExternalLinkException extends GlobalException {
         super(code, message);
     }
 
-    public InvalidExternalLinkException(String message){
+    public InvalidExternalLinkException(String message) {
         super(ECode.INVALID_EXTERNAL_LINK, message);
     }
 

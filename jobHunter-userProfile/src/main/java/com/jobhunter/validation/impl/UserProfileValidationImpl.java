@@ -13,7 +13,6 @@ import java.util.stream.IntStream;
 import static com.jobhunter.enums.ECode.REQUEST_PARAMS_COMBINATION_INVALID;
 import static com.jobhunter.helper.DateHelper.validDatePattern;
 import static com.jobhunter.helper.NumbersHelper.isNotNullOrZero;
-import static com.jobhunter.helper.NumbersHelper.isNullOrZero;
 import static com.jobhunter.helper.StringHelper.isNotNullOrBlank;
 import static com.jobhunter.helper.StringHelper.isNullOrBlank;
 

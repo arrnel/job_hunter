@@ -1,6 +1,5 @@
 package com.jobhunter.dataParser.parser.impl;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jobhunter.dataParser.parser.FileParser;
@@ -21,8 +20,6 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import static com.jobhunter.dataParser.parser.impl.ResourceFileCategoryParser.CategoryType.INDUSTRY;
 import static com.jobhunter.dataParser.parser.impl.ResourceFileCategoryParser.CategoryType.SPECIALIZATION;

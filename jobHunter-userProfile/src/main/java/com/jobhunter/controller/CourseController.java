@@ -1,8 +1,8 @@
 package com.jobhunter.controller;
 
+import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.course.CourseRequest;
 import com.jobhunter.dto.course.CourseResponse;
-import com.jobhunter.dto.StatusDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.NonNull;

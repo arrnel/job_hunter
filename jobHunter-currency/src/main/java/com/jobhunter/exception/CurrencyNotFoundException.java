@@ -3,7 +3,7 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class CurrencyNotFoundException extends GlobalException{
+public class CurrencyNotFoundException extends GlobalException {
 
     public CurrencyNotFoundException(ECode code, String message) {
         super(code, message);
@@ -13,7 +13,7 @@ public class CurrencyNotFoundException extends GlobalException{
         super(code);
     }
 
-    public CurrencyNotFoundException(String message){
+    public CurrencyNotFoundException(String message) {
         super(ECode.CURRENCY_NOT_FOUND, message);
     }
 

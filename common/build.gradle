@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 
-ext{
+ext {
     springWebVersion = '6.1.5'
 }
 

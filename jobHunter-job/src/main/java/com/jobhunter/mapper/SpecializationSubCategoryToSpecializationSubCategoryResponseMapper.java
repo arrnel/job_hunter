@@ -3,5 +3,5 @@ package com.jobhunter.mapper;
 import com.jobhunter.dto.SpecializationSubCategoryResponse;
 import com.jobhunter.model.SpecializationSubCategoryModel;
 
-public interface SpecializationSubCategoryToSpecializationSubCategoryResponseMapper extends Mapper<SpecializationSubCategoryResponse, SpecializationSubCategoryModel>{
+public interface SpecializationSubCategoryToSpecializationSubCategoryResponseMapper extends Mapper<SpecializationSubCategoryResponse, SpecializationSubCategoryModel> {
 }

@@ -3,7 +3,7 @@ package com.jobhunter.exception;
 import com.jobhunter.enums.ECode;
 import org.springframework.http.HttpStatus;
 
-public class CurrencyUpdaterException extends GlobalException{
+public class CurrencyUpdaterException extends GlobalException {
 
     public CurrencyUpdaterException(ECode code, String message) {
         super(code, message);
@@ -13,7 +13,7 @@ public class CurrencyUpdaterException extends GlobalException{
         super(code);
     }
 
-    public CurrencyUpdaterException(String message){
+    public CurrencyUpdaterException(String message) {
         super(ECode.CURRENCY_INFO_DOWNLOAD_FAIL, message);
     }
 

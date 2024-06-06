@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -22,16 +21,16 @@ public class UserProfileStatusServiceImpl implements UserProfileStatusService {
     private final UserProfileStatusRepository repository;
 
     @Transactional(readOnly = true)
-    public Optional<UserProfileStatusEntity> getByName(UserProfileStatus name){
+    public Optional<UserProfileStatusEntity> getByName(UserProfileStatus name) {
         return repository.findByName(name);
     }
 
     @Transactional(readOnly = true)
-    public Optional<UserProfileStatusEntity> getById(Integer id){
+    public Optional<UserProfileStatusEntity> getById(Integer id) {
         return repository.findById(id);
     }
 
-    public Set<UserProfileStatusEntity> getAll(){
+    public Set<UserProfileStatusEntity> getAll() {
         return new HashSet<>(repository.findAll());
     }
 

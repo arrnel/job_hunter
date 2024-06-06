@@ -13,7 +13,7 @@ public class EducationNotFoundException extends GlobalException {
         super(code, message);
     }
 
-    public EducationNotFoundException(String message){
+    public EducationNotFoundException(String message) {
         super(ECode.EDUCATION_NOT_FOUND, message);
     }
 

@@ -2,7 +2,6 @@ package com.jobhunter.service;
 
 import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.model.CourseEntity;
-import com.jobhunter.model.ExperienceEntity;
 import lombok.NonNull;
 
 import java.util.Optional;

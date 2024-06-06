@@ -20,7 +20,7 @@ dependencies {
             , 'org.testcontainers:junit-jupiter'
             , 'org.testcontainers:postgresql'
     )
-    compileOnly (
+    compileOnly(
             'org.projectlombok:lombok'
             , "org.apache.commons:commons-csv:${project.ext.apacheCommonCsvVersion}"
     )

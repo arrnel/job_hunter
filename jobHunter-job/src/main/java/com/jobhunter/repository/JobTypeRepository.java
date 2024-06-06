@@ -10,6 +10,7 @@ import java.util.Set;
 public interface JobTypeRepository extends JpaRepository<JobTypeEntity, Integer> {
 
     Optional<JobTypeEntity> getByName(JobType jobType);
+
     Set<JobTypeEntity> getByNameIn(Set<JobType> jobType);
 
 }

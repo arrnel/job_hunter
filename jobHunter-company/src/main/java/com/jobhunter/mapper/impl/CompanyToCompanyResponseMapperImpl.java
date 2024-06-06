@@ -1,2 +1,4 @@
-package com.jobhunter.mapper.impl;public class CompanyToCompanyResponseMapperImpl {
+package com.jobhunter.mapper.impl;
+
+public class CompanyToCompanyResponseMapperImpl {
 }

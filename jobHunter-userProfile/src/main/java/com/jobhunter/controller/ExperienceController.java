@@ -1,8 +1,8 @@
 package com.jobhunter.controller;
 
+import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.experience.ExperienceRequest;
 import com.jobhunter.dto.experience.ExperienceResponse;
-import com.jobhunter.dto.StatusDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.NonNull;
@@ -37,7 +37,7 @@ public interface ExperienceController {
     @ResponseStatus(OK)
     ExperienceResponse update(
             @Valid @Min(1) @PathVariable("id") Long id,
-            @Valid @NonNull ExperienceRequest requestBody            
+            @Valid @NonNull ExperienceRequest requestBody
     );
 
     @DeleteMapping("/{id}")

@@ -4,10 +4,10 @@ import com.jobhunter.config.Config;
 import com.jobhunter.controller.UserProfileController;
 import com.jobhunter.dto.PageResponse;
 import com.jobhunter.dto.StatusDTO;
-import com.jobhunter.dto.userProfile.UserProfileRequest;
-import com.jobhunter.dto.userProfile.UserProfileResponse;
 import com.jobhunter.dto.requestParam.UserProfileFilter;
 import com.jobhunter.dto.requestParam.UserProfileFilterValues;
+import com.jobhunter.dto.userProfile.UserProfileRequest;
+import com.jobhunter.dto.userProfile.UserProfileResponse;
 import com.jobhunter.exception.TooManyUserProfilesException;
 import com.jobhunter.exception.UserProfileNotFoundException;
 import com.jobhunter.mapper.*;
@@ -20,7 +20,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -52,7 +51,7 @@ public class UserProfileControllerImpl implements UserProfileController {
         // Add if user has greater than 10 user profiles then throw TooMachUserProfilesException
         long userId = 1L;
 
-        if(userProfileService.getAll(UserProfileFilter.builder().user(userId).build(), Pageable.ofSize(1)).getTotalElements() >= Config.User.profilesMax())
+        if (userProfileService.getAll(UserProfileFilter.builder().user(userId).build(), Pageable.ofSize(1)).getTotalElements() >= Config.User.profilesMax())
             throw new TooManyUserProfilesException();
 
 

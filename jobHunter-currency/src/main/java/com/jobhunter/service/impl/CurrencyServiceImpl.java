@@ -26,10 +26,13 @@ import static java.math.RoundingMode.CEILING;
 @RequiredArgsConstructor
 public class CurrencyServiceImpl implements CurrencyService {
 
+    private static LocalDateTime dateUpdated;
     private final CurrencyRepository currencyRepository;
     private final CurrencyUpdater currencyUpdater;
 
-    private static LocalDateTime dateUpdated;
+    private static BigDecimal calculateRate(BigDecimal from, BigDecimal to) {
+        return BigDecimal.ONE.divide(from, 6, CEILING).multiply(to).setScale(6, CEILING);
+    }
 
     @Override
     @PostConstruct
@@ -64,10 +67,6 @@ public class CurrencyServiceImpl implements CurrencyService {
                 .dateUpdated(fromEntity.getDateUpdated())
                 .build();
 
-    }
-
-    private static BigDecimal calculateRate(BigDecimal from, BigDecimal to) {
-        return BigDecimal.ONE.divide(from, 6, CEILING).multiply(to).setScale(6, CEILING);
     }
 
     @Override

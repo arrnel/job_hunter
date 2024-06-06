@@ -2,9 +2,9 @@ package com.jobhunter.controller.impl;
 
 import com.jobhunter.config.Config;
 import com.jobhunter.controller.CourseController;
+import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.course.CourseRequest;
 import com.jobhunter.dto.course.CourseResponse;
-import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.exception.CourseNotFoundException;
 import com.jobhunter.exception.TooManyEducationsException;
 import com.jobhunter.mapper.CourseEntityToCourseResponseMapper;

@@ -65,7 +65,7 @@ create table if not exists jobs.job_industry_subcategory
 create table if not exists categories.specialization_category
 (
     id   serial unique not null,
-    name varchar(255)   not null unique,
+    name varchar(255)  not null unique,
     primary key (id)
 );
 
@@ -119,11 +119,18 @@ alter table jobs.job_specialization_subcategory
     add constraint job_specialization_subcategory__specialization_subcategory_fk
         foreign key (subcategory_id) references categories.specialization_subcategory (id);
 
-delete from jobs.job_type;
-insert into jobs.job_type(name) values ('OFFICE');
-insert into jobs.job_type(name) values ('REMOTE');
-insert into jobs.job_type(name) values ('HYBRID');
+delete
+from jobs.job_type;
+insert into jobs.job_type(name)
+values ('OFFICE');
+insert into jobs.job_type(name)
+values ('REMOTE');
+insert into jobs.job_type(name)
+values ('HYBRID');
 
-delete from jobs.price_type;
-insert into jobs.price_type(name) values ('BEFORE_TAXES');
-insert into jobs.price_type(name) values ('AFTER_TAX');
+delete
+from jobs.price_type;
+insert into jobs.price_type(name)
+values ('BEFORE_TAXES');
+insert into jobs.price_type(name)
+values ('AFTER_TAX');

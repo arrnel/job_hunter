@@ -13,7 +13,7 @@ public class LocationNotFoundException extends GlobalException {
         super(code, message);
     }
 
-    public LocationNotFoundException(String message){
+    public LocationNotFoundException(String message) {
         super(ECode.LOCATION_NOT_FOUND, message);
     }
 

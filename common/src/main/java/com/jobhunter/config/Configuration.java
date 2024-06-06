@@ -88,7 +88,7 @@ public interface Configuration extends Config {
     @Key("job.file.categories")
     @DefaultValue("files/categories.json")
     String pathToCategoriesFile();
-    
+
     // INFO: jobHunter-notification
     // _________________________________________________________________________________________________________________
 
@@ -160,7 +160,7 @@ public interface Configuration extends Config {
     @Key("user_profile.experiences.max")
     @DefaultValue("5")
     Integer maxEducations();
-    
+
     // _________________________________________________________________________________________________________________
-    
+
 }

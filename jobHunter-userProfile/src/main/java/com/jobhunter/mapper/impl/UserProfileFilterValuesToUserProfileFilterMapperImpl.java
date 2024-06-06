@@ -3,8 +3,6 @@ package com.jobhunter.mapper.impl;
 import com.jobhunter.dto.requestParam.UserProfileFilter;
 import com.jobhunter.dto.requestParam.UserProfileFilterValues;
 import com.jobhunter.enums.UserProfileStatus;
-import com.jobhunter.exception.InvalidRequestParamException;
-import com.jobhunter.exception.UserProfileNotFoundException;
 import com.jobhunter.exception.UserProfileStatusNotFoundException;
 import com.jobhunter.mapper.UserProfileFilterValuesToUserProfileFilterMapper;
 import com.jobhunter.service.UserProfileStatusService;
@@ -13,9 +11,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
-import static com.jobhunter.helper.EnumHelper.getEnumByNameIgnoreCase;
-import static com.jobhunter.helper.NumbersHelper.isNotNullOrZero;
-import static com.jobhunter.helper.NumbersHelper.isNullOrZero;
 import static com.jobhunter.helper.StringHelper.isNotNullOrBlank;
 
 @Component

@@ -9,8 +9,6 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
-import static jakarta.persistence.FetchType.EAGER;
-
 @Entity
 @Table(schema = "profiles", name = "user_profile")
 @Data

@@ -13,7 +13,7 @@ public class UserProfileNotFoundException extends GlobalException {
         super(code, message);
     }
 
-    public UserProfileNotFoundException(String message){
+    public UserProfileNotFoundException(String message) {
         super(ECode.USER_PROFILE_NOT_FOUND, message);
     }
 

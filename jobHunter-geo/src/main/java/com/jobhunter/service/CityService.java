@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface CityService {
 
     Optional<City> getCityById(Integer id);
+
     Page<City> getCities(CitiesFilter requestParams, Pageable pageable);
 
 }

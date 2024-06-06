@@ -5,7 +5,6 @@ import com.jobhunter.controller.ExperienceController;
 import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.experience.ExperienceRequest;
 import com.jobhunter.dto.experience.ExperienceResponse;
-import com.jobhunter.exception.CourseNotFoundException;
 import com.jobhunter.exception.ExperienceNotFoundException;
 import com.jobhunter.exception.TooManyExperiencesException;
 import com.jobhunter.mapper.ExperienceEntityToExperienceResponseMapper;

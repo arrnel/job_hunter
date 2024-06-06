@@ -35,8 +35,8 @@ create table profiles.course
     company_name    varchar(255) not null,
     position        varchar(255) not null,
     description     text         not null,
-    date_from          date         not null,
-    date_to            date         not null,
+    date_from       date         not null,
+    date_to         date         not null,
     date_created    timestamp(3) not null,
     date_updated    timestamp(3),
     primary key (id)
@@ -51,8 +51,8 @@ create table profiles.education
     company_name    varchar(255) not null,
     position        varchar(255) not null,
     description     text         not null,
-    date_from          date         not null,
-    date_to            date         not null,
+    date_from       date         not null,
+    date_to         date         not null,
     date_created    timestamp(3) not null,
     date_updated    timestamp(3),
     primary key (id)
@@ -67,8 +67,8 @@ create table profiles.experience
     company_name    varchar(255) not null,
     position        varchar(255) not null,
     description     text         not null,
-    date_from          date         not null,
-    date_to            date         not null,
+    date_from       date         not null,
+    date_to         date         not null,
     date_created    timestamp(3) not null,
     date_updated    timestamp(3),
     primary key (id)

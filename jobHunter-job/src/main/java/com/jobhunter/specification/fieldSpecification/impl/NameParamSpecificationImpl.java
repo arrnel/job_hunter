@@ -1,6 +1,5 @@
 package com.jobhunter.specification.fieldSpecification.impl;
 
-import com.jobhunter.helper.StringHelper;
 import com.jobhunter.specification.fieldSpecification.NameParamSpecification;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.Predicate;

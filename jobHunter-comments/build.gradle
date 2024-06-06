@@ -10,7 +10,7 @@ dependencyManagementVersion = project.ext.dependencyManagementVersion
 dependencies {
     implementation(
             project(":common")
-            ,'org.springframework.boot:spring-boot-starter-data-jpa'
+            , 'org.springframework.boot:spring-boot-starter-data-jpa'
             , 'org.springframework.boot:spring-boot-starter-web'
             , 'org.flywaydb:flyway-core'
     )

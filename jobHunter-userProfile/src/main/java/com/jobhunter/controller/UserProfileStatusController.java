@@ -10,8 +10,8 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 public interface UserProfileStatusController {
 
-   @PostMapping
-   @ResponseStatus(CREATED)
-   Set<UserProfileStatusResponse> getAll();
+    @PostMapping
+    @ResponseStatus(CREATED)
+    Set<UserProfileStatusResponse> getAll();
 
 }

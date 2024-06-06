@@ -1,2 +1,4 @@
-package com.jobhunter.dto.requestParam;public class CompanyFilter {
+package com.jobhunter.dto.requestParam;
+
+public class CompanyFilter {
 }

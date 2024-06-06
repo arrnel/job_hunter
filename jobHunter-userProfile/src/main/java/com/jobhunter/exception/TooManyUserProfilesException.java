@@ -17,7 +17,7 @@ public class TooManyUserProfilesException extends GlobalException {
         super(code, message);
     }
 
-    public TooManyUserProfilesException(String message){
+    public TooManyUserProfilesException(String message) {
         super(ECode.EXCEEDED_THE_COURSE_LIMIT, message);
     }
 

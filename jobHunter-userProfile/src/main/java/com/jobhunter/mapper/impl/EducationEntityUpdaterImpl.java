@@ -2,9 +2,7 @@ package com.jobhunter.mapper.impl;
 
 import com.jobhunter.helper.NumbersHelper;
 import com.jobhunter.helper.StringHelper;
-import com.jobhunter.mapper.CourseEntityUpdater;
 import com.jobhunter.mapper.EducationEntityUpdater;
-import com.jobhunter.model.CourseEntity;
 import com.jobhunter.model.EducationEntity;
 import org.springframework.stereotype.Component;
 

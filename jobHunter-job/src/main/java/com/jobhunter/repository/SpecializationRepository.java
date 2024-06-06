@@ -1,7 +1,6 @@
 package com.jobhunter.repository;
 
 import com.jobhunter.model.SpecializationCategoryModel;
-import com.jobhunter.model.SpecializationSubCategoryModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -17,7 +17,7 @@ public class TooManyExperiencesException extends GlobalException {
         super(code, message);
     }
 
-    public TooManyExperiencesException(String message){
+    public TooManyExperiencesException(String message) {
         super(ECode.EXCEEDED_THE_EXPERIENCE_LIMIT, message);
     }
 

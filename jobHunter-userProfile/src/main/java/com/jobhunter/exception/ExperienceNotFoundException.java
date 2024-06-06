@@ -13,7 +13,7 @@ public class ExperienceNotFoundException extends GlobalException {
         super(code, message);
     }
 
-    public ExperienceNotFoundException(String message){
+    public ExperienceNotFoundException(String message) {
         super(ECode.EXPERIENCE_NOT_FOUND, message);
     }
 

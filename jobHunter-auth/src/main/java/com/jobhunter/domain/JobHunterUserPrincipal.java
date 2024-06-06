@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public class JobHunterUserPrincipal implements UserDetails{
+public class JobHunterUserPrincipal implements UserDetails {
 
     private final UserEntity user;
 

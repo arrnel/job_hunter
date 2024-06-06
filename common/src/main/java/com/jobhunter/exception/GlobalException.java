@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class GlobalException extends RuntimeException{
+public class GlobalException extends RuntimeException {
 
     private final ECode code;
     private final String message;

@@ -21,7 +21,7 @@ public class IdsParamSpecificationImpl implements IdsParamSpecification {
             , List<Predicate> predicates
     ) {
 
-        if (CollectionHelper.isNotNullOrEmpty(ids)){
+        if (CollectionHelper.isNotNullOrEmpty(ids)) {
             CriteriaBuilder.In<Long> inClause = criteriaBuilder.in(root.get("id"));
             ids.forEach(inClause::value);
             predicates.add(inClause);

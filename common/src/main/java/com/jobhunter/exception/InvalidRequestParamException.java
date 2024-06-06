@@ -13,7 +13,7 @@ public class InvalidRequestParamException extends GlobalException {
         super(code, message);
     }
 
-    public InvalidRequestParamException(String message){
+    public InvalidRequestParamException(String message) {
         super(ECode.INVALID_REQUEST_PARAM, message);
     }
 
