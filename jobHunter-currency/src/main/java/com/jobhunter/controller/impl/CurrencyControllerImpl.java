@@ -64,7 +64,7 @@ public class CurrencyControllerImpl implements CurrencyController {
     }
 
     @Scheduled(fixedDelay = 60 * 60 * 1000) // INFO: updating every hour
-    private void updateScheduled(){
+    private void updateScheduled() {
         log.info("Start scheduled updating currencies");
         update();
     }

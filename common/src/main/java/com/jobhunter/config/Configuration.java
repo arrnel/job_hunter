@@ -23,7 +23,7 @@ public interface Configuration extends Config {
 
     @Key("common.port.jobhunter_cv")
     @DefaultValue("9005")
-    Integer jobHunterCvPort();
+    Integer jobHunterUserProfilePort();
 
     @Key("common.port.jobhunter_files")
     @DefaultValue("9006")
@@ -72,9 +72,6 @@ public interface Configuration extends Config {
     String[] activeCurrencies();
     // _________________________________________________________________________________________________________________
 
-    // INFO: jobHunter-cv
-    // _________________________________________________________________________________________________________________
-
     // INFO: jobHunter-files
     // _________________________________________________________________________________________________________________
 
@@ -87,41 +84,46 @@ public interface Configuration extends Config {
     String geoFileVersion();
     // _________________________________________________________________________________________________________________
 
+    // INFO: jobHunter-job
+    @Key("job.file.categories")
+    @DefaultValue("files/categories.json")
+    String pathToCategoriesFile();
+
     // INFO: jobHunter-notification
     // _________________________________________________________________________________________________________________
 
-    // INFO: jobHunter-user
+    // INFO: jobHunter-user && jobHunter-userProfile
     @Key("user.username.min_length")
     @DefaultValue("4")
-    int usernameMinLength();
+    Integer usernameMinLength();
 
     @Key("user.username.max_length")
     @DefaultValue("50")
-    int usernameMaxLength();
+    Integer usernameMaxLength();
 
     @Key("user.email.min_length")
     @DefaultValue("9")
-    int emailMinLength();
+    Integer emailMinLength();
 
     @Key("user.email.max_length")
     @DefaultValue("50")
-    int emailMaxLength();
+    Integer emailMaxLength();
 
     @Key("user.password.min_length")
     @DefaultValue("8")
-    int passwordMinLength();
+    Integer passwordMinLength();
 
     @Key("user.password.max_length")
     @DefaultValue("50")
-    int passwordMaxLength();
+    Integer passwordMaxLength();
 
     @Key("user.first_name.min_length")
     @DefaultValue("2")
-    int firstNameMinLength();
+    Integer firstNameMinLength();
 
     @Key("user.first_name.max_length")
     @DefaultValue("50")
-    int firstNameMaxLength();
+    Integer firstNameMaxLength();
 
     @Key("user.last_name.is_required")
     @DefaultValue("true")
@@ -129,23 +131,36 @@ public interface Configuration extends Config {
 
     @Key("user.last_name.min_length")
     @DefaultValue("2")
-    int lastNameMinLength();
+    Integer lastNameMinLength();
 
     @Key("user.last_name.max_length")
     @DefaultValue("50")
-    int lastNameMaxLength();
+    Integer lastNameMaxLength();
 
     @Key("user.age.min")
     @DefaultValue("18")
-    int ageMin();
+    Integer ageMin();
 
     @Key("user.age.max")
     @DefaultValue("60")
-    int ageMax();
+    Integer ageMax();
+
+    @Key("user_profile.courses.max")
+    @DefaultValue("10")
+    Integer maxProfiles();
+
+    @Key("user_profile.courses.max")
+    @DefaultValue("50")
+    Integer maxCourses();
+
+    @Key("user_profile.experiences.max")
+    @DefaultValue("50")
+    Integer maxExperiences();
+
+    @Key("user_profile.experiences.max")
+    @DefaultValue("5")
+    Integer maxEducations();
+
     // _________________________________________________________________________________________________________________
 
-    // INFO: jobHunter-job
-    @Key("job.file.categories")
-    @DefaultValue("files/categories.json")
-    String pathToCategoriesFile();
 }

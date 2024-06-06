@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 public interface RegionController {
 
     RegionResponse getRegionById(Integer id);
+
     PageResponse getRegions(String name, String partialName, Integer countryId, Pageable pageable);
 
 }

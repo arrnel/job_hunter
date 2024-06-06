@@ -25,7 +25,4 @@ public class JobTypeEntity {
     @Column(name = "name", unique = true, nullable = false)
     private JobType name;
 
-//    @ManyToMany(mappedBy = "jobTypes")
-//    private Set<Job> jobTypes = new HashSet<>();
-
 }

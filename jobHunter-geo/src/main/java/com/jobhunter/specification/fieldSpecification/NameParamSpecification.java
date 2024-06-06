@@ -6,7 +6,7 @@ import jakarta.persistence.criteria.Root;
 
 import java.util.List;
 
-public interface NameParamSpecification{
+public interface NameParamSpecification {
 
     List<Predicate> specify(
             String name

@@ -56,7 +56,7 @@ public class JobRequestToJobMapperImpl implements JobRequestToJobMapper {
         Set<JobType> jobTypes = jobTypeNames.stream().map(name -> getEnumByNameIgnoreCase(JobType.class, name)).collect(Collectors.toSet());
         Set<JobTypeEntity> jobTypeEntities = jobTypeService.getJobTypesByNames(jobTypes);
 
-        Job job = Job.builder()
+        return Job.builder()
                 .title(source.getTitle())
                 .description(source.getDescription())
                 .minPrice(minPrice)
@@ -76,8 +76,6 @@ public class JobRequestToJobMapperImpl implements JobRequestToJobMapper {
                 .regionId(cityResponse.getRegion().getId())
                 .countryId(cityResponse.getCountry().getId())
                 .build();
-
-        return job;
 
     }
 

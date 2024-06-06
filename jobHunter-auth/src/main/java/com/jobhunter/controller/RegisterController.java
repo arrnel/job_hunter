@@ -8,6 +8,7 @@ import org.springframework.validation.Errors;
 public interface RegisterController {
 
     String getRegisterPage(Model model);
+
     String registerUser(RegistrationRequestDTO registrationModel,
                         Errors errors,
                         Model model,

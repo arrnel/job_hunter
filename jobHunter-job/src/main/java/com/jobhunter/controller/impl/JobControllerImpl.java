@@ -113,7 +113,7 @@ public class JobControllerImpl implements JobController {
     @PutMapping("/job/{jobId}")
     @ResponseStatus(HttpStatus.OK)
     public JobResponse updateJob(@PathVariable Long jobId, @RequestBody JobRequest requestBody) {
-        log.info("Update job with id = [{}] and request = \n [{}]", jobId, requestBody.toString());
+        log.info("Update job with id = [{}] and request = [{}]", jobId, requestBody);
         return mapJobToJobResponse.map(
                 jobService.updateJob(
                         jobId,

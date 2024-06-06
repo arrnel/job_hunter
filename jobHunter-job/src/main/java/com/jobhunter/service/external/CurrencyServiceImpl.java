@@ -13,7 +13,7 @@ import static com.jobhunter.enums.ECode.INVALID_REQUEST_PARAM;
 
 @Service
 @RequiredArgsConstructor
-public class CurrencyServiceImpl implements CurrencyService{
+public class CurrencyServiceImpl implements CurrencyService {
 
     private static final Integer port = Config.Port.currency();
     private final WebClient webClient;

@@ -34,7 +34,7 @@ public class City {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    @Column(name="city_type")
+    @Column(name = "city_type")
     private CityType cityType;
 
     private Long population;

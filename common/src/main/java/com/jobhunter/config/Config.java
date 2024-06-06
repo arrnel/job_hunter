@@ -30,8 +30,8 @@ public class Config {
             return config.jobHunterCurrencyPort();
         }
 
-        public static Integer cv() {
-            return config.jobHunterCvPort();
+        public static Integer userProfile() {
+            return config.jobHunterUserProfilePort();
         }
 
         public static Integer files() {
@@ -88,9 +88,8 @@ public class Config {
 
     }
 
-    public static class CV {
-
-    }
+//    All in user
+//    public static class UserProfile {}
 
     public static class Files {
 
@@ -171,6 +170,24 @@ public class Config {
         public static int ageMax() {
             return config.ageMax();
         }
+
+        public static int profilesMax() {
+            return config.maxProfiles();
+        }
+
+        public static int experiencesMax() {
+            return config.maxExperiences();
+        }
+
+        public static int coursesMax() {
+            return config.maxCourses();
+        }
+
+        public static int educationsMax() {
+            return config.maxEducations();
+        }
+
+
     }
 
 }

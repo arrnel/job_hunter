@@ -5,7 +5,6 @@ import com.jobhunter.dto.StatusDTO;
 import com.jobhunter.dto.requestParams.JobsFilter;
 import com.jobhunter.exception.JobAlreadyExistsInCompanyException;
 import com.jobhunter.exception.JobNotFoundException;
-import com.jobhunter.helper.StringHelper;
 import com.jobhunter.mapper.JobUpdater;
 import com.jobhunter.model.Job;
 import com.jobhunter.repository.JobRepository;
@@ -21,8 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static com.jobhunter.enums.ECode.JOB_NAME_IS_ALREADY_EXISTS;
+import static com.jobhunter.enums.ECode.JOB_NAME_IS_ALREADY_EXISTS_IN_COMPANY;
 import static com.jobhunter.enums.ECode.JOB_NOT_FOUND;
+import static com.jobhunter.helper.StringHelper.isNullOrBlank;
 
 @Slf4j
 @Service
@@ -40,7 +40,7 @@ public class JobServiceImpl implements JobService {
         boolean isJobExistInCompanyWithTitle = jobRepository.existsByCompanyIdAndTitle(companyId, newJob.getTitle());
 
         if (isJobExistInCompanyWithTitle) throw new JobAlreadyExistsInCompanyException(
-                JOB_NAME_IS_ALREADY_EXISTS,
+                JOB_NAME_IS_ALREADY_EXISTS_IN_COMPANY,
                 "Job with name is already exists in company");
         log.info("Job before save = {}", newJob);
         return jobRepository.save(newJob);
@@ -58,7 +58,7 @@ public class JobServiceImpl implements JobService {
     public Page<Job> getJobs(JobsFilter requestParams, final Pageable pageable) {
 
         String currency = requestParams.getCurrency();
-        BigDecimal rate = (StringHelper.isEmptyOrBlank(currency) || currency.equalsIgnoreCase(Config.Currency.defaultCurrency()))
+        BigDecimal rate = (isNullOrBlank(currency) || currency.equalsIgnoreCase(Config.Currency.defaultCurrency()))
                 ? BigDecimal.ONE
                 : BigDecimal.TWO;
 
@@ -90,7 +90,7 @@ public class JobServiceImpl implements JobService {
 
         if (isJobExistInCompanyWithTitle)
             throw new JobAlreadyExistsInCompanyException(
-                    JOB_NAME_IS_ALREADY_EXISTS,
+                    JOB_NAME_IS_ALREADY_EXISTS_IN_COMPANY,
                     "Job with name is already exists in company");
         oldJob = jobUpdater.update(oldJob, newJob);
         log.info("Saving job: {}", oldJob.toString());

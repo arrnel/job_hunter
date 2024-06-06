@@ -9,6 +9,7 @@ import java.util.Set;
 public interface JobTypeService {
 
     Optional<JobTypeEntity> getJobTypeByName(JobType name);
+
     Set<JobTypeEntity> getJobTypesByNames(Set<JobType> names);
 
 }

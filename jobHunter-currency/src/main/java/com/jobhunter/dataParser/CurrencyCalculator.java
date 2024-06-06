@@ -14,7 +14,7 @@ import java.util.Map;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class CurrencyCalculator implements CurrencyUpdater{
+public class CurrencyCalculator implements CurrencyUpdater {
 
     private final CurrencyInfoDownloader currencyInfoDownloader;
     private final CurrencyRateMapParser currencyInfoExtractor;

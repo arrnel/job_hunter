@@ -6,7 +6,7 @@ package com.jobhunter;
 //@SpringBootTest
 class JobHunterFrontendApplicationTests {
 
-//    @Test
+    //    @Test
     void contextLoads() {
     }
 

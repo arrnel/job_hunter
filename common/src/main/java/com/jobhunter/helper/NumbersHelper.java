@@ -6,17 +6,21 @@ public class NumbersHelper {
 
     public static <T> boolean isNullOrZero(T value) {
         if (value == null) return true;
-        if (!isParsable(value.toString()))
-            throw new IllegalArgumentException("Invalid argument type or value: [" + value +"]");
+        if (!(value instanceof Number))
+            throw new IllegalArgumentException("Invalid argument type or value: [" + value + "]");
         return new BigDecimal(value.toString()).compareTo(BigDecimal.ZERO) == 0;
-
     }
+
+    public static <T> boolean isNotNullOrZero(T value) {
+        return !isNullOrZero(value);
+    }
+
 
     public static <T> boolean isParsable(String value) {
 
-        if (StringHelper.isEmptyOrBlank(value)) return false;
+        if (StringHelper.isNullOrBlank(value)) return false;
         if (value.charAt(value.length() - 1) == '.' || value.charAt(0) == '.') return false;
-        if (value.charAt(0) == '-'){
+        if (value.charAt(0) == '-') {
             if (value.length() == 1) return false;
             return withDecimalsParsing(value, 1);
         }

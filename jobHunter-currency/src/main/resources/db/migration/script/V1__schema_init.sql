@@ -7,6 +7,6 @@ create table if not exists currencies.currency
     rate         decimal       not null,
     is_default   boolean       not null,
     is_active    boolean       not null,
-    date_updated timestamp(6)  not null,
+    date_updated timestamp(3)  not null,
     primary key (id, name)
 );

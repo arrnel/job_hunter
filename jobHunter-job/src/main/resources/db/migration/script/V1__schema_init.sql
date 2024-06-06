@@ -19,7 +19,6 @@ create table if not exists jobs.job
     date_created                  timestamp(3)   not null,
     date_updated                  timestamp(3),
     primary key (id)
-
 );
 
 create table if not exists jobs.job_type
@@ -39,10 +38,7 @@ create table if not exists jobs.price_type
 create table if not exists jobs.job_job_type
 (
     job_id      bigint not null,
-    job_type_id bigint not null,
-    primary key (job_id, job_type_id),
-    foreign key (job_id) references jobs.job (id),
-    foreign key (job_type_id) references jobs.job_type (id)
+    job_type_id int    not null
 );
 
 create table if not exists categories.industry_category
@@ -63,8 +59,7 @@ create table if not exists categories.industry_subcategory
 create table if not exists jobs.job_industry_subcategory
 (
     job_id         bigint not null,
-    subcategory_id int    not null,
-    primary key (job_id, subcategory_id)
+    subcategory_id int    not null
 );
 
 create table if not exists categories.specialization_category
@@ -85,8 +80,7 @@ create table if not exists categories.specialization_subcategory
 create table if not exists jobs.job_specialization_subcategory
 (
     job_id         bigint not null,
-    subcategory_id int    not null,
-    primary key (job_id, subcategory_id)
+    subcategory_id int    not null
 );
 
 alter table jobs.job

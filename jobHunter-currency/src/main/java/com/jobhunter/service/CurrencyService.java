@@ -9,8 +9,11 @@ import java.util.List;
 public interface CurrencyService {
 
     void init();
+
     CurrencyRateDTO getRate(Currency from, Currency to);
+
     List<CurrencyRateDTO> getAllRates();
+
     StatusDTO update();
 
 }

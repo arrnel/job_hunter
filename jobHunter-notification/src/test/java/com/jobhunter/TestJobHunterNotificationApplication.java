@@ -10,14 +10,14 @@ import org.testcontainers.utility.DockerImageName;
 @TestConfiguration(proxyBeanMethods = false)
 public class TestJobHunterNotificationApplication {
 
+    public static void main(String[] args) {
+        SpringApplication.from(JobHunterNotificationApplication::main).with(TestJobHunterNotificationApplication.class).run(args);
+    }
+
     @Bean
     @ServiceConnection
     PostgreSQLContainer<?> postgresContainer() {
         return new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"));
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.from(JobHunterNotificationApplication::main).with(TestJobHunterNotificationApplication.class).run(args);
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
 import static com.jobhunter.config.Config.Currency.activeCurrencies;
 import static com.jobhunter.enums.ECode.CURRENCY_NOT_FOUND;
 import static com.jobhunter.enums.ECode.REQUEST_PARAMS_COMBINATION_INVALID;
-import static com.jobhunter.helper.StringHelper.isEmptyOrBlank;
+import static com.jobhunter.helper.StringHelper.isNotNullOrBlank;
 
 @Component
 public class JobFilterValidationImpl implements JobsFilterValidation {
@@ -26,7 +26,7 @@ public class JobFilterValidationImpl implements JobsFilterValidation {
         String partialTitle = requestParams.getPartialTitle(),
                 partialDescription = requestParams.getPartialDescription(),
                 partialContent = requestParams.getPartialContent();
-        if ((!isEmptyOrBlank(partialTitle) || !isEmptyOrBlank(partialDescription)) && !isEmptyOrBlank(partialContent))
+        if ((isNotNullOrBlank(partialTitle) || isNotNullOrBlank(partialDescription)) && isNotNullOrBlank(partialContent))
             throw new InvalidRequestParamException(REQUEST_PARAMS_COMBINATION_INVALID
                     , "Unable to search by part of content and part of title or description");
 
@@ -38,7 +38,7 @@ public class JobFilterValidationImpl implements JobsFilterValidation {
             throw new InvalidRequestParamException(REQUEST_PARAMS_COMBINATION_INVALID
                     , "Invalid price range: [" + minPrice + ";" + maxPrice + "]");
         }
-        if (!isEmptyOrBlank(currency) && Arrays.stream(activeCurrencies()).noneMatch(x -> x.equalsIgnoreCase(currency))) {
+        if (isNotNullOrBlank(currency) && Arrays.stream(activeCurrencies()).noneMatch(x -> x.equalsIgnoreCase(currency))) {
             throw new InvalidRequestParamException(CURRENCY_NOT_FOUND, "Currency = [" + currency + "] not found");
         }
 

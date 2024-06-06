@@ -8,5 +8,9 @@ public class CollectionHelper {
         return collection == null || collection.isEmpty();
     }
 
+    public static boolean isNotNullOrEmpty(Collection<?> collection) {
+        return !isNullOrEmpty(collection);
+    }
+
 
 }

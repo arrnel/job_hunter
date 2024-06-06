@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface RegionService {
 
     Optional<Region> getRegionById(Integer id);
+
     Page<Region> getRegions(RegionsFilter queryParams, Pageable pageable);
 
 }

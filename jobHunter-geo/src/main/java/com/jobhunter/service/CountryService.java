@@ -10,7 +10,9 @@ import java.util.Optional;
 public interface CountryService {
 
     Optional<Country> getCountryById(Integer id);
+
     Page<Country> getCountries(CountriesFilter queryParams, Pageable pageable);
+
     Page<Country> getAllCountries(Pageable pageable);
 
 }

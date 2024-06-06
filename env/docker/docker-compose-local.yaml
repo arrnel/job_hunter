@@ -16,7 +16,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-job_hunter}
     volumes:
       - job_hunter_db_data:/var/lib/postgresql/data
-      - .env/script/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
+      #      - ../../env/script/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
+      - ../../env/script/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
 
   pgadmin:
     container_name: pgadmin
@@ -43,7 +44,7 @@ services:
     environment:
       - ZOOKEEPER_CLIENT_PORT=2181
     networks:
-    - job_hunter
+      - job_hunter
     restart: unless-stopped
 
   kafka:
