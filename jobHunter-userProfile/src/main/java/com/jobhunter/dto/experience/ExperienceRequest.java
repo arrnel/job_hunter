@@ -1,6 +1,7 @@
 package com.jobhunter.dto.experience;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.Accessors;
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 @ToString
 public class ExperienceRequest {
 
-    @JsonProperty("user_profile_id")
+    @JsonIgnore
     private Long userProfileId;
 
     @JsonProperty("company_id")

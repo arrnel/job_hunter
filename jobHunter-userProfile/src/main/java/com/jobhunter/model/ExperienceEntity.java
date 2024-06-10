@@ -23,10 +23,10 @@ public class ExperienceEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_profile_id")
+    @JoinColumn(name = "user_profile_id", referencedColumnName = "id", nullable = false, updatable = false)
     private UserProfile userProfile;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(name = "user_id", nullable = false, updatable = false)
     private Long user;
 
     @Column(name = "company_id")
@@ -47,7 +47,7 @@ public class ExperienceEntity {
     @Column(name = "date_to", nullable = false)
     private LocalDate to;
 
-    @Column(name = "date_created", nullable = false)
+    @Column(name = "date_created", nullable = false, updatable = false)
     private LocalDateTime dateCreated;
 
     @Column(name = "date_updated")

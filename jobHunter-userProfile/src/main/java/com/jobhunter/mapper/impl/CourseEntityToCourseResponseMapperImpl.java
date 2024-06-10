@@ -14,7 +14,7 @@ public class CourseEntityToCourseResponseMapperImpl implements CourseEntityToCou
     public CourseResponse map(CourseEntity source) {
         return CourseResponse.builder()
                 .id(source.getId())
-                .userProfile(source.getUserProfile())
+                .userProfile(source.getUserProfile().getId())
                 .user(source.getUser())
                 .companyId(source.getCompanyId())
                 .companyName(source.getCompanyName())

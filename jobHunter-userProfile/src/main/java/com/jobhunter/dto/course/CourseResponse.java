@@ -22,7 +22,7 @@ public class CourseResponse {
     private Long id;
 
     @JsonProperty("user_profile_id")
-    private UserProfile userProfile;
+    private Long userProfile;
 
     @JsonProperty("user")
     private Long user;

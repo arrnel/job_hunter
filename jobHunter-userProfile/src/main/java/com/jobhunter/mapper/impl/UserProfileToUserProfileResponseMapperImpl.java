@@ -7,6 +7,9 @@ import com.jobhunter.mapper.EducationEntityToEducationResponseShortMapper;
 import com.jobhunter.mapper.ExperienceEntityToExperienceResponseShortMapper;
 import com.jobhunter.mapper.UserProfileToUserProfileResponseMapper;
 import com.jobhunter.model.UserProfile;
+import com.jobhunter.service.CourseService;
+import com.jobhunter.service.EducationService;
+import com.jobhunter.service.ExperienceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +20,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class UserProfileToUserProfileResponseMapperImpl implements UserProfileToUserProfileResponseMapper {
 
-    private final ExperienceEntityToExperienceResponseShortMapper experienceResponseShortMapper;
     private final CourseEntityToCourseResponseShortMapper courseResponseShortMapper;
+    private final ExperienceEntityToExperienceResponseShortMapper experienceResponseShortMapper;
     private final EducationEntityToEducationResponseShortMapper educationResponseShortMapper;
+    private final ExperienceService experienceService;
+    private final CourseService courseService;
+    private final EducationService educationService;
 
     @Override
     public UserProfileResponse map(UserProfile source) {
@@ -37,17 +43,29 @@ public class UserProfileToUserProfileResponseMapperImpl implements UserProfileTo
                 .avatarId(source.getAvatarId())
                 .status(source.getStatus().getName())
                 .experiences(
-                        CollectionHelper.isNullOrEmpty(source.getExperiences())
-                                ? Collections.emptySet()
-                                : source.getExperiences().stream().map(experienceResponseShortMapper::map).collect(Collectors.toSet()))
+                        experienceService.getByUserProfile(source.getId())
+                                .stream().map(experienceResponseShortMapper::map).collect(Collectors.toSet())
+                )
                 .courses(
-                        CollectionHelper.isNullOrEmpty(source.getCourses())
-                                ? Collections.emptySet()
-                                : source.getCourses().stream().map(courseResponseShortMapper::map).collect(Collectors.toSet()))
+                        courseService.getByUserProfile(source.getId())
+                                .stream().map(courseResponseShortMapper::map).collect(Collectors.toSet())
+                )
                 .educations(
-                        CollectionHelper.isNullOrEmpty(source.getCourses())
-                                ? Collections.emptySet()
-                                : source.getEducations().stream().map(educationResponseShortMapper::map).collect(Collectors.toSet()))
+                        educationService.getByUserProfile(source.getId())
+                                .stream().map(educationResponseShortMapper::map).collect(Collectors.toSet())
+                )
+//                .experiences(
+//                        CollectionHelper.isNullOrEmpty(source.getExperiences())
+//                                ? Collections.emptySet()
+//                                : source.getExperiences().stream().map(experienceResponseShortMapper::map).collect(Collectors.toSet()))
+//                .courses(
+//                        CollectionHelper.isNullOrEmpty(source.getCourses())
+//                                ? Collections.emptySet()
+//                                : source.getCourses().stream().map(courseResponseShortMapper::map).collect(Collectors.toSet()))
+//                .educations(
+//                        CollectionHelper.isNullOrEmpty(source.getCourses())
+//                                ? Collections.emptySet()
+//                                : source.getEducations().stream().map(educationResponseShortMapper::map).collect(Collectors.toSet()))
                 .dateCreated(source.getDateCreated())
                 .dateUpdated(source.getDateUpdated())
                 .build();

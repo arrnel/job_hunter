@@ -1,13 +1,13 @@
 create schema if not exists profiles;
 
-create table profiles.user_profile_status
+create table if not exists profiles.user_profile_status
 (
     id   serial,
     name varchar(255) not null unique,
     primary key (id)
 );
 
-create table profiles.user_profile
+create table if not exists profiles.user_profile
 (
     id                    bigserial,
     user_id               bigint       not null,
@@ -26,7 +26,7 @@ create table profiles.user_profile
     primary key (id)
 );
 
-create table profiles.course
+create table if not exists profiles.course
 (
     id              bigserial,
     user_profile_id bigint,
@@ -42,7 +42,7 @@ create table profiles.course
     primary key (id)
 );
 
-create table profiles.education
+create table if not exists profiles.education
 (
     id              bigserial,
     user_profile_id bigint,
@@ -58,7 +58,7 @@ create table profiles.education
     primary key (id)
 );
 
-create table profiles.experience
+create table if not exists profiles.experience
 (
     id              bigserial,
     user_profile_id bigint,

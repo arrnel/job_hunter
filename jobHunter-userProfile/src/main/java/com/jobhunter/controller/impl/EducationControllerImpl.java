@@ -9,6 +9,7 @@ import com.jobhunter.exception.CourseNotFoundException;
 import com.jobhunter.exception.TooManyEducationsException;
 import com.jobhunter.mapper.EducationEntityToEducationResponseMapper;
 import com.jobhunter.mapper.EducationRequestToEducationEntityMapper;
+import com.jobhunter.model.EducationEntity;
 import com.jobhunter.service.EducationService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
@@ -26,7 +27,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/profile/education")
+@RequestMapping("/api/v1/profile")
 @RequiredArgsConstructor
 public class EducationControllerImpl implements EducationController {
 
@@ -35,10 +36,11 @@ public class EducationControllerImpl implements EducationController {
     private final EducationEntityToEducationResponseMapper educationResponseMapper;
 
     @Override
-    @PostMapping
+    @PostMapping("/{user_profile_id}/education")
     @ResponseStatus(CREATED)
     public EducationResponse create(
-            @NonNull @Valid @RequestBody EducationRequest requestBody
+            @Valid @Min(1) @PathVariable("user_profile_id") Long userProfileId
+            , @NonNull @Valid @RequestBody EducationRequest requestBody
     ) {
 
         log.info("Start creating education with requestBody = [{}]", requestBody);
@@ -57,10 +59,10 @@ public class EducationControllerImpl implements EducationController {
     }
 
     @Override
-    @GetMapping("/{id}")
+    @GetMapping("/education/{id}")
     @ResponseStatus(OK)
     public EducationResponse getById(
-            @NonNull @Valid @Min(1) @PathVariable("id") Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     ) {
 
         log.info("Get education with id = [{}]", id);
@@ -70,10 +72,10 @@ public class EducationControllerImpl implements EducationController {
     }
 
     @Override
-    @GetMapping
+    @GetMapping("/education")
     @ResponseStatus(OK)
     public Set<EducationResponse> getByProfileId(
-            @NonNull @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
+            @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
     ) {
 
         log.info("Get educations with user_profile_id = [{}]", userProfileId);
@@ -83,21 +85,29 @@ public class EducationControllerImpl implements EducationController {
     }
 
     @Override
-    @PutMapping("/{id}")
+    @PutMapping("/education/{id}")
     @ResponseStatus(OK)
     public EducationResponse update(
-            @NonNull @Valid @Min(1) @PathVariable Long id,
-            @NonNull @Valid @RequestBody EducationRequest requestBody
+            @Valid @Min(1) @PathVariable("id") Long id
+            , @Valid @NonNull @RequestBody EducationRequest requestBody
     ) {
         log.info("Update education with id = [{}] and requestBody = [{}]", id, requestBody);
-        return educationResponseMapper.map(educationService.update(id, educationEntityMapper.map(requestBody)));
+
+        EducationEntity education = educationService.getById(id)
+                .orElseThrow(() -> new CourseNotFoundException("Education with id = [%d] not found".formatted(id)));
+
+        return educationResponseMapper.map(
+                educationService.update(
+                        id
+                        , educationEntityMapper.map(requestBody.setUserProfileId(education.getUserProfile().getId())))
+        );
     }
 
     @Override
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/education/{id}")
     @ResponseStatus(OK)
     public StatusDTO delete(
-            @NonNull @Valid @Min(1) @PathVariable Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     ) {
         log.info("Delete education with id = [{}]", id);
         return educationService.delete(id);

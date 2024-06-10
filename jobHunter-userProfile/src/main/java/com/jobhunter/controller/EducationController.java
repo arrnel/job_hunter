@@ -18,32 +18,33 @@ public interface EducationController {
     @PostMapping
     @ResponseStatus(CREATED)
     EducationResponse create(
-            @NonNull @Valid @RequestBody EducationRequest requestBody
+            @Valid @Min(1) @PathVariable("user_profile_id") Long userProfileId
+            , @Valid @NonNull @RequestBody EducationRequest requestBody
     );
 
     @GetMapping("/{id}")
     @ResponseStatus(OK)
     EducationResponse getById(
-            @NonNull @Valid @Min(1) @PathVariable("id") Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     );
 
     @GetMapping
     @ResponseStatus(OK)
     Set<EducationResponse> getByProfileId(
-            @NonNull @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
+            @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
     );
 
     @PutMapping("/{id}")
     @ResponseStatus(OK)
     EducationResponse update(
-            @NonNull @Valid @Min(1) @PathVariable Long id,
-            @NonNull @Valid @RequestBody EducationRequest requestBody
+            @Valid @Min(1) @PathVariable Long id
+            , @Valid @NonNull @RequestBody EducationRequest requestBody
     );
 
     @DeleteMapping("/{id}")
     @ResponseStatus(OK)
     StatusDTO delete(
-            @NonNull @Valid @Min(1) @PathVariable Long id
+            @Valid @Min(1) @PathVariable Long id
     );
 
 }
