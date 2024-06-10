@@ -20,13 +20,7 @@ public class EducationResponseShort {
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("user_profile_id")
-    private UserProfile userProfile;
-
-    @JsonProperty("user")
-    private Long user;
-
-    @JsonProperty("school_id")
+    @JsonProperty("company_id")
     private Long companyId;
 
     @JsonProperty("company_name")

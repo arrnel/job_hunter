@@ -12,8 +12,8 @@ $$
             'job_hunter_geo',
             'job_hunter_job',
             'job_hunter_notification',
-            'job_hunter_user',
-            'job_hunter_profiles'
+            'job_hunter_profiles',
+            'job_hunter_user'
             ]
             LOOP
                 IF NOT EXISTS (SELECT

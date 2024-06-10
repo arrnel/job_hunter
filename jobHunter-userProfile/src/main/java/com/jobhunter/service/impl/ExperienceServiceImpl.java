@@ -46,13 +46,13 @@ public class ExperienceServiceImpl implements ExperienceService {
     }
 
     @Override
-    public ExperienceEntity update(@NonNull Long id, ExperienceEntity newCourse) {
+    public ExperienceEntity update(@NonNull Long id, ExperienceEntity newExperience) {
 
         return experienceRepository.save(
                 experienceEntityUpdater.update(
                         experienceRepository.findById(id)
                                 .orElseThrow(() -> new ExperienceNotFoundException("Experience with id = [%d] not found".formatted(id), BAD_REQUEST))
-                        , newCourse));
+                        , newExperience));
     }
 
     @Override

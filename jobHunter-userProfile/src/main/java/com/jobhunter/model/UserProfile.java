@@ -58,17 +58,17 @@ public class UserProfile {
     @JoinColumn(name = "status_id", nullable = false)
     private UserProfileStatusEntity status;
 
-    @Builder.Default
-    @OneToMany(mappedBy = "userProfile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<ExperienceEntity> experiences = new HashSet<>();
-
-    @Builder.Default
-    @OneToMany(mappedBy = "userProfile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<CourseEntity> courses = new HashSet<>();
-
-    @Builder.Default
-    @OneToMany(mappedBy = "userProfile", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<EducationEntity> educations = new HashSet<>();
+//    @Builder.Default
+//    @OneToMany(mappedBy = "userProfile", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<ExperienceEntity> experiences = new HashSet<>();
+//
+//    @Builder.Default
+//    @OneToMany(mappedBy = "userProfile", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<CourseEntity> courses = new HashSet<>();
+//
+//    @Builder.Default
+//    @OneToMany(mappedBy = "userProfile", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+//    private Set<EducationEntity> educations = new HashSet<>();
 
     @Column(name = "date_created", nullable = false, updatable = false)
     private LocalDateTime dateCreated;

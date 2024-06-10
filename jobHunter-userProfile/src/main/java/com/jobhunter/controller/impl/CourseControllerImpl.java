@@ -9,6 +9,7 @@ import com.jobhunter.exception.CourseNotFoundException;
 import com.jobhunter.exception.TooManyEducationsException;
 import com.jobhunter.mapper.CourseEntityToCourseResponseMapper;
 import com.jobhunter.mapper.CourseRequestToCourseEntityMapper;
+import com.jobhunter.model.CourseEntity;
 import com.jobhunter.service.CourseService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
@@ -26,7 +27,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/profile/course")
+@RequestMapping("/api/v1/profile")
 @RequiredArgsConstructor
 public class CourseControllerImpl implements CourseController {
 
@@ -35,10 +36,11 @@ public class CourseControllerImpl implements CourseController {
     private final CourseEntityToCourseResponseMapper courseResponseMapper;
 
     @Override
-    @PostMapping
+    @PostMapping("/{user_profile_id}/course")
     @ResponseStatus(CREATED)
     public CourseResponse create(
-            @NonNull @Valid @RequestBody CourseRequest requestBody
+            @Valid @Min(1) @PathVariable("user_profile_id") Long userProfileId
+            , @Valid @NonNull @RequestBody CourseRequest requestBody
     ) {
 
         log.info("Start creating education with requestBody = [{}]", requestBody);
@@ -47,20 +49,23 @@ public class CourseControllerImpl implements CourseController {
         long userId = 1L;
 
         log.info("Start creating course with requestBody = [{}]", requestBody);
-        int totalUserCourses = courseService.getByUserProfile(requestBody.getUserProfileId()).size(),
+        int totalUserCourses = courseService.getByUserProfile(userProfileId).size(),
                 coursesLimit = Config.User.coursesMax();
         if (totalUserCourses >= coursesLimit) throw new TooManyEducationsException();
 
-        return courseResponseMapper.map(courseService.create(courseEntityMapper.map(requestBody)
-                .setDateCreated(LocalDateTime.now()))
-        );
+        return courseResponseMapper.map(
+                courseService.create(
+                        courseEntityMapper.map(requestBody.setUserProfileId(userProfileId))
+                                .setUser(userId)                        // FIXME: REMOVE and add authorization
+                                .setDateCreated(LocalDateTime.now())
+                ));
     }
 
     @Override
-    @GetMapping("/{id}")
+    @GetMapping("/course/{id}")
     @ResponseStatus(OK)
     public CourseResponse getById(
-            @NonNull @Valid @Min(1) @PathVariable("id") Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     ) {
         log.info("Get course with id = [{}]", id);
         return courseResponseMapper.map(
@@ -69,10 +74,10 @@ public class CourseControllerImpl implements CourseController {
     }
 
     @Override
-    @GetMapping
+    @GetMapping("/course")
     @ResponseStatus(OK)
     public Set<CourseResponse> getByProfileId(
-            @NonNull @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
+            @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
     ) {
         log.info("Get courses with user_profile_id = [{}]", userProfileId);
         return courseService.getByUserProfile(userProfileId)
@@ -81,20 +86,29 @@ public class CourseControllerImpl implements CourseController {
     }
 
     @Override
-    @PutMapping("/{id}")
+    @PutMapping("/course/{id}")
     @ResponseStatus(OK)
     public CourseResponse update(
-            @NonNull @Valid @Min(1) @PathVariable Long id,
-            @NonNull @Valid @RequestBody CourseRequest requestBody
+            @Valid @Min(1) @PathVariable Long id
+            , @Valid @NonNull @RequestBody CourseRequest requestBody
     ) {
+
         log.info("Update course with id = [{}] and requestBody = [{}]", id, requestBody);
-        return courseResponseMapper.map(courseService.update(id, courseEntityMapper.map(requestBody)));
+
+        CourseEntity course = courseService.getById(id)
+                .orElseThrow(() -> new CourseNotFoundException("Course with id = [%d] not found".formatted(id)));
+
+        return courseResponseMapper.map(
+                courseService.update(
+                        id
+                        , courseEntityMapper.map(requestBody.setUserProfileId(course.getUserProfile().getId())))
+        );
     }
 
     @Override
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/course/{id}")
     @ResponseStatus(OK)
-    public StatusDTO delete(@NonNull @Valid @Min(1) @PathVariable Long id) {
+    public StatusDTO delete(@Valid @Min(1) @PathVariable Long id) {
         log.info("Delete course with id = [{}]", id);
         return courseService.delete(id);
     }

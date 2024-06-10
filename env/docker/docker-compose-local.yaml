@@ -3,7 +3,7 @@ version: '3.9'
 services:
 
   postgres:
-    image: postgres:16.2-alpine3.19
+    image: postgres:16.3-alpine3.20
     container_name: postgres
     restart: unless-stopped
     networks:
@@ -16,8 +16,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-job_hunter}
     volumes:
       - job_hunter_db_data:/var/lib/postgresql/data
-      #      - ../../env/script/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
-      - ../../env/script/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+      #      - ../script/create_db.sh:/docker-entrypoint-initdb.d/create_db.sh
+      - ../script/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
 
   pgadmin:
     container_name: pgadmin

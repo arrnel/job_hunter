@@ -18,30 +18,31 @@ public interface CourseController {
     @PostMapping
     @ResponseStatus(CREATED)
     CourseResponse create(
-            @NonNull @Valid @RequestBody CourseRequest requestBody
+            @Valid @Min(1) @PathVariable("user_profile_id") Long userProfileId
+            , @Valid @NonNull @RequestBody CourseRequest requestBody
     );
 
     @GetMapping("/{id}")
     @ResponseStatus(OK)
     CourseResponse getById(
-            @NonNull @Valid @Min(1) @PathVariable("id") Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     );
 
     @GetMapping
     @ResponseStatus(OK)
     Set<CourseResponse> getByProfileId(
-            @NonNull @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
+            @Valid @Min(1) @RequestParam("user_profile_id") Long userProfileId
     );
 
     @PutMapping("/{id}")
     @ResponseStatus(OK)
     CourseResponse update(
-            @NonNull @Valid @Min(1) @PathVariable Long id,
-            @NonNull @Valid @RequestBody CourseRequest requestBody
+            @Valid @Min(1) @PathVariable Long id
+            , @Valid @NonNull @RequestBody CourseRequest requestBody
     );
 
     StatusDTO delete(
-            @NonNull @Valid @Min(1) @PathVariable Long id
+            @Valid @Min(1) @PathVariable Long id
     );
 
 }

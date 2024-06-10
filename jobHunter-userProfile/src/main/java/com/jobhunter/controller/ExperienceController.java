@@ -18,7 +18,8 @@ public interface ExperienceController {
     @PostMapping
     @ResponseStatus(CREATED)
     ExperienceResponse create(
-            @Valid @RequestBody ExperienceRequest requestBody
+            @Valid @Min(1) @PathVariable("user_profile_id") Long userProfileId
+            , @Valid @NonNull @RequestBody ExperienceRequest requestBody
     );
 
     @GetMapping("/{id}")
@@ -36,14 +37,14 @@ public interface ExperienceController {
     @PutMapping("/{id}")
     @ResponseStatus(OK)
     ExperienceResponse update(
-            @Valid @Min(1) @PathVariable("id") Long id,
-            @Valid @NonNull ExperienceRequest requestBody
+            @Valid @Min(1) @PathVariable("id") Long id
+            , @Valid @NonNull @RequestBody ExperienceRequest requestBody
     );
 
     @DeleteMapping("/{id}")
     @ResponseStatus(OK)
     StatusDTO delete(
-            @Valid @Min(1) @PathVariable Long id
+            @Valid @Min(1) @PathVariable("id") Long id
     );
 
 }

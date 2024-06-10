@@ -62,11 +62,22 @@ public class UserProfileUpdaterImpl implements UserProfileUpdater {
                                 ? oldSource.getStatus()
                                 : newSource.getStatus()
                 )
-                .setExperiences(
-                        CollectionHelper.isNullOrEmpty(newSource.getExperiences())
-                                ? oldSource.getExperiences()
-                                : newSource.getExperiences()
-                );
+//                .setExperiences(
+//                        CollectionHelper.isNullOrEmpty(newSource.getExperiences())
+//                                ? oldSource.getExperiences()
+//                                : newSource.getExperiences()
+//                )
+//                .setCourses(
+//                        CollectionHelper.isNullOrEmpty(newSource.getCourses())
+//                                ? oldSource.getCourses()
+//                                : newSource.getCourses()
+//                )
+//                .setEducations(
+//                        CollectionHelper.isNullOrEmpty(newSource.getEducations())
+//                                ? oldSource.getEducations()
+//                                : newSource.getEducations()
+//                )
+                ;
 
     }
 }

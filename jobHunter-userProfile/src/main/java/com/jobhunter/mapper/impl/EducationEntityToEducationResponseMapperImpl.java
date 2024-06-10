@@ -14,7 +14,7 @@ public class EducationEntityToEducationResponseMapperImpl implements EducationEn
     public EducationResponse map(EducationEntity source) {
         return EducationResponse.builder()
                 .id(source.getId())
-                .userProfile(source.getUserProfile())
+                .userProfile(source.getUserProfile().getId())
                 .user(source.getUser())
                 .companyId(source.getCompanyId())
                 .companyName(source.getCompanyName())
